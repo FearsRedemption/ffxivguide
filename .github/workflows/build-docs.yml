@@ -1,9 +1,16 @@
 name: Build docs and Commit
 
+# fire on every push to main
 on:
   push:
     branches:
       - main
+
+# grant the token permission to push code
+permissions:
+  contents: write    # <— allows commit & push to the repo
+  pages: write       # if you’re also deploying Pages
+  id-token: write    # only needed for pages-deploy
 
 jobs:
   build-and-commit-docs:
@@ -13,7 +20,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0     # needed so Git sees full history
+          persist-credentials: true  # enable auth for subsequent git commands
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -25,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Build into docs/
-        run: npm run build
+        run: npm run build       # your vite.config.ts → outDir: docs
 
       - name: Commit updated docs
         uses: EndBug/add-and-commit@v9
