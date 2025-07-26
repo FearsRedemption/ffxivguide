@@ -1,0 +1,36 @@
+name: Build docs and Commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-commit-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build into docs/
+        run: npm run build
+
+      - name: Commit updated docs
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: github-actions@users.noreply.github.com
+          message: "chore: rebuild docs [skip ci]"
+          add: "docs"
