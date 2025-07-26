@@ -1,10 +1,13 @@
 ﻿// src/pages/ComingSoon.tsx
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSubscription } from '../hooks/useSubscription';
 import { useAccess } from '../hooks/useAccess';
 import '../styles/index.css';
 
 export default function ComingSoon() {
+    const navigate = useNavigate();
+
     const {
         email,
         setEmail,
@@ -21,7 +24,7 @@ export default function ComingSoon() {
         verify,
     } = useAccess();
 
-    // Smooth-scroll for anchor links
+    // Smooth‑scroll for anchor links
     useEffect(() => {
         const anchors = Array.from(
             document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
@@ -29,8 +32,7 @@ export default function ComingSoon() {
         const handleClick = (e: Event) => {
             e.preventDefault();
             const anchor = e.currentTarget as HTMLAnchorElement;
-            const href = anchor.getAttribute('href')!;
-            const targetId = href.slice(1);
+            const targetId = anchor.getAttribute('href')!.slice(1);
             if (!targetId) return;
             const targetEl = document.getElementById(targetId);
             if (targetEl) {
@@ -38,10 +40,16 @@ export default function ComingSoon() {
             }
         };
         anchors.forEach(a => a.addEventListener('click', handleClick));
-        return () => {
-            anchors.forEach(a => a.removeEventListener('click', handleClick));
-        };
+        return () => anchors.forEach(a => a.removeEventListener('click', handleClick));
     }, []);
+
+    // When the access code verification succeeds, navigate to /home
+    useEffect(() => {
+        if (accessStatus === 'success') {
+            const timer = setTimeout(() => navigate('/home'), 1000);
+            return () => clearTimeout(timer);
+        }
+    }, [accessStatus, navigate]);
 
     return (
         <>
