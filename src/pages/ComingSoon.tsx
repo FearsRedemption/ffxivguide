@@ -56,7 +56,7 @@ const ComingSoon = () => {
                         <input
                             type="email"
                             id="email"
-                            placeholder="your@email.com"
+                            placeholder="username@domainname.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
