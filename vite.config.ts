@@ -5,7 +5,7 @@ export default defineConfig({
   base: './',
   plugins: [react()],
   build: {
-    outDir: 'docs', // 👈 Vite will output here
+    outDir: 'docs',
     emptyOutDir: true
   }
 });

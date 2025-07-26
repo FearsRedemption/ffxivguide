@@ -2,28 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Readdy.ai-style adjustments */
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
 }
 
-.dark body {
-  background-color: #111827;
-  color: #f3f4f6;
-}
-
-h1, h2, h3, h4 {
+/* Headings */
+h1, h2, h3 {
   font-weight: 700;
   line-height: 1.2;
 }
 
-a {
-  color: #2563eb;
-  text-decoration: none;
+/* Hero Background */
+.hero-bg {
+  background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+  ),
+  url('https://readdy.ai/api/search-image?query=Dark%20epic%20fantasy%20landscape%20with%20floating%20crystal%20islands%20in%20a%20mystical%20night%20sky%2C%20ethereal%20moonlight%20rays%20piercing%20through%20dark%20clouds%2C%20majestic%20ancient%20architecture%2C%20mysterious%20atmosphere%2C%20magical%20energy%20streams%2C%20deep%20shadows%2C%20professional%20digital%20art%2C%20cinematic%20lighting%2C%20highly%20detailed%2C%204k%20quality&width=1920&height=1080&seq=4&orientation=landscape');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-a:hover {
-  text-decoration: underline;
+/* Feature Cards */
+.feature-card {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(123, 104, 238, 0.4);
+}
+
+/* Countdown block (optional if used) */
+.countdown-item {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+/* Rounded button utility */
+.rounded-button {
+  border-radius: 8px;
+}
+
+/* Email form spinner removal */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Custom checkbox (if used in the future) */
+.custom-checkbox {
+  display: none;
+}
+.custom-checkbox-label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+}
+.custom-checkbox-label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #7b68ee;
+  background: transparent;
+  border-radius: 4px;
+}
+.custom-checkbox:checked + .custom-checkbox-label:before {
+  background-color: #7b68ee;
+}
+.custom-checkbox:checked + .custom-checkbox-label:after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 8px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }

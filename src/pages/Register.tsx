@@ -1,19 +1,33 @@
-﻿//import React from 'react';
-
-export default function Register() {
+﻿export default function Register() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-800 px-4">
-            <form className="bg-gray-100 dark:bg-gray-900 p-8 rounded-lg shadow-lg max-w-md w-full">
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Create an Account</h2>
+        <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white px-4">
+            <form className="w-full max-w-md bg-slate-800/80 backdrop-blur-md p-8 rounded-lg border border-slate-700 shadow-md">
+                <h2 className="text-3xl font-bold mb-6 text-center text-white">Create an Account</h2>
+
                 <label className="block mb-4">
-                    <span className="text-gray-700 dark:text-gray-300">Email</span>
-                    <input type="email" className="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-md" required />
+                    <span className="text-slate-300">Email</span>
+                    <input
+                        type="email"
+                        required
+                        className="mt-1 w-full px-4 py-3 bg-slate-900 text-white placeholder-slate-500 border border-slate-700 rounded-button outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="you@example.com"
+                    />
                 </label>
+
                 <label className="block mb-6">
-                    <span className="text-gray-700 dark:text-gray-300">Password</span>
-                    <input type="password" className="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-md" required />
+                    <span className="text-slate-300">Password</span>
+                    <input
+                        type="password"
+                        required
+                        className="mt-1 w-full px-4 py-3 bg-slate-900 text-white placeholder-slate-500 border border-slate-700 rounded-button outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="••••••••"
+                    />
                 </label>
-                <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">
+
+                <button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-opacity-90 text-white py-3 px-6 rounded-button text-lg font-medium transition-colors"
+                >
                     Register
                 </button>
             </form>
