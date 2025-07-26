@@ -1,12 +1,12 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import ComingSoon from './pages/ComingSoon';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import AllJobs from './pages/AllJobs';
-
 import JobGuide from './pages/guides/JobGuide';
+import NotFound from "./pages/NotFound.tsx";
 
 export default function App() {
     return (
@@ -26,7 +26,9 @@ export default function App() {
             <Route path="/jobs/:jobName" element={<JobGuide />} />
 
             {/* Catch-all: redirect unknown paths to root */}
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<NotFound />} />
+            {/*<Route path="*" element={<Navigate to="/" />} />*/}
         </Routes>
+        
     );
 }

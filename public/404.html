@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+    <script>
+        const path = window.location.pathname;
+        const query = window.location.search;
+        const hash = window.location.hash;
+        const target = `/?redirect=${encodeURIComponent(path + query + hash)}`;
+        window.location.replace(target);
+    </script>
+</head>
+<body></body>
+</html>

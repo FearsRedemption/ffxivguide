@@ -1,13 +1,10 @@
 ﻿// src/pages/ComingSoon.tsx
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useSubscription } from '../hooks/useSubscription';
-import { useAccess } from '../hooks/useAccess';
+import {useEffect} from 'react';
+import {useSubscription} from '../hooks/useSubscription';
+import {useAccess} from '../hooks/useAccess';
 import '../styles/index.css';
 
 export default function ComingSoon() {
-    const navigate = useNavigate();
-
     const {
         email,
         setEmail,
@@ -42,14 +39,6 @@ export default function ComingSoon() {
         anchors.forEach(a => a.addEventListener('click', handleClick));
         return () => anchors.forEach(a => a.removeEventListener('click', handleClick));
     }, []);
-
-    // When the access code verification succeeds, navigate to /home
-    useEffect(() => {
-        if (accessStatus === 'success') {
-            const timer = setTimeout(() => navigate('/home'), 1000);
-            return () => clearTimeout(timer);
-        }
-    }, [accessStatus, navigate]);
 
     return (
         <>
