@@ -1,78 +1,47 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿// src/pages/ComingSoon.tsx
+import { useEffect } from 'react';
+import { useSubscription } from '../hooks/useSubscription';
+import { useAccess } from '../hooks/useAccess';
 import '../styles/index.css';
 
 export default function ComingSoon() {
-    const [email, setEmail] = useState('');
-    const [formMessage, setFormMessage] = useState('');
-    const [formStatus, setFormStatus] = useState<'hidden' | 'success' | 'error'>('hidden');
+    const {
+        email,
+        setEmail,
+        status: formStatus,
+        message: formMessage,
+        subscribe,
+    } = useSubscription();
 
-    const [accessCode, setAccessCode] = useState('');
-    const [accessMessage, setAccessMessage] = useState('');
-    const [accessStatus, setAccessStatus] = useState<'hidden' | 'info' | 'success' | 'error'>('hidden');
+    const {
+        code: accessCode,
+        setCode: setAccessCode,
+        status: accessStatus,
+        message: accessMessage,
+        verify,
+    } = useAccess();
 
-    // Smooth-scroll for any anchor links (exact copy of the inline script)
+    // Smooth-scroll for anchor links
     useEffect(() => {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = (anchor.getAttribute('href') || '').slice(1);
-                if (targetId === '') return;
-                const targetEl = document.getElementById(targetId);
-                if (targetEl) {
-                    window.scrollTo({ top: targetEl.offsetTop - 80, behavior: 'smooth' });
-                }
-            });
-        });
+        const anchors = Array.from(
+            document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
+        );
+        const handleClick = (e: Event) => {
+            e.preventDefault();
+            const anchor = e.currentTarget as HTMLAnchorElement;
+            const href = anchor.getAttribute('href')!;
+            const targetId = href.slice(1);
+            if (!targetId) return;
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                window.scrollTo({ top: targetEl.offsetTop - 80, behavior: 'smooth' });
+            }
+        };
+        anchors.forEach(a => a.addEventListener('click', handleClick));
+        return () => {
+            anchors.forEach(a => a.removeEventListener('click', handleClick));
+        };
     }, []);
-
-    // Handle subscription form submit
-    const handleSubscribe = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!email || email.length > 500) {
-            setFormMessage('Email is too long. Please keep it under 500 characters.');
-            setFormStatus('error');
-        } else {
-            try {
-                const res = await fetch('https://readdy.ai/api/form/d1hclh9eus6kik1r0i50', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({ email }),
-                });
-                if (!res.ok) throw new Error();
-                setFormMessage('Thank you for subscribing!');
-                setFormStatus('success');
-                setEmail('');
-            } catch {
-                setFormMessage('Something went wrong. Please try again later.');
-                setFormStatus('error');
-            }
-        }
-        setTimeout(() => setFormStatus('hidden'), 5000);
-    };
-
-    // Handle early access code form submit
-    const handleAccess = (e: React.FormEvent) => {
-        e.preventDefault();
-        const code = accessCode.trim();
-        if (!code) {
-            setAccessMessage('Please enter an access code');
-            setAccessStatus('error');
-        } else {
-            setAccessMessage('Verifying access code...');
-            setAccessStatus('info');
-            if (code === '0792') {
-                setAccessMessage('Access granted! Redirecting...');
-                setAccessStatus('success');
-                setTimeout(() => {
-                    window.location.href = '/home';
-                }, 1000);
-            } else {
-                setAccessMessage('Invalid access code. Please try again.');
-                setAccessStatus('error');
-            }
-            setTimeout(() => setAccessStatus('hidden'), 5000);
-        }
-    };
 
     return (
         <>
@@ -87,8 +56,7 @@ export default function ComingSoon() {
                             <span className="block mt-2">Coming Soon</span>
                         </h1>
                         <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-                            The ultimate resource for Final Fantasy XIV players. Comprehensive guides, strategies, and tools to master
-                            every aspect of Eorzea. Maybe even enjoy a new FC?
+                            The ultimate resource for Final Fantasy XIV players. Comprehensive guides, strategies, and tools to master every aspect of Eorzea. Maybe even enjoy a new FC?
                         </p>
 
                         {/* Email Subscription Form */}
@@ -98,11 +66,9 @@ export default function ComingSoon() {
                         >
                             <h3 className="text-xl font-semibold mb-4">Get Notified When We Launch</h3>
                             <form
-                                onSubmit={handleSubscribe}
+                                onSubmit={(e) => { e.preventDefault(); subscribe(); }}
                                 className="flex flex-col space-y-4"
                                 id="subscribeForm"
-                                action="https://readdy.ai/api/form/d1hclh9eus6kik1r0i50"
-                                method="POST"
                             >
                                 <div className="relative">
                                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -127,9 +93,11 @@ export default function ComingSoon() {
                                 <div
                                     id="formMessage"
                                     className={`${
-                                        formStatus === 'hidden' ? 'hidden' : ''
+                                        formStatus === 'idle' ? 'hidden' : ''
                                     } text-center py-2 px-4 rounded-button ${
-                                        formStatus === 'success' ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'
+                                        formStatus === 'success'
+                                            ? 'bg-green-500/10 text-green-500'
+                                            : 'bg-red-500/10 text-red-500'
                                     }`}
                                 >
                                     {formMessage}
@@ -150,15 +118,13 @@ export default function ComingSoon() {
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Repeat each feature-card exactly */}
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
                             <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
                                 <i className="ri-sword-line text-primary ri-lg"></i>
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Combat Guides</h3>
                             <p className="text-slate-400">
-                                Master every job with our detailed rotation guides, openers, and optimization tips for both casual and savage
-                                content.
+                                Master every job with our detailed rotation guides, openers, and optimization tips for both casual and savage content.
                             </p>
                         </div>
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
@@ -185,8 +151,7 @@ export default function ComingSoon() {
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Gil Making Guides</h3>
                             <p className="text-slate-400">
-                                Effective strategies for making gil through crafting, gathering, market board flipping, and other lucrative
-                                activities.
+                                Effective strategies for making gil through crafting, gathering, market board flipping, and other lucrative activities.
                             </p>
                         </div>
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
@@ -226,11 +191,9 @@ export default function ComingSoon() {
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">Support Our Development</h2>
                         <p className="text-slate-300 max-w-2xl mx-auto">
-                            Your donations directly impact our ability to launch sooner and develop more features. Help us create the
-                            ultimate FFXIV resource!{' '}
+                            Your donations directly impact our ability to launch sooner and develop more features. Help us create the ultimate FFXIV resource!{' '}
                             <span className="font-bold text-primary">
-                An Early (Immediate) Access Code will be provided for those that Donate $5 or more! (The site is not
-                finished so some info will be incomplete or generic until full release)
+                An Early (Immediate) Access Code will be provided for those that Donate $5 or more! (The site is not finished so some info will be incomplete or generic until full release)
               </span>
                         </p>
                     </div>
@@ -245,7 +208,7 @@ export default function ComingSoon() {
                         </a>
                         <div className="mt-8 pt-8 border-t border-slate-700">
                             <h3 className="text-xl font-semibold mb-4 text-center">Early Access Code</h3>
-                            <form onSubmit={handleAccess} className="space-y-4" autoComplete="off" id="earlyAccessForm">
+                            <form onSubmit={(e) => { e.preventDefault(); verify(); }} className="space-y-4" autoComplete="off" id="earlyAccessForm">
                                 <div className="relative">
                                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                         <i className="ri-key-2-line text-slate-400"></i>
@@ -269,7 +232,7 @@ export default function ComingSoon() {
                                 <div
                                     id="accessMessage"
                                     className={`${
-                                        accessStatus === 'hidden' ? 'hidden' : ''
+                                        accessStatus === 'idle' ? 'hidden' : ''
                                     } text-center py-2 px-4 rounded-button ${
                                         accessStatus === 'success'
                                             ? 'bg-green-500/10 text-green-500'
@@ -306,8 +269,7 @@ export default function ComingSoon() {
                     </div>
                     <div className="border-t border-slate-800 pt-8 text-center">
                         <p className="text-slate-500 text-sm">
-                            FINAL FANTASY XIV © 2010 - 2025 SQUARE ENIX CO., LTD. All Rights Reserved.
-                            <br />
+                            FINAL FANTASY XIV © 2010 - 2025 SQUARE ENIX CO., LTD. All Rights Reserved.<br />
                             FinalFXIV Guides is not affiliated with SQUARE ENIX CO., LTD.
                         </p>
                         <p className="text-slate-500 text-sm mt-2">© 2025 FinalFXIV Guides. All rights reserved.</p>
