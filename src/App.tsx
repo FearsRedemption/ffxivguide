@@ -1,5 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+// 404 page not found
+import NotFound from "./pages/NotFound.tsx";
+
 import ComingSoon from './pages/ComingSoon';
 import Register from './pages/Register';
 import Home from './pages/Home';
@@ -12,7 +15,7 @@ export default function App() {
     return (
         <Routes>
             {/* Root: Default Coming Soon */}
-            <Route path="/" element={<ComingSoon />} />
+            <Route path="./" element={<ComingSoon />} />
 
             {/* Account Flow */}
             <Route path="/register" element={<Register />} />
@@ -27,6 +30,8 @@ export default function App() {
 
             {/* Catch-all: redirect unknown paths to root */}
             <Route path="*" element={<Navigate to="/" />} />
+            
+            <Route path="*" element={<NotFound />} />
         </Routes>
     );
 }

@@ -1,9 +1,10 @@
 // src/context/AccessContext.tsx
-import  { createContext, useContext, useState, type ReactNode } from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export interface AccessState {
     code: string;
-    status: 'idle' | 'info' | 'success' | 'error';
+    status: 'idle' | 'loading' | 'success' | 'error';
     message: string;
 }
 
@@ -30,19 +31,37 @@ const AccessContext = createContext<{
 });
 
 export const AccessProvider = ({ children }: { children: ReactNode }) => {
+    const navigate = useNavigate();
     const [state, setState] = useState<AccessState>(defaultAccess);
 
     const setCode = (code: string) =>
         setState((s) => ({ ...s, code }));
 
     const verify = () => {
-        setState((s) => ({ ...s, status: 'info', message: 'Verifying access code...' }));
-        if (state.code.trim() === '0792') {
-            setState((s) => ({ ...s, status: 'success', message: 'Access granted! Redirecting...' }));
-            setTimeout(() => (window.location.href = '/home'), 1000);
-        } else {
-            setState((s) => ({ ...s, status: 'error', message: 'Invalid access code. Please try again.' }));
-        }
+        setState((s) => ({
+            ...s,
+            status: 'loading',
+            message: 'Verifying access code…',
+        }));
+
+        const codeToCheck = state.code.trim();
+
+        setTimeout(() => {
+            if (codeToCheck === '0792') {
+                setState((s) => ({
+                    ...s,
+                    status: 'success',
+                    message: 'Access granted! Redirecting…',
+                }));
+                navigate('/home');
+            } else {
+                setState((s) => ({
+                    ...s,
+                    status: 'error',
+                    message: 'Invalid access code. Please try again.',
+                }));
+            }
+        }, 1000);
     };
 
     return (
