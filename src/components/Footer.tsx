@@ -1,0 +1,67 @@
+﻿export default function Footer() {
+    return (
+        <footer className="bg-gray-900 text-white pt-12 pb-6">
+            <div className="container mx-auto px-4">
+                {/* Top Footer */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    {/* Logo + Description */}
+                    <div>
+                        <a href="#" className="h-8 mb-4 inline-block">
+                            <img
+                                src="https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/df9c602eea78cd8da5fdf5ff493a779b.png"
+                                alt="Final Fantasy XIV"
+                                className="h-full"
+                            />
+                        </a>
+                        <p className="text-gray-400 mt-4">
+                            Your ultimate resource for all things Final Fantasy XIV, from beginner guides to advanced strategies.
+                        </p>
+                    </div>
+
+                    {/* Legal Links */}
+                    <div>
+                        <h3 className="font-semibold text-lg mb-4">Legal</h3>
+                        <ul className="space-y-2">
+                            <li>
+                                <a
+                                    href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/b90b125b-8cc4-4265-a406-e5e8a24669a3"
+                                    className="text-gray-400 hover:text-primary"
+                                    data-readdy="true"
+                                >
+                                    Terms of Service
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/e0f9472c-7cb9-4c67-a5e7-a1cd9aebf8f3"
+                                    className="text-gray-400 hover:text-primary"
+                                    data-readdy="true"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/e3749e98-aa82-4cba-bbf4-cfbf7978308e"
+                                    className="text-gray-400 hover:text-primary"
+                                    data-readdy="true"
+                                >
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Bottom Footer */}
+                <div className="pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+                    <p className="mb-2">© 2025 FFXIV Guide Hub. All rights reserved.</p>
+                    <p>
+                        FINAL FANTASY XIV © SQUARE ENIX CO., LTD. All Rights Reserved. We are not affiliated with SQUARE ENIX CO.,
+                        LTD. in any way.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    );
+}

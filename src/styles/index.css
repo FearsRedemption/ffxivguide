@@ -16,12 +16,16 @@
 ------------------------------------------------*/
 :where([class^="ri-"])::before { content: "\f3c2"; }
 
+/*---------------------
+  Base Light Mode Body
+---------------------*/
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0f172a;
-  color: #e2e8f0;
+  background-color: #ffffff;       /* Light mode background */
+  color: #1f2937;                  /* Dark text */
 }
 
+/* Hero background overlay + image */
 .hero-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   url('https://readdy.ai/api/search-image?query=Dark%20epic%20fantasy%20landscape%20with%20floating%20crystal%20islands%20in%20a%20mystical%20night%20sky%2C%20ethereal%20moonlight%20rays%20piercing%20through%20dark%20clouds%2C%20majestic%20ancient%20architecture%2C%20mysterious%20atmosphere%2C%20magical%20energy%20streams%2C%20deep%20shadows%2C%20professional%20digital%20art%2C%20cinematic%20lighting%2C%20highly%20detailed%2C%204k%20quality&width=1920&height=1080&seq=4&orientation=landscape');
@@ -30,6 +34,13 @@ body {
   background-attachment: fixed;
 }
 
+.hero-bg-home {
+  background-image: url('https://readdy.ai/api/search-image?query=A%20breathtaking%2C%20ethereal%20landscape%20from%20Final%20Fantasy%20XIV%20featuring%20a%20majestic%20crystal%20tower%20in%20the%20distance%2C%20with%20floating%20islands%20and%20magical%20aether%20streams%20flowing%20through%20the%20sky.%20The%20left%20side%20has%20a%20subtle%20gradient%20to%20dark%20blue%20that%20transitions%20smoothly%20to%20a%20vibrant%20fantasy%20scene%20on%20the%20right.%20The%20image%20has%20a%20magical%2C%20otherworldly%20quality%20with%20soft%20lighting%20and%20rich%20details.&width=1920&height=800&seq=ffxiv-hero-1&orientation=landscape');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Feature card styling */
 .feature-card {
   background: rgba(30, 41, 59, 0.8);
   backdrop-filter: blur(8px);
@@ -40,17 +51,20 @@ body {
   box-shadow: 0 10px 25px -5px rgba(123, 104, 238, 0.4);
 }
 
+/* Countdown item */
 .countdown-item {
   background: rgba(30, 41, 59, 0.8);
   backdrop-filter: blur(5px);
 }
 
+/* Remove number input spin buttons */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
+/* Checkbox styling */
 .custom-checkbox {
   display: none;
 }
@@ -83,4 +97,111 @@ input[type="number"]::-webkit-outer-spin-button {
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+}
+
+/* Card hover effects */
+.category-card:hover {
+  transform: translateY(-5px);
+}
+.guide-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Toggle Switch Styles */
+.custom-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+.custom-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #6366f1;
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/*--------------------------
+  Dark Mode Overrides
+--------------------------*/
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #e5e5e5;
+}
+
+body.dark-mode .bg-white {
+  background-color: #2d2d2d;
+}
+body.dark-mode .bg-gray-50 {
+  background-color: #1f1f1f;
+}
+body.dark-mode .text-gray-900 {
+  color: #e5e5e5;
+}
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-600 {
+  color: #a3a3a3;
+}
+body.dark-mode .border-gray-100 {
+  border-color: #404040;
+}
+body.dark-mode .bg-gray-100 {
+  background-color: #333333;
+}
+body.dark-mode .shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .hover\:bg-gray-50:hover {
+  background-color: #333333;
+}
+body.dark-mode .hover\:bg-gray-200:hover {
+  background-color: #404040;
+}
+body.dark-mode input[type="email"] {
+  background-color: #333333;
+  color: #e5e5e5;
+}
+body.dark-mode .category-card {
+  background: linear-gradient(to bottom right, #2d2d2d, #333333);
+}
+body.dark-mode #marketChart {
+  filter: brightness(0.8);
+}
+
+/* Job Cards (Home Page) — Dark Mode Overrides */
+body.dark-mode .job-card {
+  background-color: #2d2d2d;
+}
+body.dark-mode .job-icon {
+  background-color: #1f1f1f;
+}
+body.dark-mode .job-name {
+  color: #ffffff;
 }

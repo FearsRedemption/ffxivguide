@@ -11,10 +11,10 @@ export default function NotFound() {
                     Oops! The page you’re looking for can’t be found.
                 </p>
                 <Link
-                    to="/home"
+                    to="/"
                     className="bg-primary text-white py-3 px-6 rounded-button hover:bg-opacity-90 transition-colors font-medium"
                 >
-                    Back to Home
+                    Back to Safety
                 </Link>
             </div>
         </section>
