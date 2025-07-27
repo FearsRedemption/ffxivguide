@@ -4,7 +4,6 @@ import '../styles/index.css';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useServerStatus } from '../hooks/useServerStatus';
 
-import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import QuickAccess from '../components/QuickAccess';
 import FeaturedGuides from '../components/FeaturedGuides';
@@ -12,6 +11,7 @@ import JobGuides from '../components/JobGuides';
 import GilMaking from '../components/GilMaking';
 import Community from '../components/Community';
 import Footer from '../components/Footer';
+import Header from "../components/Header.tsx";
 
 export default function Home() {
     useDarkMode();
@@ -27,7 +27,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="bg-gray-50 dark:bg-[#1a1a1a] min-h-screen text-gray-900 dark:text-gray-100 transition-all">
+        <div className="bg-gray-50 dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100">
             <Header serverStatus={serverStatus} />
             <HeroSection />
             <QuickAccess />

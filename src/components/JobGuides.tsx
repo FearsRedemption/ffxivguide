@@ -1,16 +1,17 @@
-﻿import JobCard from './JobCard';
+﻿// src/components/JobGuides.tsx
+import JobCard from './JobCard';
 import { jobGuides } from '../data/jobGuidesData';
 
 export default function JobGuides() {
     return (
-        <section className="py-12 bg-white dark:bg-[#2d2d2d] job-card">
+        <section className="py-12 bg-white dark:bg-[#2d2d2d]">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold job-name text-gray-900 dark:text-white mb-4">
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                         Job & Class Guides
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-300 job-name max-w-2xl mx-auto">
-                        Master your role with our comprehensive job guides, from rotation optimization to gear recommendations
+                    <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Master your role with our comprehensive job guides, from rotation optimization to gear recommendations.
                     </p>
                 </div>
 

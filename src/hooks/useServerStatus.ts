@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 export function useServerStatus() {
-    const [status, setStatus] = useState('All Servers Online | Checking status...');
+    const [status, setStatus] = useState('Checking server status...');
 
     useEffect(() => {
         const updateStatus = () => {
@@ -21,7 +21,8 @@ export function useServerStatus() {
         };
 
         updateStatus();
-        const interval = setInterval(updateStatus, 86400000);
+        const interval = setInterval(updateStatus, 5 * 60 * 1000); // Refresh every 5 minutes
+
         return () => clearInterval(interval);
     }, []);
 

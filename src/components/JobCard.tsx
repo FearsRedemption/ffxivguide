@@ -1,36 +1,21 @@
-﻿import JobCard from './JobCard';
-import { jobGuides } from '../data/jobGuidesData';
+﻿// src/components/JobCard.tsx
+interface JobCardProps {
+    name: string;
+    role: string;
+    icon: string;
+    link: string;
+    roleColor: string;
+    roleBg: string;
+}
 
-export default function JobGuides() {
+export default function JobCard({ name, role, icon, link, roleColor, roleBg }: JobCardProps) {
     return (
-        <section className="py-12 bg-white dark:bg-[#2d2d2d] job-card">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold job-name text-gray-900 dark:text-white mb-4">
-                        Job & Class Guides
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-300 job-name max-w-2xl mx-auto">
-                        Master your role with our comprehensive job guides, from rotation optimization to gear recommendations
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {jobGuides.map((job, index) => (
-                        <JobCard key={index} {...job} />
-                    ))}
-                </div>
-
-                <div className="text-center mt-8">
-                    <a
-                        href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/dd2daa77-0128-48d9-aa2f-6009c8feb053"
-                        data-readdy="true"
-                    >
-                        <button className="tool-button bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 px-6 py-3 rounded-button font-medium whitespace-nowrap text-gray-700 dark:text-gray-200">
-                            View All Jobs
-                        </button>
-                    </a>
-                </div>
+        <a href={link} data-readdy="true" className="block rounded-lg overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 bg-white dark:bg-[#2d2d2d] transition-transform hover:-translate-y-1">
+            <div className="flex flex-col items-center p-4">
+                <img src={icon} alt={`${name} icon`} className="w-16 h-16 mb-2" />
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{name}</h3>
+                <p className={`text-sm mt-1 px-2 py-1 rounded-full ${roleBg} ${roleColor}`}>{role}</p>
             </div>
-        </section>
+        </a>
     );
 }
