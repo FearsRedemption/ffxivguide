@@ -33,26 +33,26 @@ This is a private project and not intended for cloning or reuse.
 
 ffxivguide/
 ├── public/
-│   ├── 404.html                  # GitHub Pages SPA redirect fallback
-│   └── favicon.ico              # Optional site icon
+│   ├── 404.html               # GitHub Pages SPA redirect fallback
+│   └── favicon.ico            # Optional site icon
 │
 ├── src/
-│   ├── components/              # Reusable UI components (e.g., RedirectHandler)
-│   ├── context/                 # Global state providers (AccessProvider, SubscriptionProvider)
-│   ├── hooks/                   # Custom hooks for shared logic
-│   ├── pages/                   # Route views like ComingSoon, Home, NotFound
-│   ├── styles/                  # Tailwind base + global CSS (index.css)
-│   ├── App.tsx                  # Main routing structure with <Routes>
-│   ├── main.tsx                 # App entry point (ReactDOM, BrowserRouter, Providers)
-│   └── vite-env.d.ts            # Vite type declarations
+│   ├── components/            # Reusable UI components (e.g., RedirectHandler)
+│   ├── context/               # Global state providers (AccessProvider, SubscriptionProvider)
+│   ├── hooks/                 # Custom hooks for shared logic
+│   ├── pages/                 # Route views like ComingSoon, Home, NotFound
+│   ├── styles/                # Tailwind base + global CSS (index.css)
+│   ├── App.tsx                # Main routing structure with <Routes>
+│   ├── main.tsx               # App entry point (ReactDOM, BrowserRouter, Providers)
+│   └── vite-env.d.ts          # Vite type declarations
 │
-├── index.html                   # Vite root HTML (loaded on all routes)
-├── package.json                 # Project metadata and scripts
-├── tailwind.config.cjs          # Tailwind v4 config (CJS)
-├── tsconfig.json                # TypeScript compiler config
-├── tsconfig.node.json           # TS config for Vite's dev server
-├── vite.config.ts               # Vite config (base path, plugins, etc.)
-└── README.md                    # Project overview and internal documentation
+├── index.html                 # Vite root HTML (loaded on all routes)
+├── package.json               # Project metadata and scripts
+├── tailwind.config.cjs        # Tailwind v4 config (CJS)
+├── tsconfig.json              # TypeScript compiler config
+├── tsconfig.node.json         # TS config for Vite's dev server
+├── vite.config.ts             # Vite config (base path, plugins, etc.)
+└── README.md                  # Project overview and internal documentation
 
 ---
 
