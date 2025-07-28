@@ -34,10 +34,11 @@ body {
 
 /* Feature Cards */
 .feature-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: black;
   backdrop-filter: blur(10px);
   border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
+  color: white;
 }
 .feature-card:hover {
   transform: translateY(-5px);

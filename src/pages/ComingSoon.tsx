@@ -61,7 +61,7 @@ export default function ComingSoon() {
                             id="subscribe"
                             className="max-w-md mx-auto bg-slate-800/80 backdrop-blur-md p-6 rounded-lg border border-slate-700"
                         >
-                            <h3 className="text-xl font-semibold mb-4">Get Notified When We Launch</h3>
+                            <h3 className="text-white text-xl font-semibold mb-4">Get Notified When We Launch</h3>
                             <form
                                 onSubmit={(e) => { e.preventDefault(); subscribe(); }}
                                 className="flex flex-col space-y-4"
@@ -109,67 +109,86 @@ export default function ComingSoon() {
             <section id="features" className="py-16 bg-slate-900">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">What to Expect</h2>
-                        <p className="text-slate-400 max-w-2xl mx-auto">
+                        <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">What to Expect</h2>
+                        <p className="text-white max-w-2xl mx-auto">
                             Explore our upcoming comprehensive guides designed to help you master every aspect of Final Fantasy XIV.
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Card Example */}
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
-                            <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
-                                <i className="ri-sword-line text-primary ri-lg"></i>
+                            <div className="flex items-center mb-4 space-x-3">
+                                <div className="w-12 h-12 flex items-center justify-center bg-red-300 rounded-full">
+                                    <i className="ri-sword-line text-red-700 ri-lg"></i>
+                                </div>
+                                <h3 className="text-xl font-semibold">Combat Guides</h3>
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Combat Guides</h3>
-                            <p className="text-slate-400">
+                            <p>
                                 Master every job with our detailed rotation guides, openers, and optimization tips for both casual and savage content.
                             </p>
                         </div>
+
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
-                            <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
-                                <i className="ri-building-4-line text-primary ri-lg"></i>
+                            <div className="flex items-center mb-4 space-x-3">
+                                <div className="w-12 h-12 flex items-center justify-center bg-orange-300 rounded-full">
+                                    <i className="ri-building-4-line text-orange-700 ri-lg"></i>
+                                </div>
+                                <h3 className="text-xl font-semibold">Raid Strategies</h3>
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Raid Strategies</h3>
-                            <p className="text-slate-400">
+                            <p>
                                 Step-by-step walkthroughs for all raids, trials, and dungeons with visual guides and mechanic breakdowns.
                             </p>
                         </div>
+
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
-                            <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
-                                <i className="ri-map-2-line text-primary ri-lg"></i>
+                            <div className="flex items-center mb-4 space-x-3">
+                                <div className="w-12 h-12 flex items-center justify-center bg-yellow-300 rounded-full">
+                                    <i className="ri-map-2-line text-yellow-700 ri-lg"></i>
+                                </div>
+                                <h3 className="text-xl font-semibold">Interactive Maps</h3>
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Interactive Maps</h3>
-                            <p className="text-slate-400">
+                            <p>
                                 Detailed maps for gathering nodes, aether currents, treasure hunts, and other collectibles throughout Eorzea.
                             </p>
                         </div>
+
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
-                            <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
-                                <i className="ri-coins-line text-primary ri-lg"></i>
+                            <div className="flex items-center mb-4 space-x-3">
+                                <div className="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
+                                    <i className="ri-coins-line text-green-700 ri-lg"></i>
+                                </div>
+                                <h3 className="text-xl font-semibold">Gil Making Guides</h3>
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Gil Making Guides</h3>
-                            <p className="text-slate-400">
+                            <p>
                                 Effective strategies for making gil through crafting, gathering, market board flipping, and other lucrative activities.
                             </p>
                         </div>
+
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
-                            <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
-                                <i className="ri-hammer-line text-primary ri-lg"></i>
+                            <div className="flex items-center mb-4 space-x-3">
+                                <div className="w-12 h-12 flex items-center justify-center bg-blue-300 rounded-full">
+                                    <i className="ri-hammer-line text-blue-700 ri-lg"></i>
+                                </div>
+                                <h3 className="text-xl font-semibold">Crafting & Gathering</h3>
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Crafting & Gathering</h3>
-                            <p className="text-slate-400">
+                            <p>
                                 Leveling guides, rotation tips, and best practices for Disciples of the Hand and Land from beginner to expert.
                             </p>
                         </div>
+
                         <div className="feature-card p-6 rounded-lg border border-slate-700">
-                            <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
-                                <i className="ri-community-line text-primary ri-lg"></i>
+                            <div className="flex items-center mb-4 space-x-3">
+                                <div className="w-12 h-12 flex items-center justify-center bg-purple-300 rounded-full">
+                                    <i className="ri-community-line text-purple-700 ri-lg"></i>
+                                </div>
+                                <h3 className="text-xl font-semibold">Community Tools</h3>
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Community Tools</h3>
-                            <p className="text-slate-400">
+                            <p>
                                 Party finder integration, DPS calculators, gear planners, and other tools to enhance your FFXIV experience.
                             </p>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -186,12 +205,12 @@ export default function ComingSoon() {
                 />
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Support Our Development</h2>
-                        <p className="text-slate-300 max-w-2xl mx-auto">
-                            Your donations directly impact our ability to launch sooner and develop more features. Help us create the ultimate FFXIV resource!{' '}
-                            <span className="font-bold text-primary">
-                An Early (Immediate) Access Code will be provided for those that Donate $5 or more! (The site is not finished so some info will be incomplete or generic until full release)
-              </span>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Support Our Development</h2>
+                        <p className="text-white text-shadow max-w-2xl mx-auto">
+                            Your donations directly impact our ability to launch sooner and develop more features. Help us create the ultimate FFXIV resource!
+                        </p>
+                        <p className="text-white text-shadow font-bold max-w-2xl mx-auto mt-1">
+                            An Early (Immediate) Access Code will be provided for those that Donate $5 or more! (The site is not finished so some info will be incomplete or generic until full release)
                         </p>
                     </div>
                     <div className="max-w-4xl mx-auto bg-slate-900/90 backdrop-blur-md p-8 rounded-lg border border-slate-700">
@@ -201,10 +220,12 @@ export default function ComingSoon() {
                             rel="noopener"
                             className="w-full block bg-primary hover:bg-opacity-90 text-white py-4 !rounded-button whitespace-nowrap transition-colors text-lg font-medium mb-6 text-center"
                         >
-                            Support Our Development
+                            <i className="ri-paypal-fill text-xl mr-2"></i>
+                            Support via PayPal
+                            <i className="ri-heart-fill text-xl ml-2"></i>
                         </a>
                         <div className="mt-8 pt-8 border-t border-slate-700">
-                            <h3 className="text-xl font-semibold mb-4 text-center">Early Access Code</h3>
+                            <h3 className="text-white text-xl font-semibold mb-4 text-center">Early Access Code</h3>
                             <form onSubmit={(e) => { e.preventDefault(); verify(); }} className="space-y-4" autoComplete="off" id="earlyAccessForm">
                                 <div className="relative">
                                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
