@@ -65,19 +65,19 @@ export const jobGuides = [
         roleBg: 'bg-purple-50'
     },
     {
-        name: 'Reaper',
-        role: 'MELEE DPS',
-        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/p/y8GHAXX4qhY7D-yqnCqtEPkjoo.png',
-        link: '#',
-        roleColor: 'text-red-600',
-        roleBg: 'bg-red-50'
-    },
-    {
         name: 'Dark Knight',
         role: 'TANK',
         icon: 'https://lds-img.finalfantasyxiv.com/promo/h/9/5JT3hJnBNPZSLAijAF9u7zrueQ.png',
         link: '#',
         roleColor: 'text-blue-600',
         roleBg: 'bg-blue-50'
+    },
+    {   
+        name: 'Reaper',
+        role: 'MELEE DPS',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/p/y8GHAXX4qhY7D-yqnCqtEPkjoo.png',
+        link: '#',
+        roleColor: 'text-red-600',
+        roleBg: 'bg-red-50'
     }
 ];
