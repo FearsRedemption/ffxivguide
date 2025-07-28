@@ -78,6 +78,6 @@ export const jobGuides = [
         icon: 'https://lds-img.finalfantasyxiv.com/promo/h/9/5JT3hJnBNPZSLAijAF9u7zrueQ.png',
         link: '#',
         roleColor: 'text-blue-600',
-        roleBg: 'bg-blue-300'
+        roleBg: 'bg-blue-50'
     }
 ];
