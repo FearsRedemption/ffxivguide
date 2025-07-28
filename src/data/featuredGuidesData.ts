@@ -1,14 +1,18 @@
 ﻿// src/data/featuredGuidesData.ts
+import UltimateRaidImage from '../assets/images/ultimate-raid-guide.png';
+import CrafterImage from '../assets/images/crafter-guide.png';
+import ZoneGuideImage from '../assets/images/zone-guide.png';
+
 export const featuredGuides = [
     {
         title: 'Futures Rewritten Ultimate',
         description: 'Master the mechanics of the latest Ultimate Raid.',
         tag: 'Ultimate Raid Guide',
         difficulty: 'DIFFICULT',
-        views: '25k',
-        imageUrl: 'https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/2bbb9ce51691fcd867ae013a21d5d585.png',
+        views: '34,573 - 7/27/2025',
+        imageUrl: UltimateRaidImage,
         authorName: 'Tessan Twintails',
-        authorAvatar: 'https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/bf93ed410cadfe02c63a7057ad989f0a.jfif',
+        authorAvatar: 'https://yt3.googleusercontent.com/M_vBa6nPD1IIWGsi2P5bP1epnULnMiT9LtH5_D_LWxag2teLXBTnXczH4JqxeFR2NCIZJ_s_=s160-c-k-c0x00ffffff-no-rj',
         videoUrl: 'https://www.youtube.com/watch?v=Sgz3nNpirCE',
         tagColor: 'text-indigo-600',
         tagBg: 'bg-indigo-50 dark:bg-indigo-900 dark:text-indigo-300',
@@ -19,10 +23,10 @@ export const featuredGuides = [
         description: 'The most efficient leveling paths for Crafters to maximize XP gain.',
         tag: 'Crafting Guide',
         difficulty: 'BEGINNER',
-        views: '535k',
-        imageUrl: 'https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/94b778f1f75f13c678a4622ae5860e92.png',
+        views: '540,034 - 7/27/2025',
+        imageUrl: CrafterImage,
         authorName: 'Jolsn',
-        authorAvatar: 'https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/c04b83831056f7de4b2528611262df40.jfif',
+        authorAvatar: 'https://yt3.googleusercontent.com/5nn6bRkZ5yMxwCxw9zDWbzSpD3X9NwfAPtKcUyTlALWu_LhletDwYE_FwD4kEVyczXJRMYJMMlo=s160-c-k-c0x00ffffff-no-rj',
         videoUrl: 'https://www.youtube.com/watch?v=JDtimUPWEWA',
         tagColor: 'text-emerald-600',
         tagBg: 'bg-emerald-50 dark:bg-emerald-900 dark:text-emerald-300',
@@ -33,10 +37,10 @@ export const featuredGuides = [
         description: 'Go into the Occult Crescent Zone prepared with these tips and tricks!',
         tag: 'Zone',
         difficulty: 'TRENDING',
-        views: '40k',
-        imageUrl: 'https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/d39c2430eae3cc3a6315fca048cfbe06.png',
+        views: '42,013 - 7/27/2025',
+        imageUrl: ZoneGuideImage,
         authorName: 'Cole Evyx',
-        authorAvatar: 'https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/b915f20d5d8c67011886da9cabffa133.jfif',
+        authorAvatar: 'https://yt3.googleusercontent.com/ytc/AIdro_n8vaAe066_7wdVBg1gueReaGGcdqmLi_o8g4Nm0fB7YA=s160-c-k-c0x00ffffff-no-rj',
         videoUrl: 'https://www.youtube.com/watch?v=deLXjU9hVV8',
         tagColor: 'text-rose-600',
         tagBg: 'bg-rose-50 dark:bg-rose-900 dark:text-rose-300',
