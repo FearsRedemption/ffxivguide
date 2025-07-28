@@ -5,7 +5,6 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import AllJobs from './pages/AllJobs';
-import JobGuide from './pages/guides/JobGuide';
 import NotFound from "./pages/NotFound.tsx";
 
 export default function App() {
@@ -20,14 +19,12 @@ export default function App() {
 
             {/* Main Site */}
             <Route path="/home" element={<Home />} />
-            <Route path="/jobs" element={<AllJobs />} />
 
             {/* Guides */}
-            <Route path="/jobs/:jobName" element={<JobGuide />} />
+            <Route path="/all-jobs" element={<AllJobs />} />
 
             {/* Catch-all: redirect unknown paths to root */}
             <Route path="*" element={<NotFound />} />
-            {/*<Route path="*" element={<Navigate to="/" />} />*/}
         </Routes>
         
     );
