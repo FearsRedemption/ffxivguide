@@ -3,23 +3,23 @@ export const jobGuides = [
     {
         name: 'Paladin',
         role: 'TANK',
-        icon: 'https://lds-img.finalfantasyxiv.com/h/E/d0Tx-vhnsMYfYpGe9MvslemEfg.png',
-        link: 'https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/d4b8ff78-eadd-4734-9b32-40254139286c',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/V/NUXU4h6iXzF8HS4BxHKYf7vOa0.png',
+        link: '#',
         roleColor: 'text-blue-600',
         roleBg: 'bg-blue-50'
     },
     {
         name: 'White Mage',
         role: 'HEALER',
-        icon: 'https://lds-img.finalfantasyxiv.com/h/7/i20QvSPcSQTybykLZDbQCgPwMw.png',
-        link: 'https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/63eb8e17-6870-4725-bf2b-8a4ce7791d56',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/G/Na619RGtVtbEvNn1vyFoSlvZ84.png',
+        link: '#',
         roleColor: 'text-green-600',
         roleBg: 'bg-green-50'
     },
     {
         name: 'Samurai',
         role: 'MELEE DPS',
-        icon: 'https://lds-img.finalfantasyxiv.com/h/m/KndG72XtCFwaq1I1iqwcmO_0zc.png',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/J/Ra2GV79gVQhy6SwCrU19boTghc.png',
         link: '#',
         roleColor: 'text-red-600',
         roleBg: 'bg-red-50'
@@ -27,7 +27,7 @@ export const jobGuides = [
     {
         name: 'Black Mage',
         role: 'MAGICAL DPS',
-        icon: 'https://lds-img.finalfantasyxiv.com/h/P/V01m8YRBYcIs5vgbRtpDiqltSE.png',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/A/7JuT00VSwaFqTfcTYUCUnGPFQE.png',
         link: '#',
         roleColor: 'text-purple-600',
         roleBg: 'bg-purple-50'
@@ -35,23 +35,23 @@ export const jobGuides = [
     {
         name: 'Gunbreaker',
         role: 'TANK',
-        icon: 'https://lds-img.finalfantasyxiv.com/h/8/hg8ofSSOKzqng290No55trV4mI.png',
-        link: 'https://www.thebalanceffxiv.com/jobs/tanks/gunbreaker/',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/8/fc5PYpEFGrg4qPYDq_YBbCy1X0.png',
+        link: '#',
         roleColor: 'text-blue-600',
         roleBg: 'bg-blue-50'
     },
     {
         name: 'Sage',
         role: 'HEALER',
-        icon: 'https://lds-img.finalfantasyxiv.com/h/g/_oYApASVVReLLmsokuCJGkEpk0.png',
-        link: 'https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/acb75359-4ef4-461b-8d9e-11cda99aca01',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/e/G0lQTD01LdCGk5pECSc7fbbmbM.png',
+        link: '#',
         roleColor: 'text-green-600',
         roleBg: 'bg-green-50'
     },
     {
         name: 'Bard',
         role: 'RANGED DPS',
-        icon: 'https://lds-img.finalfantasyxiv.com/h/F/KWI-9P3RX_Ojjn_mwCS2N0-3TI.png',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/b/d7BM1x8OZRZU-9fTk-D7g1t2oc.png',
         link: '#',
         roleColor: 'text-amber-600',
         roleBg: 'bg-amber-50'
@@ -59,9 +59,17 @@ export const jobGuides = [
     {
         name: 'Summoner',
         role: 'MAGICAL DPS',
-        icon: 'https://lds-img.finalfantasyxiv.com/h/h/4ghjpyyuNelzw1Bl0sM_PBA_FE.png',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/b/ZwJFxv3XnfqB5N6tKbgXKnj6BU.png',
         link: '#',
         roleColor: 'text-purple-600',
         roleBg: 'bg-purple-50'
+    },
+    {
+        name: 'Reaper',
+        role: 'MELEE DPS',
+        icon: 'https://lds-img.finalfantasyxiv.com/promo/h/p/y8GHAXX4qhY7D-yqnCqtEPkjoo.png',
+        link: '#',
+        roleColor: 'text-red-600',
+        roleBg: 'bg-red-50'
     }
 ];
