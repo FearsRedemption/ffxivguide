@@ -1,34 +1,26 @@
-/*------------------------------------------------
-  1. External Fonts & Icons – must come first
-------------------------------------------------*/
+
+/* External Fonts & Icons */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css');
 
-/*------------------------------------------------
-  2. Tailwind v4 import + load your config
-------------------------------------------------*/
+/* Tailwind Import */
 @import "tailwindcss";
 @config "../../tailwind.config.cjs";
 
-/*------------------------------------------------
-  3. Inline‐styles from Coming‑Soon.html
-------------------------------------------------*/
+/* Icon Default */
 :where([class^="ri-"])::before { content: "\f3c2"; }
 
-/*---------------------
-  Base Light Mode Body
----------------------*/
+/* Base Light Mode Body */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;       /* Light mode background */
-  color: #1f2937;                  /* Dark text */
+  background-color: #f7f8fa;
+  color: #1e293b;
 }
 
-/* Hero background overlay + image */
+/* Hero Backgrounds */
 .hero-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url('https://readdy.ai/api/search-image?query=Dark%20epic%20fantasy%20landscape%20with%20floating%20crystal%20islands%20in%20a%20mystical%20night%20sky%2C%20ethereal%20moonlight%20rays%20piercing%20through%20dark%20clouds%2C%20majestic%20ancient%20architecture%2C%20mysterious%20atmosphere%2C%20magical%20energy%20streams%2C%20deep%20shadows%2C%20professional%20digital%20art%2C%20cinematic%20lighting%2C%20highly%20detailed%2C%204k%20quality&width=1920&height=1080&seq=4&orientation=landscape');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=Dark%20epic%20fantasy%20landscape%20with%20floating%20crystal%20islands%20in%20a%20mystical%20night%20sky%2C%20ethereal%20moonlight%20rays%20piercing%20through%20dark%20clouds%2C%20majestic%20ancient%20architecture%2C%20mysterious%20atmosphere%2C%20magical%20energy%20streams%2C%20deep%20shadows%2C%20professional%20digital%20art%2C%20cinematic%20lighting%2C%20highly%20detailed%2C%204k%20quality&width=1920&height=1080&seq=4&orientation=landscape');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -40,34 +32,34 @@ body {
   background-position: center;
 }
 
-/* Feature card styling */
+/* Feature Cards */
 .feature-card {
-  background: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
 }
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(123, 104, 238, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
 }
 
-/* Countdown item */
+/* Countdown Item */
 .countdown-item {
-  background: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid #e0e0e0;
 }
 
-/* Remove number input spin buttons */
+/* Input cleanup */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Checkbox styling */
-.custom-checkbox {
-  display: none;
-}
+/* Checkbox Styles */
+.custom-checkbox { display: none; }
 .custom-checkbox-label {
   position: relative;
   padding-left: 35px;
@@ -80,12 +72,12 @@ input[type="number"]::-webkit-outer-spin-button {
   top: 0;
   width: 24px;
   height: 24px;
-  border: 2px solid #7b68ee;
+  border: 2px solid #6366f1;
   background: transparent;
   border-radius: 4px;
 }
 .custom-checkbox:checked + .custom-checkbox-label:before {
-  background-color: #7b68ee;
+  background-color: #6366f1;
 }
 .custom-checkbox:checked + .custom-checkbox-label:after {
   content: '';
@@ -99,26 +91,18 @@ input[type="number"]::-webkit-outer-spin-button {
   transform: rotate(45deg);
 }
 
-/* Card hover effects */
-.category-card:hover {
-  transform: translateY(-5px);
-}
-.guide-card:hover img {
-  transform: scale(1.05);
-}
+/* Hover Effects */
+.category-card:hover { transform: translateY(-5px); }
+.guide-card:hover img { transform: scale(1.05); }
 
-/* Toggle Switch Styles */
+/* Toggle Switch */
 .custom-switch {
   position: relative;
   display: inline-block;
   width: 48px;
   height: 24px;
 }
-.custom-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+.custom-switch input { opacity: 0; width: 0; height: 0; }
 .slider {
   position: absolute;
   cursor: pointer;
@@ -126,7 +110,7 @@ input[type="number"]::-webkit-outer-spin-button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #cbd5e1;
   transition: .4s;
   border-radius: 24px;
 }
@@ -148,60 +132,31 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-/*--------------------------
-  Dark Mode Overrides
---------------------------*/
+/* Dark Mode Overrides */
 body.dark-mode {
-  background-color: #1a1a1a;
+  background-color: #0f172a;
   color: #e5e5e5;
 }
 
-body.dark-mode .bg-white {
-  background-color: #2d2d2d;
-}
-body.dark-mode .bg-gray-50 {
-  background-color: #1f1f1f;
-}
-body.dark-mode .text-gray-900 {
-  color: #e5e5e5;
-}
+body.dark-mode .bg-white { background-color: #1e293b; }
+body.dark-mode .bg-gray-50 { background-color: #1a202c; }
+body.dark-mode .text-gray-900 { color: #e5e5e5; }
 body.dark-mode .text-gray-700,
-body.dark-mode .text-gray-600 {
-  color: #a3a3a3;
-}
-body.dark-mode .border-gray-100 {
-  border-color: #404040;
-}
-body.dark-mode .bg-gray-100 {
-  background-color: #333333;
-}
-body.dark-mode .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-}
-body.dark-mode .hover\:bg-gray-50:hover {
-  background-color: #333333;
-}
-body.dark-mode .hover\:bg-gray-200:hover {
-  background-color: #404040;
-}
+body.dark-mode .text-gray-600 { color: #a3a3a3; }
+body.dark-mode .border-gray-100 { border-color: #404040; }
+body.dark-mode .bg-gray-100 { background-color: #334155; }
+body.dark-mode .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
+body.dark-mode .hover\:bg-gray-50:hover { background-color: #333333; }
+body.dark-mode .hover\:bg-gray-200:hover { background-color: #404040; }
 body.dark-mode input[type="email"] {
-  background-color: #333333;
-  color: #e5e5e5;
+  background-color: #1e293b;
+  color: #f1f5f9;
 }
 body.dark-mode .category-card {
-  background: linear-gradient(to bottom right, #2d2d2d, #333333);
+  background: linear-gradient(to bottom right, #1f2937, #334155);
 }
-body.dark-mode #marketChart {
-  filter: brightness(0.8);
-}
+body.dark-mode #marketChart { filter: brightness(0.85); }
 
-/* Job Cards (Home Page) — Dark Mode Overrides */
-body.dark-mode .job-card {
-  background-color: #2d2d2d;
-}
-body.dark-mode .job-icon {
-  background-color: #1f1f1f;
-}
-body.dark-mode .job-name {
-  color: #ffffff;
-}
+body.dark-mode .job-card { background-color: #1e293b; }
+body.dark-mode .job-icon { background-color: #0f172a; }
+body.dark-mode .job-name { color: #ffffff; }
