@@ -13,22 +13,23 @@
     difficultyColor: string;
 }
 
-export default function GuideCard({
-                                      title,
-                                      description,
-                                      tag,
-                                      difficulty,
-                                      views,
-                                      imageUrl,
-                                      authorName,
-                                      authorAvatar,
-                                      videoUrl,
-                                      tagColor,
-                                      tagBg,
-                                      difficultyColor
-                                  }: GuideCardProps) {
+export default function GuideCard(
+    {
+        title,
+        description,
+        tag,
+        difficulty,
+        views,
+        imageUrl,
+        authorName,
+        authorAvatar,
+        videoUrl,
+        tagColor,
+        tagBg,
+        difficultyColor
+    }: GuideCardProps) {
     return (
-        <div className="guide-card rounded-lg shadow-sm overflow-hidden bg-white dark:bg-[#2d2d2d]">
+        <div className="guide-card rounded-lg shadow-sm overflow-hidden bg-gray-50 dark:bg-[#2d2d2d]">
             <div className="relative h-48 overflow-hidden">
                 <img
                     src={imageUrl}

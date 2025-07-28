@@ -3,7 +3,7 @@ import { gilTools } from '../data/gilToolsData';
 
 export default function GilMaking() {
     return (
-        <section className="py-12 bg-white dark:bg-[#2d2d2d]">
+        <section className="py-12 bg-gray-200 dark:bg-[#2d2d2d]">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">

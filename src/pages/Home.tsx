@@ -27,7 +27,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="bg-gray-50 dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100">
+        <div className="dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100">
             <Header serverStatus={serverStatus} />
             <HeroSection />
             <QuickAccess />

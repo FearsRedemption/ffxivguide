@@ -7,8 +7,8 @@ export const gilTools = [
         icon: 'line-chart-line',
         iconColor: 'text-blue-500',
         buttonText: 'Open Universalis',
-        buttonColor: 'bg-blue-500',
-        buttonHover: 'hover:bg-blue-600',
+        buttonColor: 'bg-blue-700',
+        buttonHover: 'hover:bg-indigo-700',
         url: 'https://universalis.app/'
     },
     {
@@ -18,8 +18,8 @@ export const gilTools = [
         icon: 'tools-line',
         iconColor: 'text-indigo-500',
         buttonText: 'Open Teamcraft',
-        buttonColor: 'bg-indigo-500',
-        buttonHover: 'hover:bg-indigo-600',
+        buttonColor: 'bg-blue-700',
+        buttonHover: 'hover:bg-indigo-700',
         url: 'https://ffxivteamcraft.com/'
     }
 ];

@@ -13,7 +13,7 @@ export default function Header({ serverStatus }: HeaderProps) {
     };
 
     return (
-        <header className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white shadow-lg sticky top-0 z-50">
+        <header className="bg-gray-900 text-gray-900 text-white shadow-lg sticky top-0 z-50">
             <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                 {/* Logo + Nav */}
                 <div className="flex items-center space-x-4">
@@ -45,7 +45,7 @@ export default function Header({ serverStatus }: HeaderProps) {
                 {/* Right side – Server Status + Dark Mode */}
                 <div className="flex items-center space-x-4">
                     {/* Server Status visible in header */}
-                    <div className="hidden md:flex items-center bg-black/10 dark:bg-black/30 backdrop-blur-sm rounded px-3 py-1 text-xs text-gray-900 dark:text-white">
+                    <div className="hidden md:flex items-center bg-black/10 dark:bg-black/30 backdrop-blur-sm rounded px-3 py-1 text-xs text-gray-900 text-white">
                         <div className="w-2 h-2 rounded-full mr-2 bg-green-500" />
                         {serverStatus}
                     </div>

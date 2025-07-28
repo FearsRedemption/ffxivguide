@@ -1,6 +1,6 @@
 ﻿export default function QuickAccess() {
     return (
-        <section className="py-12 bg-white dark:bg-[#1a1a1a]">
+        <section className="py-12 bg-gray-100 dark:bg-[#1a1a1a]">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -15,7 +15,7 @@
                     <a
                         href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/0c61fec0-7349-448f-85b9-a088f194d1e8"
                         data-readdy="true"
-                        className="category-card bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-[#2a2a6a] dark:to-[#4444aa] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
+                        className="category-card bg-gradient-to-br from-blue-100 to-blue-300 dark:from-blue-100 dark:to-blue-300 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
                     >
                         <div className="w-16 h-16 rounded-full bg-indigo-100 dark:bg-indigo-700 flex items-center justify-center mx-auto mb-4">
                             <i className="ri-sword-line text-2xl text-indigo-600 dark:text-indigo-400"></i>
@@ -27,7 +27,7 @@
                     <a
                         href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/34123689-e76f-4e19-9868-1239301918d9"
                         data-readdy="true"
-                        className="category-card bg-gradient-to-br from-amber-50 to-yellow-100 dark:from-[#665c00] dark:to-[#ffcc33] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
+                        className="category-card bg-gradient-to-br from-amber-100 to-yellow-300 dark:from-[#665c00] dark:to-[#ffcc33] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
                     >
                         <div className="w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-700 flex items-center justify-center mx-auto mb-4">
                             <i className="ri-coins-line text-2xl text-amber-600 dark:text-amber-400"></i>
@@ -39,7 +39,7 @@
                     <a
                         href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/53ea7007-6963-40d9-97c4-da5413346452"
                         data-readdy="true"
-                        className="category-card bg-gradient-to-br from-emerald-50 to-green-100 dark:from-[#176c2d] dark:to-[#48b448] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
+                        className="category-card bg-gradient-to-br from-emerald-100 to-green-300 dark:from-[#176c2d] dark:to-[#48b448] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
                     >
                         <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-700 flex items-center justify-center mx-auto mb-4">
                             <i className="ri-hammer-line text-2xl text-emerald-600 dark:text-emerald-400"></i>
@@ -51,7 +51,7 @@
                     <a
                         href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/a06831e2-8fdc-441b-b051-d3c7504f82f6"
                         data-readdy="true"
-                        className="category-card bg-gradient-to-br from-rose-50 to-pink-100 dark:from-[#822a2a] dark:to-[#bb4444] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
+                        className="category-card bg-gradient-to-br from-rose-100 to-red-300 dark:from-[#822a2a] dark:to-[#bb4444] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
                     >
                         <div className="w-16 h-16 rounded-full bg-rose-100 dark:bg-rose-700 flex items-center justify-center mx-auto mb-4">
                             <i className="ri-home-4-line text-2xl text-rose-600 dark:text-rose-400"></i>

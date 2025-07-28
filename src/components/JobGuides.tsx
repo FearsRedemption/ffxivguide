@@ -4,7 +4,7 @@ import { jobGuides } from '../data/jobGuidesData';
 
 export default function JobGuides() {
     return (
-        <section className="py-12 bg-white dark:bg-[#2d2d2d]">
+        <section className="py-12 bg-gray-100 dark:bg-[#2d2d2d]">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -26,7 +26,7 @@ export default function JobGuides() {
                         href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/dd2daa77-0128-48d9-aa2f-6009c8feb053"
                         data-readdy="true"
                     >
-                        <button className="tool-button bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 px-6 py-3 rounded-button font-medium whitespace-nowrap text-gray-700 dark:text-gray-200">
+                        <button className="tool-button bg-white dark:bg-white border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 px-6 py-3 rounded-button font-medium whitespace-nowrap text-gray-700 dark:text-white">
                             View All Jobs
                         </button>
                     </a>

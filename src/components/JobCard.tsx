@@ -10,7 +10,7 @@ interface JobCardProps {
 
 export default function JobCard({ name, role, icon, link, roleColor, roleBg }: JobCardProps) {
     return (
-        <a href={link} data-readdy="true" className="block rounded-lg overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 bg-white dark:bg-[#2d2d2d] transition-transform hover:-translate-y-1">
+        <a href={link} data-readdy="true" className="block rounded-lg overflow-hidden shadow-sm border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#2d2d2d] transition-transform hover:-translate-y-1">
             <div className="flex flex-col items-center p-4">
                 <img src={icon} alt={`${name} icon`} className="w-16 h-16 mb-2" />
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{name}</h3>
