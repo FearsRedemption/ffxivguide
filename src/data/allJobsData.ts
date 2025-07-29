@@ -1,36 +1,35 @@
-﻿// src/data/allJobsData.ts
-import Paladin from '../assets/images/jobs/Paladin.png';
-import Warrior from '../assets/images/jobs/Warrior.png';
-import DarkKnight from '../assets/images/jobs/Dark Knight.png';
-import Gunbreaker from '../assets/images/jobs/Gunbreaker.png';
+﻿import paladin from '../assets/images/jobs/Paladin.png';
+import warrior from '../assets/images/jobs/Warrior.png';
+import darkknight from '../assets/images/jobs/Dark Knight.png';
+import gunbreaker from '../assets/images/jobs/Gunbreaker.png';
 
-import WhiteMage from '../assets/images/jobs/White Mage.png';
-import Scholar from '../assets/images/jobs/Scholar.png';
-import Astrologian from '../assets/images/jobs/Astrologian.png';
-import Sage from '../assets/images/jobs/Sage.png';
+import whitemage from '../assets/images/jobs/White Mage.png';
+import scholar from '../assets/images/jobs/Scholar.png';
+import astrologian from '../assets/images/jobs/Astrologian.png';
+import sage from '../assets/images/jobs/Sage.png';
 
-import Monk from '../assets/images/jobs/Monk.png';
-import Dragoon from '../assets/images/jobs/Dragoon.png';
-import Ninja from '../assets/images/jobs/Ninja.png';
-import Samurai from '../assets/images/jobs/Samurai.png';
-import Reaper from '../assets/images/jobs/Reaper.png';
-import Viper from '../assets/images/jobs/Viper.png';
+import monk from '../assets/images/jobs/Monk.png';
+import dragoon from '../assets/images/jobs/Dragoon.png';
+import ninja from '../assets/images/jobs/Ninja.png';
+import samurai from '../assets/images/jobs/Samurai.png';
+import reaper from '../assets/images/jobs/Reaper.png';
+import viper from '../assets/images/jobs/Viper.png';
 
-import Bard from '../assets/images/jobs/Bard.png';
-import Machinist from '../assets/images/jobs/Machinist.png';
-import Dancer from '../assets/images/jobs/Dancer.png';
+import bard from '../assets/images/jobs/Bard.png';
+import machinist from '../assets/images/jobs/Machinist.png';
+import dancer from '../assets/images/jobs/Dancer.png';
 
-import BlackMage from '../assets/images/jobs/Black Mage.png';
-import Summoner from '../assets/images/jobs/Summoner.png';
-import RedMage from '../assets/images/jobs/Red Mage.png';
-import BlueMage from '../assets/images/jobs/Blue Mage.png';
+import blackmage from '../assets/images/jobs/Black Mage.png';
+import summoner from '../assets/images/jobs/Summoner.png';
+import redmage from '../assets/images/jobs/Red Mage.png';
+import bluemage from '../assets/images/jobs/Blue Mage.png';
 
 export interface JobCardData {
     jobName: string;
     icon: string;
     jobRole: string;
     unlockedIn: string;
-    difficulty: number; // 1 to 5 stars
+    difficulty: number;
     link: string;
 }
 
@@ -38,178 +37,178 @@ export const allJobsData: JobCardData[] = [
     // Tanks
     {
         jobName: "Paladin",
-        icon: Paladin,
+        icon: paladin,
         jobRole: "Tank",
         unlockedIn: "A Realm Reborn",
         difficulty: 2,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Warrior",
-        icon: Warrior,
+        icon: warrior,
         jobRole: "Tank",
         unlockedIn: "A Realm Reborn",
         difficulty: 2,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Dark Knight",
-        icon: DarkKnight,
+        icon: darkknight,
         jobRole: "Tank",
         unlockedIn: "Heavensward",
         difficulty: 3,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Gunbreaker",
-        icon: Gunbreaker,
+        icon: gunbreaker,
         jobRole: "Tank",
         unlockedIn: "Shadowbringers",
         difficulty: 3,
-        link: '#'
+        link: "#"
     },
 
     // Healers
     {
         jobName: "White Mage",
-        icon: WhiteMage,
+        icon: whitemage,
         jobRole: "Healer",
         unlockedIn: "A Realm Reborn",
         difficulty: 2,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Scholar",
-        icon: Scholar,
+        icon: scholar,
         jobRole: "Healer",
         unlockedIn: "A Realm Reborn",
         difficulty: 4,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Astrologian",
-        icon: Astrologian,
+        icon: astrologian,
         jobRole: "Healer",
         unlockedIn: "Heavensward",
         difficulty: 5,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Sage",
-        icon: Sage,
+        icon: sage,
         jobRole: "Healer",
         unlockedIn: "Endwalker",
         difficulty: 4,
-        link: '#'
+        link: "#"
     },
 
     // Melee DPS
     {
         jobName: "Monk",
-        icon: Monk,
+        icon: monk,
         jobRole: "Melee DPS",
         unlockedIn: "A Realm Reborn",
         difficulty: 4,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Dragoon",
-        icon: Dragoon,
+        icon: dragoon,
         jobRole: "Melee DPS",
         unlockedIn: "A Realm Reborn",
         difficulty: 3,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Ninja",
-        icon: Ninja,
+        icon: ninja,
         jobRole: "Melee DPS",
         unlockedIn: "A Realm Reborn",
         difficulty: 5,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Samurai",
-        icon: Samurai,
+        icon: samurai,
         jobRole: "Melee DPS",
         unlockedIn: "Stormblood",
         difficulty: 3,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Reaper",
-        icon: Reaper,
+        icon: reaper,
         jobRole: "Melee DPS",
         unlockedIn: "Endwalker",
         difficulty: 3,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Viper",
-        icon: Viper,
+        icon: viper,
         jobRole: "Melee DPS",
         unlockedIn: "Dawntrail",
         difficulty: 4,
-        link: '#'
-    },        
+        link: "#"
+    },
 
     // Physical Ranged DPS
     {
         jobName: "Bard",
-        icon: Bard,
+        icon: bard,
         jobRole: "Physical Ranged DPS",
         unlockedIn: "A Realm Reborn",
         difficulty: 2,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Machinist",
-        icon: Machinist,
+        icon: machinist,
         jobRole: "Physical Ranged DPS",
         unlockedIn: "Heavensward",
         difficulty: 3,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Dancer",
-        icon: Dancer,
+        icon: dancer,
         jobRole: "Physical Ranged DPS",
         unlockedIn: "Shadowbringers",
         difficulty: 2,
-        link: '#'
+        link: "#"
     },
 
     // Magical Ranged DPS
     {
         jobName: "Black Mage",
-        icon: BlackMage,
+        icon: blackmage,
         jobRole: "Magical Ranged DPS",
         unlockedIn: "A Realm Reborn",
         difficulty: 5,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Summoner",
-        icon: Summoner,
+        icon: summoner,
         jobRole: "Magical Ranged DPS",
         unlockedIn: "A Realm Reborn",
         difficulty: 2,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Red Mage",
-        icon: RedMage,
+        icon: redmage,
         jobRole: "Magical Ranged DPS",
         unlockedIn: "Stormblood",
         difficulty: 3,
-        link: '#'
+        link: "#"
     },
     {
         jobName: "Blue Mage",
-        icon: BlueMage,
+        icon: bluemage,
         jobRole: "Magical Ranged DPS",
         unlockedIn: "Stormblood (Patch 4.5)",
         difficulty: 4,
-        link: '#'
-    },
+        link: "#"
+    }
 ];
