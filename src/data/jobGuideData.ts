@@ -9,7 +9,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 2,
         unlockLevel: 30,
         preJob: 'Gladiator',
-        bgImage: '/assets/images/job-hero/Paladin-Hero.jpg',
+        bgImage: '/assets/images/job-hero/Paladin.png',
         intro:
             'Paladin is a defensive tank that blends weapon skills and magic to mitigate damage, heal allies, and unleash burst damage during specific windows. It excels at both solo and group mitigation while offering unique utility through Cover and Passage of Arms.',
         roleSummary:

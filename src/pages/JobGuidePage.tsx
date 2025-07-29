@@ -12,7 +12,7 @@ function getJobIconPath(jobName: string) {
     return new URL(`../assets/images/jobs/${jobName}.png`, import.meta.url).href;
 }
 function getHeroBackgroundPath(jobName: string) {
-    return new URL(`../assets/images/Jobs/bg/${jobName}.webp`, import.meta.url).href;
+    return new URL(`../assets/images/job-hero/${jobName}.png`, import.meta.url).href;
 }
 
 export function JobGuidePage() {
@@ -57,26 +57,22 @@ export function JobGuidePage() {
     return (
         <div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
             <Header serverStatus={serverStatus} />
-            <main className="max-w-6xl mx-auto px-4 pb-16">
+            <main className="max-w-6xl mx-auto pb-16">
                 {/* Hero Banner */}
                 <section
-                    className="relative rounded-xl overflow-hidden shadow-md mb-12"
-                    style={{
-                        backgroundImage: `url(${getHeroBackgroundPath(jobData.jobName)})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                    }}
+                    className="relative rounded-xl overflow-hidden shadow-md mb-12 min-h-[500px] bg-cover bg-top text-white"
+                    style={{ backgroundImage: `url(${getHeroBackgroundPath(jobData.jobName)})` }}
                 >
-                    <div className="bg-black/50 dark:bg-black/60 p-8 md:p-12 backdrop-blur-sm">
-                        <div className="text-center text-white">
+                    {/* Content positioned in bottom overlay */}
+                    <div className="absolute bottom-0 left-0 w-full bg-black/50 dark:bg-black/60 backdrop-blur-sm px-4 py-6 md:px-8 md:py-10">
+                        <div className="flex flex-col items-center text-center text-white max-w-5xl mx-auto">
                             <img
                                 src={getJobIconPath(jobData.jobName)}
                                 alt={`${jobData.jobName} icon`}
-                                className="mx-auto h-24 w-24 mb-4 drop-shadow-lg"
+                                className="h-20 w-20 mb-4 drop-shadow-lg"
                             />
-                            <h1 className="text-4xl font-bold tracking-tight">{jobData.jobName}</h1>
-                            <p className="text-md mt-2 text-gray-200 italic">{jobData.subtitle}</p>
-
+                            <h1 className="text-3xl md:text-4xl font-bold tracking-tight">{jobData.jobName}</h1>
+                            <p className="text-sm md:text-lg mt-2 text-gray-200 italic">{jobData.subtitle}</p>
                             <div className="mt-4 flex flex-wrap justify-center gap-6 text-sm md:text-base text-gray-200">
                                 <div><strong>Role:</strong> {jobData.role}</div>
                                 <div><strong>Difficulty:</strong> {jobData.difficulty}/5</div>
