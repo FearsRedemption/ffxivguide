@@ -27,9 +27,15 @@ export function JobGuidePage() {
                 <Header serverStatus={serverStatus} />
                 <div className="container mx-auto px-4 py-20 text-center">
                     <h1 className="text-4xl font-bold mb-4">Job Not Found</h1>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
                         We couldn't find the guide for this job. Please check the job name in the URL.
                     </p>
+                    <a
+                        href="/all-jobs"
+                        className="inline-block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition"
+                    >
+                        Go Back to All Jobs
+                    </a>
                 </div>
                 <Footer />
             </div>
@@ -114,6 +120,22 @@ export function JobGuidePage() {
                                 {renderTimeline(opener.skills)}
                             </div>
                         ))}
+                    </section>
+                )}
+
+                {/*Mitigation Rotation*/}
+                {Array.isArray(jobData.rotations.mitigationRotation) && jobData.rotations.mitigationRotation.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold mb-4 text-primary-600 dark:text-primary-400">Mitigation Rotation</h2>
+                        {renderTimeline(jobData.rotations.mitigationRotation)}
+                    </section>
+                )}
+
+                {/*Heal Rotation */}
+                {Array.isArray(jobData.rotations.healingRotation) && jobData.rotations.healingRotation.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-2xl font-bold mb-4 text-primary-600 dark:text-primary-400">Healing Rotation</h2>
+                        {renderTimeline(jobData.rotations.healingRotation)}
                     </section>
                 )}
 

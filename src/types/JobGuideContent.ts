@@ -22,6 +22,8 @@ export interface JobGuideContent {
     rotations: {
         singleTarget: SkillBlock[];
         aoe: SkillBlock[];
+        mitigationRotation: SkillBlock[];
+        healingRotation: SkillBlock[];
     };
     openers: Opener[];
     tips: string[];
