@@ -14,7 +14,7 @@ import Dragoon from '../assets/images/Jobs/Dragoon.png';
 import Ninja from '../assets/images/Jobs/Ninja.png';
 import Samurai from '../assets/images/Jobs/Samurai.png';
 import Reaper from '../assets/images/Jobs/Reaper.png';
-import Viper from '../assets/images/Jobs/Viper.png';
+import Viper from 'https://github.com/FearsRedemption/ffxivguide/blob/main/src/assets/images/Jobs/Viper.png';
 
 import Bard from '../assets/images/Jobs/Bard.png';
 import Machinist from '../assets/images/Jobs/Machinist.png';
