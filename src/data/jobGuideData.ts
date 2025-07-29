@@ -9,7 +9,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 2,
         unlockLevel: 30,
         preJob: 'Gladiator',
-        bgImage: '/assets/images/job-hero/Paladin.png',
+        bgImage: 'Paladin',
         intro:
             'Paladin is a defensive tank that blends weapon skills and magic to mitigate damage, heal allies, and unleash burst damage during specific windows. It excels at both solo and group mitigation while offering unique utility through Cover and Passage of Arms.',
         roleSummary:
@@ -81,7 +81,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 2,
         unlockLevel: 30,
         preJob: 'Marauder',
-        bgImage: '/assets/images/job-hero/Warrior.png',
+        bgImage: 'Warrior',
         intro:
             'Warrior is a powerhouse tank known for its incredible self-sustain through healing and shields, alongside potent burst damage during Inner Release windows. It provides strong mitigation and excels at solo and group play.',
         roleSummary:
@@ -151,7 +151,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 30,
         preJob: 'None (Unlock via Heavensward questline)',
-        bgImage: '/assets/images/job-hero/DarkKnight.png',
+        bgImage: 'DarkKnight',
         intro:
             'Dark Knight is a thematic tank wielding dark magic and powerful burst combos. It offers strong mitigation tools, magic-based offense, and utility through skills like The Blackest Night and Oblation, with an identity centered around timing its burst windows efficiently.',
         roleSummary:
@@ -221,7 +221,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 60,
         preJob: 'None (Unlock via Shadowbringers questline)',
-        bgImage: '/assets/images/job-hero/Gunbreaker.png',
+        bgImage: 'Gunbreaker',
         intro:
             'Gunbreaker is an aggressive tank that blends fast-paced melee combos with powerful burst windows. It uses a unique Cartridge Gauge to execute continuation chains and excels at dealing sustained damage while providing solid mitigation and party utility.',
         roleSummary:
@@ -287,7 +287,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 2,
         unlockLevel: 30,
         preJob: 'Conjurer',
-        bgImage: '/assets/images/job-hero/WhiteMage.png',
+        bgImage: 'WhiteMage',
         intro:
             'White Mage is the quintessential pure healer, known for powerful single-target and area-of-effect healing, potent burst spells, and simple but effective DPS options. It is ideal for both beginners and seasoned healers alike.',
         roleSummary:
@@ -343,7 +343,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 30,
         preJob: 'Arcanist',
-        bgImage: '/assets/images/job-hero/Scholar.png',
+        bgImage: 'Scholar',
         intro:
             'Scholar is a barrier healer specializing in shielding and coordinated fairy heals. With proactive mitigation tools, emergency off‑GCD heals, and fairy synergy, it rewards precise timing and resource management.',
         roleSummary:
@@ -404,7 +404,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 4,
         unlockLevel: 30,
         preJob: 'None',
-        bgImage: '/assets/images/job-hero/Astrologian.png',
+        bgImage: 'Astrologian',
         intro:
             'Astrologian is a regen-based healer that brings strong burst healing, sustained regenerative effects, and powerful group-wide utility through its unique card system. It excels in flexible response to damage while supporting DPS output through raid buffs.',
         roleSummary:
@@ -462,7 +462,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 5,
         unlockLevel: 70,
         preJob: 'None',
-        bgImage: '/assets/images/job-hero/Sage.png',
+        bgImage: 'Sage',
         intro:
             'Sage is a high-skill barrier healer that excels at synchronizing damage-dealing with healing effects. It uses the unique Kardia system to transfer healing to a selected ally whenever damage is dealt, and offers powerful shields and mitigation tools.',
         roleSummary:
@@ -521,7 +521,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 4,
         unlockLevel: 30,
         preJob: 'Pugilist',
-        bgImage: '/assets/images/job-hero/Monk.png',
+        bgImage: 'Monk',
         intro:
             'Monk is a fast-paced melee DPS that emphasizes a flowing rotation with constantly shifting forms, resource management via Chakra, and powerful burst windows through Masterful Blitz. Its gameplay rewards rhythm, positioning, and perfect GCD alignment.',
         roleSummary:
@@ -578,7 +578,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 30,
         preJob: 'Lancer',
-        bgImage: '/assets/images/job-hero/Dragoon.png',
+        bgImage: 'Dragoon',
         intro:
             'Dragoon is a precise melee DPS that revolves around jump-based combos and strict positional attacks. With strong burst potential and a party-wide raid buff, it requires tight execution but offers rewarding damage output when mastered.',
         roleSummary:
@@ -641,7 +641,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 4,
         unlockLevel: 30,
         preJob: 'Rogue',
-        bgImage: '/assets/images/job-hero/Ninja.png',
+        bgImage: 'Ninja',
         intro:
             'Ninja is a fast-paced melee DPS job that focuses on weaving powerful Ninjutsu spells between weapon skill combos. With short cooldown burst windows and utility through Trick Attack, Ninja brings strong personal and party DPS when executed well.',
         roleSummary:
@@ -698,7 +698,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 50,
         preJob: '',
-        bgImage: '/assets/images/job-hero/Samurai.png',
+        bgImage: 'Samurai',
         intro:
             'Samurai is a selfish but powerful melee DPS focused on executing precise weapon skills and Iaijutsu techniques for massive damage. It features a streamlined rotation with an emphasis on gauge and cooldown alignment.',
         roleSummary:
@@ -755,7 +755,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 70,
         preJob: '',
-        bgImage: '/assets/images/job-hero/Reaper.png',
+        bgImage: 'Reaper',
         intro:
             'Reaper is a melee DPS that utilizes swift scythe attacks and summons a void avatar to deal devastating damage. It excels in burst phases and provides party-wide buffs through Arcane Circle.',
         roleSummary:
@@ -810,7 +810,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 4,
         unlockLevel: 80,
         preJob: '',
-        bgImage: '/assets/images/job-hero/Viper.png',
+        bgImage: 'Viper',
         intro:
             'Viper is a swift and stylish melee DPS introduced in Dawntrail. It revolves around alternating between dual-blade and combined-blade stances, weaving fast GCD combos with strong oGCD attacks. Viper excels in mobility, fluid rotation, and high burst windows.',
         roleSummary:
@@ -865,7 +865,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 2,
         unlockLevel: 30,
         preJob: 'Archer',
-        bgImage: '/assets/images/job-hero/Bard.png',
+        bgImage: 'Bard',
         intro:
             'Bard is a flexible ranged DPS that enhances party damage through songs while weaving a rotation of instant shots and powerful procs. It emphasizes utility, mobility, and sustained damage over burst, making it a reliable and supportive DPS option.',
         roleSummary:
@@ -924,7 +924,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 30,
         preJob: '',
-        bgImage: '/assets/images/job-hero/Machinist.png',
+        bgImage: 'Machinist',
         intro:
             'Machinist is a high-paced, burst-heavy ranged DPS that relies on executing powerful combos and managing its battery and heat gauges. With no raid utility, it trades party support for strong individual damage and flashy automation tools like the Automaton Queen.',
         roleSummary:
@@ -981,7 +981,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 60,
         preJob: '',
-        bgImage: '/assets/images/job-hero/Dancer.png',
+        bgImage: 'Dancer',
         intro:
             'Dancer is a unique ranged DPS that balances personal damage with potent party utility. It features a proc-based combo system, fast GCDs, and powerful buffs like Technical Step and Devilment. Its Dance Partner system allows players to amplify a teammate’s output as well.',
         roleSummary:
@@ -1035,7 +1035,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 5,
         unlockLevel: 30,
         preJob: 'Thaumaturge',
-        bgImage: '/assets/images/job-hero/Black Mage.png',
+        bgImage: 'BlackMage',
         intro:
             'Black Mage is a turret-style caster that rewards precision and planning with unmatched personal DPS. It uses a rotation of fire and ice spells, managing mana, timers, and movement tools to stay mobile during extended casting phases.',
         roleSummary:
@@ -1092,7 +1092,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 2,
         unlockLevel: 30,
         preJob: 'Arcanist',
-        bgImage: '/assets/images/job-hero/Summoner.png',
+        bgImage: 'Summoner',
         intro:
             'Summoner is a pet-based caster that harnesses the power of the primals—Ifrit, Titan, Garuda, Bahamut, and Phoenix—through a structured rotation. It offers a high-mobility, proc-free, burst-oriented toolkit that rewards good planning.',
         roleSummary:
@@ -1157,7 +1157,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 50,
         preJob: '',
-        bgImage: '/assets/images/job-hero/RedMage.png',
+        bgImage: 'RedMage',
         intro:
             'Red Mage is a highly mobile caster that blends white and black magic to build resources for powerful melee finishers. It excels in utility and resurrection, with a straightforward rotation and strong party support tools.',
         roleSummary:
@@ -1223,7 +1223,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 5,
         unlockLevel: 50,
         preJob: '',
-        bgImage: '/assets/images/job-hero/BlueMage.png',
+        bgImage: 'BlueMage',
         intro:
             'Blue Mage is a limited job designed for solo and group content with unique rules. Instead of learning skills via levels, you acquire enemy abilities by witnessing them in battle. It offers incredible versatility and challenge modes but is not permitted in standard duty finder content above certain levels.',
         roleSummary:
@@ -1279,7 +1279,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         difficulty: 3,
         unlockLevel: 80,
         preJob: '',
-        bgImage: '/assets/images/job-hero/Pictomancer.png',
+        bgImage: 'Pictomancer',
         intro:
             'Pictomancer is a magical ranged DPS introduced in Dawntrail, wielding enchanted brushes to manifest powerful artwork-based spells. With a unique resource system based on preparing canvases, it balances area control, burst phases, and support.',
         roleSummary:

@@ -72,7 +72,7 @@ export function JobGuidePage() {
                 {/* Hero Banner */}
                 <section
                     className="relative rounded-xl overflow-hidden shadow-md mb-6 min-h-[500px] bg-cover bg-center text-white"
-                    style={{ backgroundImage: `url(${getHeroBackgroundPath(jobData.jobName)})` }}
+                    style={{ backgroundImage: `url(${getHeroBackgroundPath(jobData.bgImage)})` }}
                 >
                     {/* Content positioned in bottom overlay */}
                     <div className="absolute bottom-0 left-0 w-full bg-black/50 dark:bg-black/60 backdrop-blur-sm px-4 py-6 md:px-8 md:py-10">
