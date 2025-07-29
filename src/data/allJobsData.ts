@@ -14,7 +14,7 @@ import Dragoon from '../assets/images/jobs/Dragoon.png';
 import Ninja from '../assets/images/jobs/Ninja.png';
 import Samurai from '../assets/images/jobs/Samurai.png';
 import Reaper from '../assets/images/jobs/Reaper.png';
-import Viper from '../assets/images/Jobs/Viper.png';
+import Viper from '../assets/images/jobs/Viper.png';
 
 import Bard from '../assets/images/jobs/Bard.png';
 import Machinist from '../assets/images/jobs/Machinist.png';
