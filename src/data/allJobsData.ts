@@ -146,7 +146,7 @@ export const allJobsData: JobCardData[] = [
     },
     {
         jobName: "Viper",
-        icon: Reaper,
+        icon: Viper,
         jobRole: "Melee DPS",
         unlockedIn: "Dawntrail",
         difficulty: 3,
