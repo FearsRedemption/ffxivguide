@@ -65,7 +65,7 @@ ffxivguide/
 - Early access system for donors and testers  
 - Email capture form (currently connected to third-party form endpoint)  
 - GitHub Pages deployment with clean URL routing  
-- Structured route pages (e.g., `/home`, `/jobs/:jobName`, `/register`)  
+- Structured route pages (e.g., `/home`, `/job/:jobName`, `/register`)  
 
 ---
 

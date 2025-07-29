@@ -9,7 +9,7 @@ import { slugifyJobName } from '../utils/slugify';
 
 // Dynamic image imports
 function getJobIconPath(jobName: string) {
-    return new URL(`../assets/images/jobs/${jobName}.png`, import.meta.url).href;
+    return new URL(`../assets/images/job-icon/${jobName}.png`, import.meta.url).href;
 }
 function getHeroBackgroundPath(jobName: string) {
     return new URL(`../assets/images/job-hero/${jobName}.png`, import.meta.url).href;
