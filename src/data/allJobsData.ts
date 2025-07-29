@@ -45,6 +45,14 @@ export const allJobsData: JobCardData[] = [
         link: '#'
     },
     {
+        jobName: "Fake Tank",
+        icon: Paladin,
+        jobRole: "Tank",
+        unlockedIn: "A Realm Reborn",
+        difficulty: 2,
+        link: '#'
+    },
+    {
         jobName: "Warrior",
         icon: Warrior,
         jobRole: "Tank",
