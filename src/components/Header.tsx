@@ -1,5 +1,6 @@
 ﻿// src/components/Header.tsx
 import { useDarkMode } from '../hooks/useDarkMode';
+import Logo from '../assets/images/final fxiv purple.png'
 
 interface HeaderProps {
     serverStatus: string;
@@ -17,9 +18,9 @@ export default function Header({ serverStatus }: HeaderProps) {
             <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                 {/* Logo + Nav */}
                 <div className="flex items-center space-x-4">
-                    <a href="#" className="h-8">
+                    <a href="/home" className="h-8">
                         <img
-                            src="https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/df9c602eea78cd8da5fdf5ff493a779b.png"
+                            src={Logo}
                             alt="Final Fantasy XIV"
                             className="h-full"
                         />
@@ -33,6 +34,7 @@ export default function Header({ serverStatus }: HeaderProps) {
                             News
                         </a>
                         <a
+                            //TODO: Replace readdy.ai with real link
                             href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/bd1554c1-bf38-4082-a3b6-c0cc41b4e774"
                             className="hover:text-primary transition"
                             data-readdy="true"

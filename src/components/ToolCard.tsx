@@ -9,16 +9,17 @@
     url: string;
 }
 
-export default function ToolCard({
-                                     title,
-                                     description,
-                                     icon,
-                                     buttonText,
-                                     buttonColor,
-                                     buttonHover,
-                                     iconColor,
-                                     url
-                                 }: ToolCardProps) {
+export default function ToolCard(
+    {
+        title,
+        description,
+        icon,
+        buttonText,
+        buttonColor,
+        buttonHover,
+        iconColor,
+        url
+    }: ToolCardProps) {
     return (
         <a
             href={url}

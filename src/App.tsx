@@ -5,7 +5,8 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import AllJobs from './pages/AllJobs';
-import NotFound from "./pages/NotFound.tsx";
+import NotFound from "./pages/NotFound";
+import {JobGuidePage} from './pages/JobGuidePage';
 
 export default function App() {
     return (
@@ -22,6 +23,7 @@ export default function App() {
 
             {/* Guides */}
             <Route path="/all-jobs" element={<AllJobs />} />
+            <Route path="/job/:jobName" element={<JobGuidePage />} />
 
             {/* Catch-all: redirect unknown paths to root */}
             <Route path="*" element={<NotFound />} />

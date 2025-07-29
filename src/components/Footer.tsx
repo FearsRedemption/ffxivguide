@@ -1,4 +1,6 @@
-﻿export default function Footer() {
+﻿import Logo from '../assets/images/final fxiv purple.png'
+
+export default function Footer() {
     return (
         <footer className="bg-gray-900 text-white pt-12 pb-6">
             <div className="container mx-auto px-4">
@@ -6,9 +8,9 @@
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     {/* Logo + Description */}
                     <div>
-                        <a href="#" className="h-8 mb-4 inline-block">
+                        <a href="/home" className="h-8 mb-4 inline-block">
                             <img
-                                src="https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/df9c602eea78cd8da5fdf5ff493a779b.png"
+                                src={Logo}
                                 alt="Final Fantasy XIV"
                                 className="h-full"
                             />
@@ -24,6 +26,7 @@
                         <ul className="space-y-2">
                             <li>
                                 <a
+                                    //TODO: Remove readdy.ai link and put actual link
                                     href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/b90b125b-8cc4-4265-a406-e5e8a24669a3"
                                     className="text-gray-400 hover:text-primary"
                                     data-readdy="true"
@@ -33,6 +36,7 @@
                             </li>
                             <li>
                                 <a
+                                    //TODO: Remove readdy.ai link and put actual link
                                     href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/e0f9472c-7cb9-4c67-a5e7-a1cd9aebf8f3"
                                     className="text-gray-400 hover:text-primary"
                                     data-readdy="true"
@@ -42,6 +46,7 @@
                             </li>
                             <li>
                                 <a
+                                    //TODO: Remove readdy.ai link and put actual link
                                     href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/e3749e98-aa82-4cba-bbf4-cfbf7978308e"
                                     className="text-gray-400 hover:text-primary"
                                     data-readdy="true"

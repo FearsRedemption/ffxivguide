@@ -4,6 +4,9 @@ import {useSubscription} from '../hooks/useSubscription';
 import {useAccess} from '../hooks/useAccess';
 import '../styles/index.css';
 
+import CrystalBackground from '../assets/images/crystal-background.jpg';
+import Logo from '../assets/images/final fxiv purple.png';
+
 export default function ComingSoon() {
     const {
         email,
@@ -195,10 +198,9 @@ export default function ComingSoon() {
             {/* Donation & Early Access Section */}
             <section id="donate" className="py-16 bg-slate-800 relative">
                 <div
-                    className="absolute inset-0 opacity-10"
+                    className="absolute inset-0 opacity-30"
                     style={{
-                        backgroundImage:
-                            "url('https://readdy.ai/api/search-image?query=Final%20Fantasy%20XIV%20magical%20crystals%2C%20ethereal%20blue%20and%20purple%20energy%20flowing%2C%20abstract%20fantasy%20pattern%2C%20magical%20aura%2C%20high%20quality%2C%20detailed%2C%20professional%20game%20art&width=1920&height=1080&seq=2&orientation=landscape')",
+                        backgroundImage: `url(${CrystalBackground})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                     }}
@@ -272,9 +274,9 @@ export default function ComingSoon() {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 gap-8 mb-8">
                         <div>
-                            <a href="#" className="flex items-center space-x-2 mb-4">
+                            <a href="/" className="flex items-center space-x-2 mb-4">
                                 <img
-                                    src="https://static.readdy.ai/image/ca38ae522d47c397614c1cfc96930687/df9c602eea78cd8da5fdf5ff493a779b.png"
+                                    src={Logo}
                                     alt="FinalFXIV Logo"
                                     className="h-10 w-auto"
                                 />

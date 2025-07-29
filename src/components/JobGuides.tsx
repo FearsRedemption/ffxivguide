@@ -22,8 +22,8 @@ export default function JobGuides() {
                 </div>
 
                 <div className="text-center mt-8">
-                    <a href="/all-jobs">
-                        <button className="tool-button bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 px-6 py-3 rounded-button font-medium whitespace-nowrap text-gray-700 dark:text-gray-200">
+                    <a href="/all-jobs" >
+                        <button className="cursor-pointer tool-button bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 px-6 py-3 rounded-button font-medium whitespace-nowrap text-gray-700 dark:text-gray-200">
                             View All Jobs
                         </button>
                     </a>

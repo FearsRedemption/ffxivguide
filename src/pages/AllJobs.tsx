@@ -8,12 +8,12 @@ import Header from "../components/Header.tsx";
 import Footer from "../components/Footer.tsx";
 
 // Role icons
-import Tank from '../assets/images/Jobs/Tank.png';
-import Healer from '../assets/images/Jobs/Healer.png';
-import MeleeDPS from '../assets/images/Jobs/Melee DPS.png';
-import PhysicalRanged from '../assets/images/Jobs/Physical Ranged DPS.png';
-import MagicalRanged from '../assets/images/Jobs/Magical Ranged DPS.png';
-import Filtered from '../assets/images/Jobs/Filtered.png';
+import Tank from '../assets/images/jobs/Tank.png';
+import Healer from '../assets/images/jobs/Healer.png';
+import MeleeDPS from '../assets/images/jobs/Melee DPS.png';
+import PhysicalRanged from '../assets/images/jobs/Physical Ranged DPS.png';
+import MagicalRanged from '../assets/images/jobs/Magical Ranged DPS.png';
+import Filtered from '../assets/images/jobs/Filtered.png';
 
 export default function AllJobs() {
     const serverStatus = useServerStatus();
