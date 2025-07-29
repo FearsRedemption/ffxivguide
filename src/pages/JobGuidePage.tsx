@@ -1,4 +1,5 @@
 ﻿// src/pages/JobGuidePage.tsx
+import { useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { jobGuideData } from '../data/jobGuideData';
 import type { SkillBlock } from '../types/JobGuideContent';
@@ -16,6 +17,10 @@ function getHeroBackgroundPath(jobName: string) {
 }
 
 export function JobGuidePage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const { jobName } = useParams();
     const slug = slugifyJobName(jobName ?? '');
     const jobData = jobGuideData[slug];
@@ -66,7 +71,7 @@ export function JobGuidePage() {
             <main className="max-w-6xl mx-auto pb-16">
                 {/* Hero Banner */}
                 <section
-                    className="relative rounded-xl overflow-hidden shadow-md mb-12 min-h-[500px] bg-cover bg-top text-white"
+                    className="relative rounded-xl overflow-hidden shadow-md mb-6 min-h-[500px] bg-cover bg-center text-white"
                     style={{ backgroundImage: `url(${getHeroBackgroundPath(jobData.jobName)})` }}
                 >
                     {/* Content positioned in bottom overlay */}
@@ -90,6 +95,16 @@ export function JobGuidePage() {
                         </div>
                     </div>
                 </section>
+                {/* Navigation Button Bar */}
+                <div className="mb-6 flex justify-center">
+                    <a
+                        href="/all-jobs"
+                        className="inline-block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition"
+                    >
+                        ← Go Back to All Jobs
+                    </a>
+                </div>
+
 
                 {/* Intro + Role Summary */}
                 <section className="mb-12">

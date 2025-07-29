@@ -22,6 +22,7 @@ import dancer from '../assets/images/job-icon/Dancer.png';
 import blackmage from '../assets/images/job-icon/Black Mage.png';
 import summoner from '../assets/images/job-icon/Summoner.png';
 import redmage from '../assets/images/job-icon/Red Mage.png';
+import pictomancer from '../assets/images/job-icon/Pictomancer.png';
 import bluemage from '../assets/images/job-icon/Blue Mage.png';
 
 export interface JobCardData {
@@ -204,10 +205,18 @@ export const allJobsData: JobCardData[] = [
         link: "#"
     },
     {
+        jobName: "Pictomancer",
+        icon: pictomancer,
+        jobRole: "Magical Ranged DPS",
+        unlockedIn: "Dawntrail",
+        difficulty: 3,
+        link: "#"
+    },
+    {
         jobName: "Blue Mage",
         icon: bluemage,
         jobRole: "Magical Ranged DPS",
-        unlockedIn: "Stormblood (Patch 4.5)",
+        unlockedIn: "Stormblood",
         difficulty: 4,
         link: "#"
     }

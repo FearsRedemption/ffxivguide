@@ -1272,4 +1272,53 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             'Use spell sets from community guides like The Balance or Icy Veins for optimized builds.',
         ],
     },
+    [slugifyJobName('Pictomancer')]: {
+        jobName: 'Pictomancer',
+        subtitle: 'Versatile Caster with Paint-Themed Rotations and Utility',
+        role: 'Magical Ranged DPS',
+        difficulty: 3,
+        unlockLevel: 80,
+        preJob: '',
+        bgImage: '/assets/images/job-hero/Pictomancer.png',
+        intro:
+            'Pictomancer is a magical ranged DPS introduced in Dawntrail, wielding enchanted brushes to manifest powerful artwork-based spells. With a unique resource system based on preparing canvases, it balances area control, burst phases, and support.',
+        roleSummary:
+            'Pictomancer paints motifs and scenes that unleash potent spells after a short prep phase. It has consistent uptime tools, AoE utility, and moderate raid support. Paint management and rotation timing are key to mastering this artistic job.',
+        rotations: {
+            singleTarget: [
+                { icon: '/assets/images/skills/pictomancer/Impressionist_Stroke.png', name: 'Impressionist Stroke', time: '0s' },
+                { icon: '/assets/images/skills/pictomancer/Color_Theory.png', name: 'Color Theory', time: '2s' },
+                { icon: '/assets/images/skills/pictomancer/Paintbrush_Pummel.png', name: 'Paintbrush Pummel', time: '4s' },
+                { icon: '/assets/images/skills/pictomancer/Motif_Mirage.png', name: 'Motif Mirage', time: '6s' },
+                { icon: '/assets/images/skills/pictomancer/Masterstroke.png', name: 'Masterstroke', time: '8s' },
+            ],
+            aoe: [
+                { icon: '/assets/images/skills/pictomancer/Wide_Brush.png', name: 'Wide Brush', time: '0s' },
+                { icon: '/assets/images/skills/pictomancer/Canvas_Burst.png', name: 'Canvas Burst', time: '2s' },
+                { icon: '/assets/images/skills/pictomancer/Color_Theory.png', name: 'Color Theory', time: '4s' },
+                { icon: '/assets/images/skills/pictomancer/Masterpiece.png', name: 'Masterpiece', time: '6s' },
+            ],
+            mitigationRotation: [],
+            healingRotation: [],
+        },
+        openers: [
+            {
+                title: 'Standard Pictomancer Opener',
+                skills: [
+                    { icon: '/assets/images/skills/pictomancer/Impressionist_Stroke.png', name: 'Impressionist Stroke', time: '0s' },
+                    { icon: '/assets/images/skills/pictomancer/Color_Theory.png', name: 'Color Theory', time: '2s' },
+                    { icon: '/assets/images/skills/pictomancer/Motif_Mirage.png', name: 'Motif Mirage', time: '4s' },
+                    { icon: '/assets/images/skills/pictomancer/Masterstroke.png', name: 'Masterstroke', time: '6s' },
+                    { icon: '/assets/images/skills/pictomancer/Canvas_Burst.png', name: 'Canvas Burst', time: '8s' },
+                ],
+            },
+        ],
+        tips: [
+            'Maintain your paint stacks and use Motifs efficiently to trigger burst spells.',
+            'Align Masterstroke and Mirage with party buffs for maximum value.',
+            'Use AoE tools like Wide Brush when facing multiple enemies to keep up with other casters.',
+            'Don’t forget to prep canvases early—timing is critical for both single target and AoE.',
+            'Use mobility tools between casts to keep uptime during movement-heavy mechanics.',
+        ],
+    },
 };
