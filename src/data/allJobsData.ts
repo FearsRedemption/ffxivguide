@@ -149,7 +149,7 @@ export const allJobsData: JobCardData[] = [
         icon: Viper,
         jobRole: "Melee DPS",
         unlockedIn: "Dawntrail",
-        difficulty: 3,
+        difficulty: 4,
         link: '#'
     },        
 
