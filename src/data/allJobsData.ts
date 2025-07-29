@@ -143,6 +143,14 @@ export const allJobsData: JobCardData[] = [
         difficulty: 3,
         link: '#'
     },
+    {
+        jobName: "Viper",
+        icon: Reaper,
+        jobRole: "Melee DPS",
+        unlockedIn: "Dawntrail",
+        difficulty: 3,
+        link: '#'
+    },        
 
     // Physical Ranged DPS
     {
