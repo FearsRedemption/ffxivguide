@@ -18,9 +18,9 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             'Paladins operate on a dual-phase system—physical combos to build gauge, followed by a magical burst window. Their role is to maintain threat, apply mitigation through abilities like Sentinel and Holy Sheltron, and coordinate burst with Fight or Flight and Requiescat.',
         rotations: {
             singleTarget: [
-                { icon: `${link}/paladin/Fight_Or_Flight.png`, name: 'Fight or Flight', time: '0s' },
-                { icon: `${link}/paladin/Fast_Blade.png`, name: 'Fast Blade', time: '2s' },
-                { icon: `${link}/paladin/Riot_Blade.png`, name: 'Riot Blade', time: '4s' },
+                { icon: 'Fight_Or_Flight', name: 'Fight or Flight', time: '0s' },
+                { icon: 'Fast_Blade', name: 'Fast Blade', time: '2s' },
+                { icon: 'Riot_Blade', name: 'Riot Blade', time: '4s' },
                 { icon: `${link}/paladin/Royal_Authority.png`, name: 'Royal Authority', time: '6s' },
                 { icon: `${link}/paladin/Expiacion.png`, name: 'Expiacion', time: '8s' },
                 { icon: `${link}/paladin/Requiescat.png`, name: 'Requiescat', time: '10s' },
