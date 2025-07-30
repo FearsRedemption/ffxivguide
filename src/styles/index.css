@@ -149,10 +149,6 @@ body.dark-mode .bg-gray-100 { background-color: #334155; }
 body.dark-mode .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
 body.dark-mode .hover\:bg-gray-50:hover { background-color: #333333; }
 body.dark-mode .hover\:bg-gray-200:hover { background-color: #404040; }
-body.dark-mode input[type="email"] {
-  background-color: #1e293b;
-  color: #f1f5f9;
-}
 body.dark-mode .category-card {
   background: linear-gradient(to bottom right, #1f2937, #334155);
 }
@@ -161,3 +157,4 @@ body.dark-mode #marketChart { filter: brightness(0.85); }
 body.dark-mode .job-card { background-color: #1e293b; }
 body.dark-mode .job-icon { background-color: #0f172a; }
 body.dark-mode .job-name { color: #ffffff; }
+

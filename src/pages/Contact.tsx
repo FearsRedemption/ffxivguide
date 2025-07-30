@@ -1,9 +1,9 @@
 ﻿import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { ContactFormProvider } from '../context/ContactFormContext';
-import ContactForm from '../components/ContactForm';
-import ContactInfo from '../components/ContactInfo';
-import FAQSection from '../components/FAQSection';
+import ContactForm from '../components/contact/ContactForm';
+import ContactInfo from '../components/contact/ContactInfo';
+import FAQSection from '../components/contact/FAQSection';
 import PageHeader from '../components/PageHeader';
 import {useServerStatus} from "../hooks/useServerStatus.ts";
 

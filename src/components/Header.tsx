@@ -29,7 +29,6 @@ export default function Header({ serverStatus }: HeaderProps) {
                         <a
                             href="https://na.finalfantasyxiv.com/lodestone/news/"
                             className="hover:text-primary transition"
-                            data-readdy="true"
                         >
                             News
                         </a>
@@ -37,7 +36,6 @@ export default function Header({ serverStatus }: HeaderProps) {
                             //TODO: Replace readdy.ai with real link
                             href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/bd1554c1-bf38-4082-a3b6-c0cc41b4e774"
                             className="hover:text-primary transition"
-                            data-readdy="true"
                         >
                             Personal Free Company
                         </a>

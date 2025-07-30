@@ -8,6 +8,8 @@ import AllJobs from './pages/AllJobs';
 import NotFound from "./pages/NotFound";
 import {JobGuidePage} from './pages/JobGuidePage';
 import Contact from "./pages/Contact";
+import Privacy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService.tsx";
 
 export default function App() {
     return (
@@ -22,6 +24,8 @@ export default function App() {
             {/* Main Site */}
             <Route path="/home" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/tos" element={<TermsOfService />} />
 
             {/* Guides */}
             <Route path="/all-jobs" element={<AllJobs />} />

@@ -9,25 +9,24 @@
     url: string;
 }
 
-export default function ToolCard(
-    {
-        title,
-        description,
-        icon,
-        buttonText,
-        buttonColor,
-        buttonHover,
-        iconColor,
-        url
-    }: ToolCardProps) {
+export default function ToolCard({
+                                     title,
+                                     description,
+                                     icon,
+                                     buttonText,
+                                     buttonColor,
+                                     buttonHover,
+                                     iconColor,
+                                     url
+                                 }: ToolCardProps) {
     return (
         <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white dark:bg-[#2d2d2d] border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm p-6 flex flex-col items-center text-center hover:shadow-md transition duration-300 flex-1 max-w-md"
+            className="guide-card rounded-lg overflow-hidden shadow-sm bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-gray-800 p-6 flex flex-col items-center text-center transition-transform hover:-translate-y-1"
         >
-            <div className={`w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4`}>
+            <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-4">
                 <i className={`ri-${icon} ${iconColor} text-2xl`}></i>
             </div>
             <h3 className="font-bold text-gray-900 dark:text-white mb-2">{title}</h3>

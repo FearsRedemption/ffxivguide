@@ -3,19 +3,17 @@
 export function useDarkMode(): [boolean, (value: boolean) => void] {
     const [enabled, setEnabled] = useState(false);
 
-    // Load from localStorage on first render
     useEffect(() => {
         const saved = localStorage.getItem('darkMode');
         const isEnabled = saved === 'enabled';
 
         setEnabled(isEnabled);
-        document.body.classList.toggle('dark-mode', isEnabled);
+        document.documentElement.classList.toggle('dark', isEnabled); // ← FIXED
     }, []);
 
-    // Toggle function
     const toggleDarkMode = (value: boolean) => {
         setEnabled(value);
-        document.body.classList.toggle('dark-mode', value);
+        document.documentElement.classList.toggle('dark', value); // ← FIXED
         localStorage.setItem('darkMode', value ? 'enabled' : 'disabled');
     };
 

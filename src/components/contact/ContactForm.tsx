@@ -1,4 +1,4 @@
-﻿import { useContactForm } from '../hooks/useContactForm';
+﻿import { useContactForm } from '../../hooks/useContactForm';
 
 export default function ContactForm() {
     const { data, updateField, submitForm, status, message } = useContactForm();
@@ -78,7 +78,7 @@ export default function ContactForm() {
                         className="h-4 w-4 mt-1 mr-2"
                     />
                     <label className="text-sm">
-                        I agree to the <a href="#" className="text-primary">Privacy Policy</a>
+                        I agree to the <a href="/privacy" className="text-primary">Privacy Policy</a>
                     </label>
                 </div>
                 <button

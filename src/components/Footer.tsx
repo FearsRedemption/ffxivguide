@@ -26,7 +26,6 @@ export default function Footer() {
                         <ul className="space-y-2">
                             <li>
                                 <a
-                                    //TODO: Remove readdy.ai link and put actual link
                                     href="/tos"
                                     className="text-gray-400 hover:text-primary"
                                 >
@@ -35,8 +34,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    //TODO: Remove readdy.ai link and put actual link
-                                    href="/policy"
+                                    href="/privacy "
                                     className="text-gray-400 hover:text-primary"
                                 >
                                     Privacy Policy
@@ -44,7 +42,6 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    //TODO: Remove readdy.ai link and put actual link
                                     href="/contact"
                                     className="text-gray-400 hover:text-primary"
                                 >

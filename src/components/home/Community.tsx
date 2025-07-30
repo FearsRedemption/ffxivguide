@@ -3,7 +3,7 @@ import SupportCard from './SupportCard';
 
 export default function Community() {
     return (
-        <section className="py-12 bg-gray-100 dark:bg-[#1f1f1f]">
+        <section className="py-12 bg-gray-100 dark:bg-[#1a1a1a]">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">

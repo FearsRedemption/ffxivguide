@@ -1,18 +1,19 @@
-﻿import { useServerStatus } from '../hooks/useServerStatus';
+﻿import { useServerStatus } from '../../hooks/useServerStatus';
 
 export default function HeroSection() {
-    const serverStatus = useServerStatus(); // Will return a status string
+    const serverStatus = useServerStatus();
 
     return (
         <section className="hero-bg-home relative text-white">
+            {/* Dark gradient overlay for readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-transparent"></div>
 
-            <div className="container mx-auto px-4 py-20 relative z-10">
+            <div className="relative z-10 container mx-auto px-4 py-20">
                 <div className="max-w-2xl">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
                         Your Ultimate FFXIV Resource Hub
                     </h1>
-                    <p className="text-xl text-gray-200 mb-8 drop-shadow-sm">
+                    <p className="text-xl text-gray-300 dark:text-gray-200 mb-8 drop-shadow-sm">
                         Comprehensive guides, strategies, and resources to enhance your adventures in Eorzea and beyond.
                     </p>
 
@@ -22,8 +23,7 @@ export default function HeroSection() {
                             href="https://na.finalfantasyxiv.com/lodestone/worldstatus/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white text-sm hover:text-primary transition"
-                            data-readdy="true"
+                            className="text-sm text-white hover:text-primary transition"
                         >
                             {serverStatus}
                         </a>

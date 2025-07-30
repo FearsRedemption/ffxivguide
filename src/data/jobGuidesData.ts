@@ -1,5 +1,4 @@
-﻿// src/data/jobGuidesData.ts
-import paladin from '../assets/images/job-icon/Paladin.png';
+﻿import paladin from '../assets/images/job-icon/Paladin.png';
 import darkknight from '../assets/images/job-icon/Dark Knight.png';
 import gunbreaker from '../assets/images/job-icon/Gunbreaker.png';
 import whitemage from '../assets/images/job-icon/White Mage.png';
@@ -17,7 +16,8 @@ export const jobGuides = [
         icon: paladin,
         link: '/job/paladin',
         roleColor: 'text-blue-600',
-        roleBg: 'bg-blue-50'
+        roleBg: 'bg-blue-50',
+        borderColor: 'border-blue-600'
     },
     {
         name: 'White Mage',
@@ -25,7 +25,8 @@ export const jobGuides = [
         icon: whitemage,
         link: '/job/whitemage',
         roleColor: 'text-green-600',
-        roleBg: 'bg-green-50'
+        roleBg: 'bg-green-50',
+        borderColor: 'border-green-600'
     },
     {
         name: 'Samurai',
@@ -33,7 +34,8 @@ export const jobGuides = [
         icon: samurai,
         link: '/job/samurai',
         roleColor: 'text-red-600',
-        roleBg: 'bg-red-50'
+        roleBg: 'bg-red-50',
+        borderColor: 'border-red-600'
     },
     {
         name: 'Black Mage',
@@ -41,7 +43,8 @@ export const jobGuides = [
         icon: blackmage,
         link: '/job/blackmage',
         roleColor: 'text-purple-600',
-        roleBg: 'bg-purple-50'
+        roleBg: 'bg-purple-50',
+        borderColor: 'border-purple-600'
     },
     {
         name: 'Gunbreaker',
@@ -49,7 +52,8 @@ export const jobGuides = [
         icon: gunbreaker,
         link: '/job/gunbreaker',
         roleColor: 'text-blue-600',
-        roleBg: 'bg-blue-50'
+        roleBg: 'bg-blue-50',
+        borderColor: 'border-blue-600'
     },
     {
         name: 'Sage',
@@ -57,7 +61,8 @@ export const jobGuides = [
         icon: sage,
         link: '/job/sage',
         roleColor: 'text-green-600',
-        roleBg: 'bg-green-50'
+        roleBg: 'bg-green-50',
+        borderColor: 'border-green-600'
     },
     {
         name: 'Bard',
@@ -65,15 +70,17 @@ export const jobGuides = [
         icon: bard,
         link: '/job/bard',
         roleColor: 'text-amber-600',
-        roleBg: 'bg-amber-50'
+        roleBg: 'bg-amber-50',
+        borderColor: 'border-amber-600'
     },
     {
         name: 'Summoner',
         role: 'MAGICAL DPS',
         icon: summoner,
-        link: 'summoner',
+        link: '/job/summoner',
         roleColor: 'text-purple-600',
-        roleBg: 'bg-purple-50'
+        roleBg: 'bg-purple-50',
+        borderColor: 'border-purple-600'
     },
     {
         name: 'Dark Knight',
@@ -81,14 +88,16 @@ export const jobGuides = [
         icon: darkknight,
         link: '/job/darkknight',
         roleColor: 'text-blue-600',
-        roleBg: 'bg-blue-50'
+        roleBg: 'bg-blue-50',
+        borderColor: 'border-blue-600'
     },
-    {   
+    {
         name: 'Reaper',
         role: 'MELEE DPS',
         icon: reaper,
         link: '/job/reaper',
         roleColor: 'text-red-600',
-        roleBg: 'bg-red-50'
+        roleBg: 'bg-red-50',
+        borderColor: 'border-red-600'
     }
 ];

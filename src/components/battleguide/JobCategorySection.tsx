@@ -1,4 +1,4 @@
-﻿import type { JobCardData } from '../data/allJobsData';
+﻿import type { JobCardData } from '../../data/allJobsData';
 import AllJobCard from './AllJobCard';
 
 interface JobCategorySectionProps {
