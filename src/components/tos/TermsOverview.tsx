@@ -1,4 +1,6 @@
 ﻿// src/components/TermsOverview.tsx
+import type {JSX} from "react";
+
 export default function TermsOverview() {
     return (
         <section className="mb-12">
