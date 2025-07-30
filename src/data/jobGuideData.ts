@@ -350,15 +350,15 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             'Scholars manage their fairy (Eos or Selene), apply shields like Adloquium, Sacred Soil, and Deployment Tactics, and use Aetherflow actions (Lustrate, Indomitability) to support burst or emergency heals. Healing is prioritized free oGCD → Aetherflow → GCD spells that include regenerative options like Recitation and Succor :contentReference[oaicite:2]{index=2}.',
         rotations: {
             singleTarget: [
-                { icon: '/assets/images/skills/scholar/Bio_III.png', name: 'Bio III', time: '0s' },
-                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '2s' },
-                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '4s' },
-                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '6s' },
+                { icon: '/assets/images/skills/scholar/Bio_II.png', name: 'Bio II', time: '0s' },
+                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '2s' },
+                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '4s' },
+                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '6s' },
             ],
             aoe: [
-                { icon: '/assets/images/skills/scholar/Art_of_War_II.png', name: 'Art of War II', time: '0s' },
-                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '2s' },
-                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '4s' },
+                { icon: '/assets/images/skills/scholar/Art_of_War_II.png', name: 'Art of War II', time: '0s' },
+                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '2s' },
+                { icon: '/assets/images/skills/scholar/Broil_IV.png', name: 'Broil IV', time: '4s' },
             ],
             mitigationRotation: [
                 { icon: '/assets/images/skills/scholar/Adloquium.png', name: 'Adloquium', time: '0s' },
@@ -378,7 +378,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             {
                 title: 'Standard Barrier Open',
                 skills: [
-                    { icon: '/assets/images/skills/scholar/Bio_III.png', name: 'Bio III', time: '0s' },
+                    { icon: '/assets/images/skills/scholar/Bio_II.png', name: 'Bio II', time: '0s' },
                     { icon: '/assets/images/skills/scholar/Adloquium.png', name: 'Adloquium', time: '1s' },
                     { icon: '/assets/images/skills/scholar/Protraction.png', name: 'Protraction', time: '2s' },
                     { icon: '/assets/images/skills/scholar/Recitation.png', name: 'Recitation', time: '3s' },
@@ -817,7 +817,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             'Viper’s gameplay centers around switching stances mid-rotation to build resources for its burst phase. You’ll juggle rapid dual attacks, combine your blades into a powerful glaive, then unleash devastating finishers while syncing buffs and party windows. Mastering its flow is key to maximizing DPS.',
         rotations: {
             singleTarget: [
-                { icon: '/assets/images/skills/viper/Steel_Fang.png', name: 'Steel Fang', time: '0s' },
+                { icon: '/assets/images/skills/viper/Steel_Fangs.png', name: 'Steel Fangs', time: '0s' },
                 { icon: '/assets/images/skills/viper/Snake_Bite.png', name: 'Snake Bite', time: '2s' },
                 { icon: '/assets/images/skills/viper/Twinstrike.png', name: 'Twinstrike', time: '4s' },
                 { icon: '/assets/images/skills/viper/Dreadwrath.png', name: 'Dreadwrath', time: '6s' },
@@ -840,7 +840,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             {
                 title: 'Burst Opener',
                 skills: [
-                    { icon: '/assets/images/skills/viper/Steel_Fang.png', name: 'Steel Fang', time: '0s' },
+                    { icon: '/assets/images/skills/viper/Steel_Fangs.png', name: 'Steel Fangs', time: '0s' },
                     { icon: '/assets/images/skills/viper/Snake_Bite.png', name: 'Snake Bite', time: '2s' },
                     { icon: '/assets/images/skills/viper/Twinstrike.png', name: 'Twinstrike', time: '4s' },
                     { icon: '/assets/images/skills/viper/Dreadwrath.png', name: 'Dreadwrath', time: '6s' },
@@ -1216,6 +1216,57 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             'Avoid overcapping Mana—spend often for smooth rotation flow.',
         ],
     },
+    [slugifyJobName('Pictomancer')]: {
+        jobName: 'Pictomancer',
+        subtitle: 'Versatile Caster with Paint‑Themed Burst and Utility',
+        role: 'Magical Ranged DPS',
+        difficulty: 3,
+        unlockLevel: 80,
+        preJob: '',
+        bgImage: '/assets/images/job-hero/Pictomancer.png',
+        intro:
+            'Pictomancer is a burst‑oriented magical ranged DPS introduced in Dawntrail. It balances Motif painting, motif execution (Muses), and burst windows through Starry Muse. Managing canvases and paint resources is key to maximizing damage and utility.' ,
+        roleSummary:
+            'Pictomancer cycles between Creature, Weapon, and Landscape Motifs to unleash spells like Blizzard, Hammer combos, and raid buffs. Burst windows are centered around Starry Muse, Hyperphantasia, and painting chains. Outside burst, it’s a freeform but fluid rotation.' ,
+        rotations: {
+            singleTarget: [
+                { icon: '/assets/images/skills/pictomancer/Fire_in_Red.png', name: 'Fire in Red → Aero in Green → Water in Blue combo', time: '0s' },
+                { icon: '/assets/images/skills/pictomancer/Subtractive_Palette.png', name: 'Subtractive Palette → Stone in Yellow → Thunder in Magenta → Blizzard in Cyan', time: '2s' },
+                { icon: '/assets/images/skills/pictomancer/Holy_in_White.png', name: 'Holy in White (movement weave)', time: '6s' },
+                { icon: '/assets/images/skills/pictomancer/Living_Muse.png', name: 'Living Muse → Pom/Winged/Clawed/Fanged Muse usage', time: '8s' },
+                { icon: '/assets/images/skills/pictomancer/Mog_of_the_Ages.png', name: 'Mog of the Ages or Retribution of the Madeen', time: '10s' },
+            ],
+            aoe: [
+                { icon: '/assets/images/skills/pictomancer/Fire_II_in_Red.png', name: 'Fire II → Aero II → Water II', time: '0s' },
+                { icon: '/assets/images/skills/pictomancer/Blizzard_II.png', name: 'Blizzard II → Stone II → Thunder II', time: '2s' },
+                { icon: '/assets/images/skills/pictomancer/Holy_in_White.png', name: 'Holy in White for movement or extra AOE', time: '6s' },
+            ],
+            mitigationRotation: [],
+            healingRotation: [],
+        },
+        openers: [
+            {
+                title: 'Standard Burst Opener',
+                skills: [
+                    { icon: '/assets/images/skills/pictomancer/Rainbow_Drip.png', name: 'Rainbow Drip → Starry Muse', time: '0s' },
+                    { icon: '/assets/images/skills/pictomancer/Motifs_all.png', name: 'Creature Motif + Hammer Motif painted beforehand', time: '1s' },
+                    { icon: '/assets/images/skills/pictomancer/Pom_Muse.png', name: 'Pom Muse → Winged Muse → Clawed Muse → Mog/Retribution', time: '3s' },
+                    { icon: '/assets/images/skills/pictomancer/Hammer_Combo.png', name: 'Hammer Stamp → Brush → Polishing Hammer', time: '5s' },
+                    { icon: '/assets/images/skills/pictomancer/Subtractive_Palette.png', name: 'Subtractive Palette sequence', time: '7s' },
+                    { icon: '/assets/images/skills/pictomancer/Comet_in_Black.png', name: 'Comet in Black before and after subtractive', time: '9s' },
+                    { icon: '/assets/images/skills/pictomancer/Star_Prism.png', name: 'Star Prism (burst heal + party buff)', time: '11s' },
+                ],
+            },
+        ],
+        tips: [
+            'Burst every 2 minutes aligned to Starry Muse and party buffs to maximize damage windows.' ,
+            'Never overcap Palette Gauge—use Living Muse or off‑GCDs before bursting.' ,
+            'Holy in White is excellent for movement during cast but may cost minor DPS if overused.' ,
+            'Painter’s motif order: aim to always have Creature, Landscape and Hammer motifs ready before burst window.' ,
+            'Use Comet in Black both before and after Subtractive Palette to maximize potency output.' ,
+            'During downtime, either sustain Paint resources or weave spells freely depending on movement.' ,
+        ],
+    },
     [slugifyJobName('Blue Mage')]: {
         jobName: 'Blue Mage',
         subtitle: 'Mimicry-Based Limited Job with Extreme Versatility',
@@ -1270,55 +1321,6 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             'Ultravibration instantly kills enemies under stun—pair with AoE stun.',
             'Some skills (e.g., Final Sting, Self-Destruct) are extremely situational and powerful.',
             'Use spell sets from community guides like The Balance or Icy Veins for optimized builds.',
-        ],
-    },
-    [slugifyJobName('Pictomancer')]: {
-        jobName: 'Pictomancer',
-        subtitle: 'Versatile Caster with Paint-Themed Rotations and Utility',
-        role: 'Magical Ranged DPS',
-        difficulty: 3,
-        unlockLevel: 80,
-        preJob: '',
-        bgImage: 'Pictomancer',
-        intro:
-            'Pictomancer is a magical ranged DPS introduced in Dawntrail, wielding enchanted brushes to manifest powerful artwork-based spells. With a unique resource system based on preparing canvases, it balances area control, burst phases, and support.',
-        roleSummary:
-            'Pictomancer paints motifs and scenes that unleash potent spells after a short prep phase. It has consistent uptime tools, AoE utility, and moderate raid support. Paint management and rotation timing are key to mastering this artistic job.',
-        rotations: {
-            singleTarget: [
-                { icon: '/assets/images/skills/pictomancer/Impressionist_Stroke.png', name: 'Impressionist Stroke', time: '0s' },
-                { icon: '/assets/images/skills/pictomancer/Color_Theory.png', name: 'Color Theory', time: '2s' },
-                { icon: '/assets/images/skills/pictomancer/Paintbrush_Pummel.png', name: 'Paintbrush Pummel', time: '4s' },
-                { icon: '/assets/images/skills/pictomancer/Motif_Mirage.png', name: 'Motif Mirage', time: '6s' },
-                { icon: '/assets/images/skills/pictomancer/Masterstroke.png', name: 'Masterstroke', time: '8s' },
-            ],
-            aoe: [
-                { icon: '/assets/images/skills/pictomancer/Wide_Brush.png', name: 'Wide Brush', time: '0s' },
-                { icon: '/assets/images/skills/pictomancer/Canvas_Burst.png', name: 'Canvas Burst', time: '2s' },
-                { icon: '/assets/images/skills/pictomancer/Color_Theory.png', name: 'Color Theory', time: '4s' },
-                { icon: '/assets/images/skills/pictomancer/Masterpiece.png', name: 'Masterpiece', time: '6s' },
-            ],
-            mitigationRotation: [],
-            healingRotation: [],
-        },
-        openers: [
-            {
-                title: 'Standard Pictomancer Opener',
-                skills: [
-                    { icon: '/assets/images/skills/pictomancer/Impressionist_Stroke.png', name: 'Impressionist Stroke', time: '0s' },
-                    { icon: '/assets/images/skills/pictomancer/Color_Theory.png', name: 'Color Theory', time: '2s' },
-                    { icon: '/assets/images/skills/pictomancer/Motif_Mirage.png', name: 'Motif Mirage', time: '4s' },
-                    { icon: '/assets/images/skills/pictomancer/Masterstroke.png', name: 'Masterstroke', time: '6s' },
-                    { icon: '/assets/images/skills/pictomancer/Canvas_Burst.png', name: 'Canvas Burst', time: '8s' },
-                ],
-            },
-        ],
-        tips: [
-            'Maintain your paint stacks and use Motifs efficiently to trigger burst spells.',
-            'Align Masterstroke and Mirage with party buffs for maximum value.',
-            'Use AoE tools like Wide Brush when facing multiple enemies to keep up with other casters.',
-            'Don’t forget to prep canvases early—timing is critical for both single target and AoE.',
-            'Use mobility tools between casts to keep uptime during movement-heavy mechanics.',
         ],
     },
 };
