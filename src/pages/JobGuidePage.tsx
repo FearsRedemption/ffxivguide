@@ -16,6 +16,10 @@ function getHeroBackgroundPath(jobName: string) {
     return new URL(`../assets/images/job-hero/${jobName}.png`, import.meta.url).href;
 }
 
+function getSkillIconPatch(skillPath: string) {
+    return new URL(`${skillPath}`, import.meta.url).href;
+}
+
 export function JobGuidePage() {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -52,12 +56,10 @@ export function JobGuidePage() {
             <div className="flex min-w-[800px] bg-gray-50 dark:bg-[#1f1f1f] p-4 rounded-lg shadow-inner">
                 {skills.map((skill, index) => (
                     <div key={index} className="timeline-item flex flex-col items-center mx-3">
-                        <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center relative overflow-hidden shadow-sm">
-                            <img src={skill.icon} alt={skill.name} className="w-full h-full object-contain" />
-                            <span className="absolute bottom-1 text-xs font-semibold text-gray-700 dark:text-white text-center w-full">
-                                {skill.name}
-                            </span>
+                        <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center relative overflow-hidden shadow-sm mb-2">
+                            <img src={getSkillIconPatch(skill.icon)} alt={skill.name} className="w-full h-full object-contain" />
                         </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{skill.name}</p>
                         <p className="text-xs mt-1 text-gray-600 dark:text-gray-300">{skill.time}</p>
                     </div>
                 ))}
@@ -104,8 +106,7 @@ export function JobGuidePage() {
                         ← Go Back to All Jobs
                     </a>
                 </div>
-
-
+                
                 {/* Intro + Role Summary */}
                 <section className="mb-12">
                     <p className="text-lg leading-relaxed mb-6">{jobData.intro}</p>
@@ -165,6 +166,16 @@ export function JobGuidePage() {
                         </ul>
                     </section>
                 )}
+
+                {/* Navigation Button Bar */}
+                <div className="flex justify-center">
+                    <a
+                        href="/all-jobs"
+                        className="inline-block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition"
+                    >
+                        ← Go Back to All Jobs
+                    </a>
+                </div>
             </main>
             <Footer />
         </div>
