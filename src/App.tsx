@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import AllJobs from './pages/AllJobs';
 import NotFound from "./pages/NotFound";
 import {JobGuidePage} from './pages/JobGuidePage';
+import Contact from "./pages/Contact";
 
 export default function App() {
     return (
@@ -20,6 +21,7 @@ export default function App() {
 
             {/* Main Site */}
             <Route path="/home" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
 
             {/* Guides */}
             <Route path="/all-jobs" element={<AllJobs />} />

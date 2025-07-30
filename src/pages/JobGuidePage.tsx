@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { useServerStatus } from '../hooks/useServerStatus';
 import { slugifyJobName } from '../utils/slugify';
+import PageHeader from '../components/PageHeader';
 
 // Dynamic image imports
 function getJobIconPath(jobName: string) {
@@ -74,6 +75,13 @@ export function JobGuidePage() {
     return (
         <div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
             <Header serverStatus={serverStatus} />
+            <PageHeader
+                breadcrumbs={[
+                    { label: 'Home', href: '/home' },
+                    { label: 'All Jobs', href: '/all-jobs' },
+                    { label: `${jobData.jobName} Guide`, href: `/all-jobs/${slug}` },
+                ]}
+            />
             <main className="max-w-6xl mx-auto pb-16">
                 {/* Hero Banner */}
                 <section

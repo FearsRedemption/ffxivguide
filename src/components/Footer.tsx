@@ -27,9 +27,8 @@ export default function Footer() {
                             <li>
                                 <a
                                     //TODO: Remove readdy.ai link and put actual link
-                                    href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/b90b125b-8cc4-4265-a406-e5e8a24669a3"
+                                    href="/tos"
                                     className="text-gray-400 hover:text-primary"
-                                    data-readdy="true"
                                 >
                                     Terms of Service
                                 </a>
@@ -37,9 +36,8 @@ export default function Footer() {
                             <li>
                                 <a
                                     //TODO: Remove readdy.ai link and put actual link
-                                    href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/e0f9472c-7cb9-4c67-a5e7-a1cd9aebf8f3"
+                                    href="/policy"
                                     className="text-gray-400 hover:text-primary"
-                                    data-readdy="true"
                                 >
                                     Privacy Policy
                                 </a>
@@ -47,9 +45,8 @@ export default function Footer() {
                             <li>
                                 <a
                                     //TODO: Remove readdy.ai link and put actual link
-                                    href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/e3749e98-aa82-4cba-bbf4-cfbf7978308e"
+                                    href="/contact"
                                     className="text-gray-400 hover:text-primary"
-                                    data-readdy="true"
                                 >
                                     Contact Us
                                 </a>
