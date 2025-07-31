@@ -2,7 +2,7 @@
 
 export default function FCAchievements() {
     return (
-        <section id="achievements" className="py-16 bg-white dark:bg-[#2a2a2a]">
+        <section id="achievements" className="scroll-mt-24 py-16 bg-white dark:bg-[#2a2a2a]">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">FC Achievements</h2>

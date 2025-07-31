@@ -17,6 +17,8 @@ import FCMembers from "../components/personalfc/FCMembers";
 import FCActivities from "../components/personalfc/FCActivities";
 import FCAchievements from "../components/personalfc/FCAchievements";
 import FCApply from "../components/personalfc/FCApply";
+import {FCApplyFormProvider} from "../context/FCApplyFormContext.tsx";
+import FCSectionNav from "../components/personalfc/FCSectionNav.tsx";
 
 export default function PersonalFreeCompany() {
     useDarkMode();
@@ -29,6 +31,7 @@ export default function PersonalFreeCompany() {
     return (
         <div className="bg-white text-black dark:bg-[#1a1a1a] dark:text-gray-100">
             <Header serverStatus={serverStatus} />
+            <FCSectionNav />
             <PageHeader
                 breadcrumbs={[
                     { label: "Home", href: "/home" },
@@ -42,7 +45,11 @@ export default function PersonalFreeCompany() {
             <FCMembers />
             <FCActivities />
             <FCAchievements />
-            <FCApply />
+            <FCApplyFormProvider>
+                <section id="apply" className="container scroll-mt-24 mx-auto px-4 py-16 max-w-4xl">
+                    <FCApply />
+                </section>
+            </FCApplyFormProvider>
             <Footer />
         </div>
     );

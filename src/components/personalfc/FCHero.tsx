@@ -2,7 +2,7 @@
 
 export default function FCHero() {
     return (
-        <section className="fc-hero-bg relative text-white">
+        <section id="hero" className="scroll-mt-32 fc-hero-bg relative text-white">
             {/* Dark gradient overlay for readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-transparent"></div>
 

@@ -18,6 +18,10 @@ body {
   color: #1e293b;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Hero Backgrounds */
 .hero-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=Dark%20epic%20fantasy%20landscape%20with%20floating%20crystal%20islands%20in%20a%20mystical%20night%20sky%2C%20ethereal%20moonlight%20rays%20piercing%20through%20dark%20clouds%2C%20majestic%20ancient%20architecture%2C%20mysterious%20atmosphere%2C%20magical%20energy%20streams%2C%20deep%20shadows%2C%20professional%20digital%20art%2C%20cinematic%20lighting%2C%20highly%20detailed%2C%204k%20quality&width=1920&height=1080&seq=4&orientation=landscape');

@@ -4,7 +4,7 @@ import RoleCard from './RoleCard';
 
 export default function FCRecruitment() {
     return (
-        <section id="recruitment" className="py-16 bg-gray-100 dark:bg-[#1a1a1a]">
+        <section id="recruitment" className="scroll-mt-24 py-16 bg-gray-100 dark:bg-[#1a1a1a]">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">

@@ -2,7 +2,7 @@
 
 export default function FCOverview() {
     return (
-        <section id="overview" className="py-16 bg-gray-50 dark:bg-[#1a1a1a]">
+        <section id="overview" className="scroll-mt-24 py-16 bg-gray-50 dark:bg-[#1a1a1a]">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="flex flex-col md:flex-row gap-10">
                     {/* Left Column: Text */}

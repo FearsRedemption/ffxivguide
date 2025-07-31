@@ -3,7 +3,7 @@ import {UpcomingEvents} from './UpcomingEvents';
 
 export default function FCActivities() {
     return (
-        <section id="activities" className="py-16 bg-gray-50 dark:bg-[#1f1f1f]">
+        <section id="activities" className="scroll-mt-24 py-16 bg-gray-50 dark:bg-[#1f1f1f]">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
