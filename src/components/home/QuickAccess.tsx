@@ -14,7 +14,7 @@
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     {/* Combat Guides */}
                     <a
-                        href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/0c61fec0-7349-448f-85b9-a088f194d1e8"
+                        href="#"
                         className="category-card bg-gradient-to-br from-blue-100 to-blue-300 dark:from-[#1f3b5c] dark:to-[#3b82f6] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
                     >
                         <div className="w-16 h-16 rounded-full bg-indigo-100 dark:bg-indigo-700 flex items-center justify-center mx-auto mb-4">
@@ -26,7 +26,7 @@
 
                     {/* Gil Making */}
                     <a
-                        href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/34123689-e76f-4e19-9868-1239301918d9"
+                        href="#"
                         className="category-card bg-gradient-to-br from-yellow-100 to-yellow-300 dark:from-[#665c00] dark:to-[#facc15] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
                     >
                         <div className="w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-700 flex items-center justify-center mx-auto mb-4">
@@ -38,7 +38,7 @@
 
                     {/* Crafting & Gathering */}
                     <a
-                        href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/53ea7007-6963-40d9-97c4-da5413346452"
+                        href="#"
                         className="category-card bg-gradient-to-br from-green-100 to-green-300 dark:from-[#14532d] dark:to-[#22c55e] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
                     >
                         <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-700 flex items-center justify-center mx-auto mb-4">
@@ -50,7 +50,7 @@
 
                     {/* Housing & Glamour */}
                     <a
-                        href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/a06831e2-8fdc-441b-b051-d3c7504f82f6"
+                        href="#"
                         className="category-card bg-gradient-to-br from-rose-100 to-red-300 dark:from-[#7f1d1d] dark:to-[#f87171] p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 text-center"
                     >
                         <div className="w-16 h-16 rounded-full bg-rose-100 dark:bg-rose-700 flex items-center justify-center mx-auto mb-4">
