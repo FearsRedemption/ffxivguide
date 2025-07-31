@@ -42,9 +42,9 @@ export default function FCApply() {
                     >
                         <option value="">Select your main job</option>
                         {[
-                            "PLD", "WAR", "DRK", "GNB", "WHM", "SCH", "AST", "SGE",
-                            "MNK", "DRG", "NIN", "SAM", "RPR", "BRD", "MCH", "DNC",
-                            "BLM", "SMN", "RDM", "VPR", "PCT"
+                            "Paladin", "Warrior", "Dark Knight", "Gunbreaker", "White Mage", "Scholar", "Astrologian", "Sage",
+                            "Monk", "Dragoon", "Ninja", "Samurai", "Reaper", "Viper", "Bard", "Machinist", "Dancer",
+                            "Black Mage", "Summoner", "Red Mage", "Pictomancer"
                         ].map(job => (
                             <option key={job} value={job}>{job}</option>
                         ))}
