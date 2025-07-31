@@ -7,17 +7,21 @@ export function useFCApplyForm() {
     const updateField = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
-        const { name, value, type } = e.target;
+        const target = e.target;
+        const { name, value } = target;
 
-        const fieldValue =
-            type === 'checkbox' && e.target instanceof HTMLInputElement
-                ? e.target.checked
-                : value;
-
-        setData(prev => ({
-            ...prev,
-            [name]: fieldValue,
-        }));
+        if (target instanceof HTMLInputElement && target.type === 'checkbox') {
+            if (name === 'preferred_content') {
+                const updated = target.checked
+                    ? [...data.preferred_content, value]
+                    : data.preferred_content.filter(item => item !== value);
+                setData(prev => ({ ...prev, preferred_content: updated }));
+            } else {
+                setData(prev => ({ ...prev, [name]: target.checked }));
+            }
+        } else {
+            setData(prev => ({ ...prev, [name]: value }));
+        }
     };
 
     const handleCharCount = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
