@@ -1272,7 +1272,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             'Blue Mage learns monster abilities to build a custom spellbook. With proper setup, it can excel in solo, party, or challenge content. Success relies on selecting the right abilities for the situation—be it tanking, healing, or dealing burst damage. It’s a sandbox-style job with high experimentation.',
         rotations: {
             singleTarget: [
-                { icon: 'Malediction_Of_Water', name: 'Malediction of Water', time: '0s' },
+                { icon: 'Malediction_of_Water', name: 'Malediction of Water', time: '0s' },
                 { icon: 'Glass_Dance', name: 'Glass Dance', time: '2s' },
                 { icon: 'Aetherial_Spark', name: 'Aetherial Spark', time: '4s' },
                 { icon: 'Missile', name: 'Missile', time: '6s' },
