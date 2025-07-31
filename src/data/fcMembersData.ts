@@ -11,7 +11,7 @@ const fcMembers: Member[] = [
     {
         name: 'Visenyaa Targaryen',
         title: 'FC PRESIDENT',
-        classes: 'Sage (100) / All classes (100) / Full Mentor',
+        classes: 'Sage (100) / All Classes (100) / Full Mentor',
         since: 'December 2022',
         image: new URL('../assets/images/fc-members/visenyaa.png', import.meta.url).href,
     },
@@ -22,5 +22,12 @@ const fcMembers: Member[] = [
         since: 'April 2021',
         image: new URL('../assets/images/fc-members/juneko.png', import.meta.url).href,
     },
+    {
+        name: 'Whisper Sanguine',
+        title: 'SITE CODER',
+        classes: 'Reaper (100) / All Classes (100) / Full Mentor',
+        since: 'August 2022',
+        image: new URL('../assets/images/fc-members/whisper.png', import.meta.url).href,
+    }
 ];
 export default fcMembers;
