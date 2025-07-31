@@ -15,11 +15,8 @@ function getJobIconPath(jobName: string) {
 function getHeroBackgroundPath(jobName: string) {
     return new URL(`../assets/images/job-hero/${jobName}.png`, import.meta.url).href;
 }
-function getSkillIconPatch(jobName: string, skillPath: string) {
-    let alteredName = jobName;
-    if (jobName.includes(' ')) {
-        alteredName = jobName.toLowerCase().replace(' ', '');
-    }
+function getSkillIconPath(jobName: string, skillPath: string) {
+    const alteredName = jobName.toLowerCase().replace(/\s+/g, '');
     return new URL(`../assets/images/skills/${alteredName}/${skillPath}.png`, import.meta.url).href;
 }
 
@@ -68,7 +65,7 @@ export function JobGuidePage() {
                     <div key={index} className="timeline-item flex flex-col items-center mx-3">
                         <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center relative overflow-hidden shadow-sm mb-2">
                             <img
-                                src={getSkillIconPatch(jobName, skill.icon)}
+                                src={getSkillIconPath(jobName, skill.icon)}
                                 alt={skill.name}
                                 className="w-full h-full object-contain"
                             />
