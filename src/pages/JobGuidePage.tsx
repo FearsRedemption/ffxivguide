@@ -16,7 +16,11 @@ function getHeroBackgroundPath(jobName: string) {
     return new URL(`../assets/images/job-hero/${jobName}.png`, import.meta.url).href;
 }
 function getSkillIconPatch(jobName: string, skillPath: string) {
-    return new URL(`../assets/images/skills/${jobName.toLowerCase()}/${skillPath}.png`, import.meta.url).href;
+    let alteredName = jobName;
+    if (jobName.includes(' ')) {
+        alteredName = jobName.toLowerCase().replace(' ', '');
+    }
+    return new URL(`../assets/images/skills/${alteredName}/${skillPath}.png`, import.meta.url).href;
 }
 
 export function JobGuidePage() {
