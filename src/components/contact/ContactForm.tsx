@@ -9,8 +9,8 @@ export default function ContactForm() {
     };
 
     return (
-        <div className="bg-white dark:bg-[#2d2d2d] rounded-lg shadow-sm p-8">
-            <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+        <div className="bg-white dark:bg-[#2d2d2d] dark:text-gray-400 rounded-lg shadow-sm p-8">
+            <h2 className="text-2xl font-bold mb-6 dark:text-white">Send Us a Message</h2>
             {status !== 'idle' && (
                 <div className={`mb-4 p-4 rounded ${status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                     {message}
@@ -18,7 +18,7 @@ export default function ContactForm() {
             )}
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                    <label className="block text-sm font-medium mb-1">Name *</label>
+                    <label className="block text-sm font-medium mb-1 dark:text-white">Name *</label>
                     <input
                         name="name"
                         value={data.name}
@@ -29,7 +29,7 @@ export default function ContactForm() {
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium mb-1">Email *</label>
+                    <label className="block text-sm font-medium mb-1 dark:text-white">Email *</label>
                     <input
                         type="email"
                         name="email"
@@ -41,7 +41,7 @@ export default function ContactForm() {
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium mb-1">Subject *</label>
+                    <label className="block text-sm font-medium mb-1 dark:text-white">Subject *</label>
                     <select
                         name="subject"
                         value={data.subject}
@@ -58,7 +58,7 @@ export default function ContactForm() {
                     </select>
                 </div>
                 <div>
-                    <label className="block text-sm font-medium mb-1">Message *</label>
+                    <label className="block text-sm font-medium mb-1 dark:text-white">Message *</label>
                     <textarea
                         name="message"
                         rows={5}
@@ -69,7 +69,7 @@ export default function ContactForm() {
                         className="form-textarea w-full px-4 py-3 border rounded"
                     />
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start dark:text-white">
                     <input
                         type="checkbox"
                         name="privacy"

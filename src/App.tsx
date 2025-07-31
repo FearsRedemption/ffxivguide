@@ -10,6 +10,7 @@ import {JobGuidePage} from './pages/JobGuidePage';
 import Contact from "./pages/Contact";
 import Privacy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService.tsx";
+import PersonalFreeCompany from "./pages/PersonalFreeCompany.tsx";
 
 export default function App() {
     return (
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/tos" element={<TermsOfService />} />
+            <Route path="/personal-fc" element={<PersonalFreeCompany />} />
 
             {/* Guides */}
             <Route path="/all-jobs" element={<AllJobs />} />

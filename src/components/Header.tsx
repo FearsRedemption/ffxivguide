@@ -33,8 +33,7 @@ export default function Header({ serverStatus }: HeaderProps) {
                             News
                         </a>
                         <a
-                            //TODO: Replace readdy.ai with real link
-                            href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/bd1554c1-bf38-4082-a3b6-c0cc41b4e774"
+                            href="/personal-fc"
                             className="hover:text-primary transition"
                         >
                             Personal Free Company

@@ -32,6 +32,12 @@ body {
   background-position: center;
 }
 
+.fc-hero-bg {
+  background-image: url('https://readdy.ai/api/search-image?query=A%20majestic%20Final%20Fantasy%20XIV%20Free%20Company%20house%20with%20beautiful%20architecture%2C%20surrounded%20by%20lush%20gardens%20and%20fountains.%20The%20mansion%20has%20ornate%20details%20with%20magical%20aether%20crystals%20glowing%20nearby.%20The%20scene%20is%20bathed%20in%20warm%20sunset%20light%20with%20soft%20clouds%20in%20the%20sky.%20The%20image%20has%20a%20fantasy%20RPG%20aesthetic%20with%20high%20detail%20and%20vibrant%20colors.&width=1920&height=800&seq=ffxiv-fc-hero-1&orientation=landscape');
+  background-size: cover;
+  background-position: center;
+}
+
 /* Feature Cards */
 .feature-card {
   background: black;
@@ -133,28 +139,20 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-/* Dark Mode Overrides */
-body.dark-mode {
-  background-color: #0f172a;
-  color: #e5e5e5;
+.text-low {
+  @apply text-green-600 dark:text-green-400;
 }
 
-body.dark-mode .bg-white { background-color: #1e293b; }
-body.dark-mode .bg-gray-50 { background-color: #1a202c; }
-body.dark-mode .text-gray-900 { color: #e5e5e5; }
-body.dark-mode .text-gray-700,
-body.dark-mode .text-gray-600 { color: #a3a3a3; }
-body.dark-mode .border-gray-100 { border-color: #404040; }
-body.dark-mode .bg-gray-100 { background-color: #334155; }
-body.dark-mode .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
-body.dark-mode .hover\:bg-gray-50:hover { background-color: #333333; }
-body.dark-mode .hover\:bg-gray-200:hover { background-color: #404040; }
-body.dark-mode .category-card {
-  background: linear-gradient(to bottom right, #1f2937, #334155);
+.text-medium {
+  @apply text-yellow-700 dark:text-yellow-400;
 }
-body.dark-mode #marketChart { filter: brightness(0.85); }
 
-body.dark-mode .job-card { background-color: #1e293b; }
-body.dark-mode .job-icon { background-color: #0f172a; }
-body.dark-mode .job-name { color: #ffffff; }
+.text-high {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.text-shadow {
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.75);
+}
+
 

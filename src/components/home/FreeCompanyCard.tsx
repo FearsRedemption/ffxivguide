@@ -13,8 +13,7 @@ export default function FreeCompanyCard() {
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">The UwU Crew</h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6">Join our personal Free Company in-game!</p>
             <a
-                //TODO: remove readdy.ai link and replace with accurate link
-                href="https://readdy.ai/home/fd15a5a4-ace7-46c4-b191-110ce699c87e/bd1554c1-bf38-4082-a3b6-c0cc41b4e774"
+                href="/personal-fc"
             >
                 <button className="cursor-pointer bg-blue-700 hover:bg-indigo-700 text-white px-6 py-3 rounded-button font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-indigo-400">
                     Free Company

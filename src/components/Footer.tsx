@@ -1,50 +1,37 @@
-﻿import Logo from '../assets/images/final fxiv purple.png'
+﻿import Logo from '../assets/images/final fxiv purple.png';
 
 export default function Footer() {
     return (
         <footer className="bg-gray-900 text-white pt-12 pb-6">
             <div className="container mx-auto px-4">
                 {/* Top Footer */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
                     {/* Logo + Description */}
-                    <div>
+                    <div className="flex-1">
                         <a href="/home" className="h-8 mb-4 inline-block">
-                            <img
-                                src={Logo}
-                                alt="Final Fantasy XIV"
-                                className="h-full"
-                            />
+                            <img src={Logo} alt="Final Fantasy XIV" className="h-full" />
                         </a>
-                        <p className="text-gray-400 mt-4">
+                        <p className="text-gray-400 mt-4 max-w-md">
                             Your ultimate resource for all things Final Fantasy XIV, from beginner guides to advanced strategies.
                         </p>
                     </div>
 
-                    {/* Legal Links */}
-                    <div>
+                    {/* Legal Links (right aligned with spacing) */}
+                    <div className="text-right md:min-w-[240px]">
                         <h3 className="font-semibold text-lg mb-4">Legal</h3>
                         <ul className="space-y-2">
                             <li>
-                                <a
-                                    href="/tos"
-                                    className="text-gray-400 hover:text-primary"
-                                >
+                                <a href="/tos" className="text-gray-400 hover:text-primary">
                                     Terms of Service
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href="/privacy "
-                                    className="text-gray-400 hover:text-primary"
-                                >
+                                <a href="/privacy" className="text-gray-400 hover:text-primary">
                                     Privacy Policy
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href="/contact"
-                                    className="text-gray-400 hover:text-primary"
-                                >
+                                <a href="/contact" className="text-gray-400 hover:text-primary">
                                     Contact Us
                                 </a>
                             </li>
