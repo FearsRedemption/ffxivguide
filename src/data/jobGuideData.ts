@@ -887,7 +887,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
                     { icon: 'Burst_Shot', name: 'Burst Shot', time: '4s' },
                     { icon: 'Empyreal_Arrow', name: 'Empyreal Arrow', time: '6s' },
                     { icon: 'Raging_Strikes', name: 'Raging Strikes', time: '7s' },
-                    { icon: 'Wanderers_Minuet', name: 'Wanderer’s Minuet', time: '8s' },
+                    { icon: 'The_Wanderers_Minuet', name: 'Wanderer’s Minuet', time: '8s' },
                     { icon: 'Radiant_Finale', name: 'Radiant Finale', time: '10s' },
                 ],
             },
