@@ -30,7 +30,7 @@ export default function FCMembers() {
                             style={{
                                 backgroundImage: `url(${member.image})`,
                                 backgroundSize: 'cover',
-                                backgroundPosition: 'top 10%',
+                                backgroundPosition: 'center top 10%',
                                 backgroundRepeat: 'no-repeat',
                             }}
                         >
