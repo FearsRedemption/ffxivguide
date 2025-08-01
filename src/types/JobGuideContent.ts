@@ -1,4 +1,6 @@
-﻿export interface SkillBlock {
+﻿// src/types/JobGuideContent.ts
+
+export interface SkillBlock {
     icon: string;
     name: string;
     time: string;
@@ -22,9 +24,16 @@ export interface JobGuideContent {
     rotations: {
         singleTarget: SkillBlock[];
         aoe: SkillBlock[];
-        mitigationRotation: SkillBlock[];
-        healingRotation: SkillBlock[];
+        mitigationRotation?: SkillBlock[];
+        healingRotation?: SkillBlock[];
     };
-    openers: Opener[];
-    tips: string[];
+    openers?: Opener[];
+    tips?: string[];
+    rotationNotes?: {
+        singleTarget?: string;
+        aoe?: string;
+        mitigation?: string;
+        healing?: string;
+        opener?: string;
+    };
 }
