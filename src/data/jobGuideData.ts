@@ -408,17 +408,18 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         intro:
             'Astrologian is a regen-based healer that brings strong burst healing, sustained regenerative effects, and powerful group-wide utility through its unique card system. It excels in flexible response to damage while supporting DPS output through raid buffs.',
         roleSummary:
-            'Astrologians draw and play cards to buff party members, maintain HoTs with abilities like Aspected Benefic and Earthly Star, and utilize powerful cooldowns like Horoscope and Macrocosmos for burst healing. Their strength lies in timing and optimizing card plays for raid DPS.',
+            'Astrologians draw and play cards to buff party members, maintain HoTs with abilities like Aspected Benefic and Earthly Star, and utilize powerful cooldowns like Horoscope and Macrocosmos for burst healing. Their strength lies in timing, seal optimization, and raid DPS contribution.',
         rotations: {
             singleTarget: [
                 { icon: 'Malefic_IV', name: 'Malefic IV', time: '0s' },
                 { icon: 'Malefic_IV', name: 'Malefic IV', time: '2s' },
-                { icon: 'Malefic_IV', name: 'Malefic IV', time: '4s' },
-                { icon: 'Combust_III', name: 'Combust III', time: '6s' },
+                { icon: 'Combust_III', name: 'Combust III', time: '4s' },
+                { icon: 'Malefic_IV', name: 'Malefic IV', time: '6s' },
             ],
             aoe: [
                 { icon: 'Gravity_II', name: 'Gravity II', time: '0s' },
                 { icon: 'Gravity_II', name: 'Gravity II', time: '2s' },
+                { icon: 'Gravity_II', name: 'Gravity II', time: '4s' },
             ],
             mitigationRotation: [
                 { icon: 'Exaltation', name: 'Exaltation', time: '0s' },
@@ -428,7 +429,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
             ],
             healingRotation: [
                 { icon: 'Aspected_Benefic', name: 'Aspected Benefic', time: '0s' },
-                { icon: 'Aspected_Helio', name: 'Aspected Helios', time: '2s' },
+                { icon: 'Aspected_Helios', name: 'Aspected Helios', time: '2s' },
                 { icon: 'Earthly_Star', name: 'Earthly Star', time: '4s' },
                 { icon: 'Neutral_Sect', name: 'Neutral Sect', time: '6s' },
                 { icon: 'Horoscope', name: 'Horoscope', time: '8s' },
@@ -436,24 +437,47 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         },
         openers: [
             {
-                title: 'Standard Card Buff Start',
+                title: '2-Minute Raid Buff Opener',
                 skills: [
-                    { icon: 'Draw', name: 'Draw', time: '0s' },
-                    { icon: 'Play', name: 'Play (Card)', time: '1s' },
-                    { icon: 'Malefic_IV', name: 'Malefic IV', time: '2s' },
-                    { icon: 'Combust_III', name: 'Combust III', time: '4s' },
-                    { icon: 'Earthly_Star', name: 'Earthly Star', time: '6s' },
-                    { icon: 'Divination', name: 'Divination', time: '8s' },
+                    { icon: 'Astral_Draw', name: 'Astral Draw (Melee/Tank Buff)', time: '-2s' },
+                    { icon: 'Play_I', name: 'Play (Melee/Tank)', time: '0s' },
+                    { icon: 'Divination', name: 'Divination', time: '2s' },
+                    { icon: 'Earthly_Star', name: 'Earthly Star', time: '4s' },
+                    { icon: 'Malefic_IV', name: 'Malefic IV', time: '6s' },
+                    { icon: 'Combust_III', name: 'Combust III', time: '8s' },
+                    { icon: 'Lord_of_Crowns', name: 'Lord of Crowns', time: '10s' },
+                ],
+            },
+            {
+                title: 'Follow-up Burst (Umbral Draw)',
+                skills: [
+                    { icon: 'Umbral_Draw', name: 'Umbral Draw (Ranged/Healer Buff)', time: '60s' },
+                    { icon: 'Play_II', name: 'Play (Ranged/Healer)', time: '62s' },
+                    { icon: 'Lady_of_Crowns', name: 'Lady of Crowns', time: '64s' },
+                    { icon: 'Play_III', name: 'Play (Wildcard Seal)', time: '120s' },
                 ],
             },
         ],
         tips: [
-            'Use Draw and Play off cooldown to maximize party DPS uptime—cards are more important than your own DPS.',
-            'Preplace Earthly Star 10–15 seconds before predicted AoE to maximize healing burst.',
-            'Macrocosmos stores damage taken during a window—use it during big raid-wide mechanics to reverse burst heal.',
-            'Use Neutral Sect before shields like Aspected Helios to convert regen into powerful mitigation.',
-            'Try to balance card buff targets to Melee (Melee, Tank) or Ranged (Ranged DPS, Healer) depending on the drawn seal.',
+            'Use Astral or Umbral Draw based on party comp and needed seals. Astral (Play_I) for melee/tank, Umbral (Play_II) for ranged/healer.',
+            'Maximize Divination uptime by playing three unique seals before its use—track seal colors carefully.',
+            'Pre-cast Earthly Star 10–15 seconds before major raid-wide damage to get the detonation heal.',
+            'Use Macrocosmos right before raid-wide damage to store and reverse-burst heal the entire group.',
+            'Use Neutral Sect to double-shield with Aspected Helios and benefit from its mitigation utility.',
+            'Lord and Lady of Crowns should be used when drawn—Lord for DPS, Lady for healing. Always redraw if misaligned.',
         ],
+        rotationNotes: {
+            opener:
+                'Ensure 3 unique seals are played before Divination to empower the buff. Use Astral/Umbral based on who you\'re targeting: melee/tank first, then ranged/healer. Play_III is used to complete the third seal at 2-min windows.',
+            singleTarget:
+                'Malefic V is your filler. Keep Combust III up at all times. Use card draw/weave between GCDs.',
+            aoe:
+                'Gravity II is your AoE filler. Card plays and Divination are still important even in AoE pulls.',
+            mitigation:
+                'Time Horoscope and Macrocosmos just before major damage. Exaltation and Celestial Opposition add short bursts of protection.',
+            healing:
+                'Aspected Helios + Neutral Sect provides strong group shielding. Earthly Star and Horoscope give great reactive and predictive healing.',
+        },
     },
     [slugifyJobName('Sage')]: {
         jobName: 'Sage',
@@ -1005,68 +1029,74 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         ],
     },
     [slugifyJobName('Black Mage')]: {
-    jobName: 'Black Mage',
-    subtitle: 'Mobile Caster Focused on Phase Swapping and Burst Windows',
-    role: 'Magical Ranged DPS',
-    difficulty: 5,
-    unlockLevel: 30,
-    preJob: 'Thaumaturge',
-    bgImage: 'BlackMage',
-    intro:
-        'Black Mage is a powerful magical DPS focused on alternating Astral Fire and Umbral Ice phases. With Enochian now always active and Sharpcast removed, the job emphasizes natural Thundercloud procs, Paradox casting, and executing potent burst windows with Fire IV and Despair.',
-    roleSummary:
-        'You alternate between Umbral Ice (regen phase) and Astral Fire (burst phase), using Blizzard spells to regain MP and Fire spells to spend it. Firestarter procs are now granted by Paradox in Fire phase, and Thundercloud procs occur automatically when swapping from Ice to Fire, streamlining gameplay. Polyglot stacks are spent on Xenoglossy (ST) or Foul (AoE), while Triplecast and Ley Lines help with mobility.',
-    rotations: {
-        singleTarget: [
-            { icon: 'Fire_III', name: 'Fire III (Proc or Hardcast)', time: '0s' },
-            { icon: 'Fire_IV', name: 'Fire IV', time: '2s' },
-            { icon: 'Fire_IV', name: 'Fire IV', time: '4s' },
-            { icon: 'Fire_IV', name: 'Fire IV', time: '6s' },
-            { icon: 'Despair', name: 'Despair', time: '8s' },
-            { icon: 'Transpose', name: 'Transpose', time: '10s' },
-            { icon: 'Blizzard_III', name: 'Blizzard III', time: '12s' },
-            { icon: 'Blizzard_IV', name: 'Blizzard IV', time: '14s' },
-            { icon: 'Paradox', name: 'Paradox', time: '16s' },
-        ],
-        aoe: [
-            { icon: 'Foul', name: 'Foul (Polyglot)', time: '0s' },
-            { icon: 'Fire_II', name: 'Fire II', time: '2s' },
-            { icon: 'Fire_II', name: 'Fire II', time: '4s' },
-            { icon: 'Despair', name: 'Despair (if enough targets)', time: '6s' },
-            { icon: 'Transpose', name: 'Transpose', time: '8s' },
-            { icon: 'Freeze', name: 'Freeze', time: '10s' },
-            { icon: 'Thunder_IV', name: 'Thunder IV (Phase change proc)', time: '12s' },
-        ],
-        mitigationRotation: [],
-        healingRotation: []
-    },
-    openers: [
-        {
-            title: 'Standard 7.2 Black Mage Opener',
-            skills: [
-                { icon: 'Fire_III', name: 'Fire III (Hardcast or Proc)', time: '0s' },
+        jobName: 'Black Mage',
+        subtitle: 'Mobile Caster Focused on Phase Swapping and Burst Windows',
+        role: 'Magical Ranged DPS',
+        difficulty: 5,
+        unlockLevel: 30,
+        preJob: 'Thaumaturge',
+        bgImage: 'BlackMage',
+        intro:
+            'Black Mage is a powerful magical DPS centered around alternating Astral Fire and Umbral Ice phases, managing MP, and timing burst windows perfectly. Sharpcast has been removed as of Patch 7.2.',
+        roleSummary:
+            'Gameplay revolves around toggling between Astral Fire (burn phase) and Umbral Ice (regen phase). Use Paradox to guarantee Firestarter procs. Thundercloud now occurs automatically on phase swap—no Sharpcast charges.',
+        rotations: {
+            singleTarget: [
+                { icon: 'Fire_III', name: 'Fire III (Proc or Hardcast)', time: '0s' },
                 { icon: 'Fire_IV', name: 'Fire IV', time: '2s' },
                 { icon: 'Fire_IV', name: 'Fire IV', time: '4s' },
                 { icon: 'Fire_IV', name: 'Fire IV', time: '6s' },
-                { icon: 'Triplecast', name: 'Triplecast', time: '7s' },
-                { icon: 'Fire_IV', name: 'Fire IV (Triple)', time: '8s' },
-                { icon: 'Fire_IV', name: 'Fire IV (Triple)', time: '10s' },
-                { icon: 'Despair', name: 'Despair', time: '12s' },
-                { icon: 'Xenoglossy', name: 'Xenoglossy (Polyglot)', time: '14s' },
+                { icon: 'Despair', name: 'Despair', time: '8s' },
+                { icon: 'Transpose', name: 'Transpose', time: '10s' },
+                { icon: 'Blizzard_III', name: 'Blizzard III', time: '12s' },
+                { icon: 'Blizzard_IV', name: 'Blizzard IV', time: '14s' },
+                { icon: 'Paradox', name: 'Paradox', time: '16s' },
             ],
+            aoe: [
+                { icon: 'Foul', name: 'Foul (Polyglot)', time: '0s' },
+                { icon: 'Fire_II', name: 'Fire II', time: '2s' },
+                { icon: 'Fire_II', name: 'Fire II', time: '4s' },
+                { icon: 'Despair', name: 'Despair (if enough targets)', time: '6s' },
+                { icon: 'Transpose', name: 'Transpose', time: '8s' },
+                { icon: 'Freeze', name: 'Freeze', time: '10s' },
+                { icon: 'Thunder_IV', name: 'Thunder IV (phase-swap proc)', time: '12s' },
+            ],
+            mitigationRotation: [],
+            healingRotation: [],
         },
-    ],
-    tips: [
-        'Always end your Fire phase with Despair—it uses all remaining MP for huge damage.',
-        'Paradox in Fire phase grants a Firestarter proc (free instant Fire III).',
-        'Thundercloud procs are now triggered by phase changes, not Sharpcast.',
-        'Spend Polyglot stacks regularly to avoid capping—use Xenoglossy or Foul.',
-        'Use Transpose to transition phases faster and access Paradox earlier.',
-        'Triplecast and Swiftcast provide mobility—plan them around burst phases.',
-        'Don’t overwrite Thunder DoT unless a Thundercloud proc is available.',
-        'Plan around Ley Lines uptime to minimize movement loss during burst.'
-    ],
-},
+        openers: [
+            {
+                title: 'Patch 7.2+ Black Mage Opener',
+                skills: [
+                    { icon: 'Fire_III', name: 'Fire III (Proc or Hardcast)', time: '0s' },
+                    { icon: 'Fire_IV', name: 'Fire IV', time: '2s' },
+                    { icon: 'Fire_IV', name: 'Fire IV', time: '4s' },
+                    { icon: 'Fire_IV', name: 'Fire IV', time: '6s' },
+                    { icon: 'Triplecast', name: 'Triplecast', time: '7s' },
+                    { icon: 'Fire_IV', name: 'Fire IV (Triple)', time: '8s' },
+                    { icon: 'Fire_IV', name: 'Fire IV (Triple)', time: '10s' },
+                    { icon: 'Despair', name: 'Despair', time: '12s' },
+                    { icon: 'Xenoglossy', name: 'Xenoglossy (Polyglot)', time: '14s' },
+                ],
+            },
+        ],
+        tips: [
+            'Always end your burn phase with Despair—maximize MP use during Astral Fire.',
+            'Paradox grants guaranteed Firestarter—use it early in Astral Fire.',
+            'Thundercloud proc is phase-swap-based—no Sharpcast needed.',
+            'Spend Polyglot charges quickly—use Xenoglossy (ST) or Foul (AoE).',
+            'Use Ley Lines and Triplecast to maintain mobility in burst windows.',
+            'Transpose smoothly to regenerate MP instead of hardcasting Blizzard III in some cases.',
+        ],
+        rotationNotes: {
+            singleTarget:
+                'Cast Fire III if you have a Firestarter proc, then spam Fire IV ×3 (×4 if boosted by Ley Lines or Triplecast), finish with Despair. Transpose, then cast Blizzard III → IV to regenerate MP, followed by Paradox to re-enter Astral Fire. Repeat the loop, avoiding MP overcap.',
+            aoe:
+                'In multi-target situations, start with Foul then Fire II spam while Ice-free. End with Despair if target count is high, then Transpose and cast Blizzard IV or Freeze depending on number of enemies. Activate Thunder IV via phase swap for additional damage.',
+            opener:
+                'Begin with Fire III from Firestarter proc or hardcast. Cast 3 Fire IVs before using Triplecast to weave 2 more instant Fire IVs. Finish with Despair at low MP and spend your Polyglot stack on Xenoglossy. This aligns with raid buff windows and keeps the Astral Fire phase clean.',
+        },
+    },
     [slugifyJobName('Summoner')]: {
         jobName: 'Summoner',
         subtitle: 'Pet-Based Magical DPS with Rotating Primal Phases',
