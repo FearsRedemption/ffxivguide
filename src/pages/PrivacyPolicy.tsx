@@ -1,30 +1,15 @@
 ﻿// src/pages/PrivacyPolicy.tsx
-import { useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "../styles/index.css";
-import { useServerStatus } from "../hooks/useServerStatus";
 import InfoGrid from "../components/privacy/InfoGrid";
 import DataRightsGrid from "../components/privacy/DataRightsGrid";
 import SecurityContactGrid from "../components/privacy/SecurityContactGrid";
 import PolicyUpdatesSection from "../components/privacy/PolicyUpdatesSection";
 import LegalComplianceSection from "../components/privacy/LegalComplianceSection";
 import PageHeader from "../components/PageHeader";
-import { useDarkMode } from "../hooks/useDarkMode";
 
 export default function PrivacyPolicy() {
-    useDarkMode();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-    const serverStatus = useServerStatus();
-
     return (
         <div className="dark:bg-[#1a1a1a] text-gray-900 dark:text-gray-100">
-            <Header serverStatus={serverStatus} />
-
             <PageHeader
                 breadcrumbs={[
                     { label: 'Home', href: '/home' },
@@ -63,8 +48,6 @@ export default function PrivacyPolicy() {
                 <PolicyUpdatesSection />
                 <LegalComplianceSection />
             </main>
-
-            <Footer />
         </div>
     );
 }

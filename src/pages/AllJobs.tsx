@@ -1,11 +1,8 @@
 ﻿// src/pages/AllJobs.tsx
-import { useEffect, useState, useRef } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import '../styles/index.css';
-import { allJobsData } from '../data/allJobsData';
+import {allJobsData} from '../data/allJobsData';
 import JobCategorySection from '../components/battleguide/JobCategorySection';
-import { useServerStatus } from "../hooks/useServerStatus.ts";
-import Header from "../components/Header.tsx";
-import Footer from "../components/Footer.tsx";
 import PageHeader from "../components/PageHeader.tsx";
 
 // Role icons
@@ -17,12 +14,6 @@ import MagicalRanged from '../assets/images/classes/Magical Ranged DPS.png';
 import Filtered from '../assets/images/classes/Filtered.png';
 
 export default function AllJobs() {
-    const serverStatus = useServerStatus();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     const [selectedRole, setSelectedRole] = useState('All');
     const [selectedDifficulty, setSelectedDifficulty] = useState('All');
     const [selectedExpansion, setSelectedExpansion] = useState('All');
@@ -85,8 +76,6 @@ export default function AllJobs() {
 
     return (
         <div className="bg-[#f6f6f6] dark:bg-[#121212] text-gray-900 dark:text-white min-h-screen">
-            <Header serverStatus={serverStatus} />
-
             <PageHeader
                 breadcrumbs={[
                     { label: 'Home', href: '/home' },
@@ -232,8 +221,6 @@ export default function AllJobs() {
                     )}
                 </section>
             </main>
-
-            <Footer />
         </div>
     );
 }

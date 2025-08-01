@@ -1,12 +1,8 @@
 ﻿// src/pages/JobGuidePage.tsx
-import { useEffect } from "react";
-import { useParams } from 'react-router-dom';
-import { jobGuideData } from '../data/jobGuideData';
-import type { SkillBlock } from '../types/JobGuideContent';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import { useServerStatus } from '../hooks/useServerStatus';
-import { slugifyJobName } from '../utils/slugify';
+import {useParams} from 'react-router-dom';
+import {jobGuideData} from '../data/jobGuideData';
+import type {SkillBlock} from '../types/JobGuideContent';
+import {slugifyJobName} from '../utils/slugify';
 import PageHeader from '../components/PageHeader';
 
 function getJobIconPath(jobName: string) {
@@ -21,19 +17,13 @@ function getSkillIconPath(jobName: string, skillPath: string) {
 }
 
 export function JobGuidePage() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     const { jobName } = useParams();
     const slug = slugifyJobName(jobName ?? '');
     const jobData = jobGuideData[slug];
-    const serverStatus = useServerStatus();
 
     if (!jobData) {
         return (
             <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
-                <Header serverStatus={serverStatus} />
                 <PageHeader
                     breadcrumbs={[
                         { label: 'Home', href: '/home' },
@@ -41,6 +31,7 @@ export function JobGuidePage() {
                         { label: 'Unknown Job', href: `` },
                     ]}
                 />
+
                 <div className="container mx-auto px-4 py-20 text-center">
                     <h1 className="text-4xl font-bold mb-4">Job Not Found</h1>
                     <p className="text-gray-600 dark:text-gray-300 mb-6">
@@ -53,7 +44,6 @@ export function JobGuidePage() {
                         Go Back to All Jobs
                     </a>
                 </div>
-                <Footer />
             </div>
         );
     }
@@ -80,7 +70,6 @@ export function JobGuidePage() {
 
     return (
         <div className="bg-gray-100 text-gray-900 dark:text-white dark:bg-[#2a2a2a] min-h-screen">
-            <Header serverStatus={serverStatus} />
             <PageHeader
                 breadcrumbs={[
                     { label: 'Home', href: '/home' },
@@ -167,7 +156,6 @@ export function JobGuidePage() {
                     </section>
                 )}
             </main>
-            <Footer />
         </div>
     );
 }

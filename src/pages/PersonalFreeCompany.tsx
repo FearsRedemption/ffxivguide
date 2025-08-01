@@ -1,12 +1,6 @@
 ﻿// src/pages/PersonalFreeCompany.tsx
-import { useEffect } from "react";
 import "../styles/index.css";
-import { useDarkMode } from "../hooks/useDarkMode";
-import { useServerStatus } from "../hooks/useServerStatus";
-
-import Header from "../components/Header";
 import PageHeader from "../components/PageHeader";
-import Footer from "../components/Footer";
 
 // Section component imports
 import FCHero from "../components/personalfc/FCHero";
@@ -21,16 +15,8 @@ import {FCApplyFormProvider} from "../context/FCApplyFormContext.tsx";
 import FCSectionNav from "../components/personalfc/FCSectionNav.tsx";
 
 export default function PersonalFreeCompany() {
-    useDarkMode();
-    const serverStatus = useServerStatus();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <div className="bg-white text-black dark:bg-[#1a1a1a] dark:text-gray-100">
-            <Header serverStatus={serverStatus} />
             <FCSectionNav />
             <PageHeader
                 breadcrumbs={[
@@ -50,7 +36,6 @@ export default function PersonalFreeCompany() {
                     <FCApply />
                 </section>
             </FCApplyFormProvider>
-            <Footer />
         </div>
     );
 }

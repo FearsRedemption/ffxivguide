@@ -1,7 +1,7 @@
 ﻿import ToolCard from './ToolCard';
 import { gilTools } from '../../data/gilToolsData';
 
-export default function GilMaking() {
+export default function GilMakingResources() {
     return (
         <section className="py-12 bg-gray-200 dark:bg-[#2a2a2a]">
             <div className="container mx-auto px-4">
