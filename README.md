@@ -1,22 +1,23 @@
 # 🧙 FinalFXIV – Internal Guide Platform
 
-**FinalFXIV** is a custom-built React + TypeScript web platform that delivers detailed Final Fantasy XIV job, dungeon, raid, and FC content using a fully modular, component-based architecture. Inspired by early Readdy.ai designs, the project is now rebuilt with a modern, maintainable codebase using Vite, TailwindCSS, and a scalable folder system.
+**FinalFXIV** is a fully custom-built React + TypeScript web platform for delivering curated Final Fantasy XIV content. From job guides and dungeon strategies to Free Company tools and themed UI elements, the site emphasizes clarity, speed, and extensibility—offering a polished fan experience for players and community members alike.
 
 ---
 
 ## ⚙️ Tech Stack
 
-- ⚛️ React 18 + TypeScript  
-- ⚡ Vite for bundling and dev server  
-- 💨 Tailwind CSS v4 (utility-first, dark/light mode support)  
-- 🔁 React Router DOM (clean route-based navigation)  
-- 📬 Contact and application forms (hook + context managed)  
-- 🌘 Dark mode toggle system  
-- 🌐 GitHub Pages hosting with custom domain + fallback routing
+- ⚛️ React 18 with TypeScript  
+- ⚡ Vite (fast bundling, native ESM)  
+- 💨 Tailwind CSS v4 (utility-first with dark/light mode support)  
+- 🔁 React Router DOM (SPA routing with clean URLs)  
+- 🧠 Global state via Context + custom Hooks  
+- 🌐 Deployed with GitHub Pages and custom domain  
+- 📬 Email forms integrated with a secured backend  
+- 🔒 Route fallback and redirect logic for smooth SPA navigation  
 
 ---
 
-## 📁 Project Structure (July 2025)
+## 📁 Project Structure
 
 ```txt
 src/
@@ -160,56 +161,70 @@ src/
 
 ---
 
-## ✅ Current Features
+## ✅ Key Features
 
-- Responsive layout with theme toggle (light/dark)
-- Job guide system using centralized data and skill rotation blocks
-- Home page, job overview, job detail pages with metadata and icons
-- Personal Free Company landing page with upcoming event system
-- FC application and contact forms using context + hook architecture
-- Featured video guide carousel system with metadata
-- GitHub Pages routing with clean `/job/paladin`-style URLs
-- Visual parity with original design prototypes, now React-native
+- 📘 **Modular Job Guides**  
+  Job-by-job breakdowns with difficulty ratings, unlock levels, prerequisites, rotation steps, and skill icons. All content is structured using data-driven React components.
 
----
+- 🏘 **Free Company Hub**  
+  Dedicated FC features include an event calendar, member showcase, and an application form for prospective recruits.
 
-## 📌 Todo / In Progress
+- 🖼 **Light/Dark Mode**  
+  Theme toggle implemented using `useDarkMode` with centralized Tailwind support via `index.css`.
 
-- ⚔ **Combat Guides** (dungeons, raids, trials) — full guide system
-- 💰 **Gil Marking Guide** (farming, retainers, markets)
-- 🔨 **Crafting/Gathering Guides** (rotations, node tracking, tooltips)
-- 🏡 **Housing and Glamour Guides** (decoration, fashion, layout tools)
-- 🖼 **Skill Icon Collection** — bulk skill icon imports still pending
-- 📸 **FC Member Scraping Tool** — planned scraping of official site data
-- 🔐 **Backend Access Gating** — custom login + register, gated content, access code unlock for donations ≥ $5.00
+- 🔍 **Search & Filtering**  
+  Overview pages for jobs and content include role-based filtering and difficulty sorting.
 
----
+- 📺 **Featured Video Guides**  
+  Hand-picked guide videos with thumbnails, metadata, and performance tags displayed in a responsive carousel.
 
-## 🔒 Deployment & Hosting Notes
+- 📬 **Forms with Hook Context**  
+  Contact and FC applications powered by `useContactForm`, `useFCApplyForm`, and `useSubscription`, with validation and state tracking via context.
 
-- Hosted via GitHub Pages using a custom domain: [https://finalfxiv.com](https://finalfxiv.com)
-- Uses `BrowserRouter` with a `404.html` fallback to support clean routes
-- Skill images and guide data resolved using `import.meta.url` for Vite compatibility
-- Backend integration planned but not exposed in this frontend repo
+- 🚦 **Live Server Status Hook**  
+  Simple world status checker using `useServerStatus` with color-coded display.
+
+- 📦 **Static Asset Resolution**  
+  Skill icons, banners, and images resolved via `import.meta.url` to support clean builds and relative imports.
+
+- 🧭 **404 Support + Redirects**  
+  `404.html` + `RedirectHandler.tsx` enable proper client-side routing for all GitHub Pages routes.
 
 ---
 
-## ⚠️ Licensing & Use
+## 📌 In Progress
 
-This project is **private and proprietary**.  
-Do **not** clone, reuse, or distribute any part of this codebase or its assets without explicit permission.
+- ⚔ **Combat Guides** – Dungeon, raid, and trial breakdowns  
+- 💰 **Gil Making Tools** – Marketboard tips, retainers, and farming routes  
+- 🔨 **Crafting/Gathering** – Rotations, node maps, and specialist tips  
+- 🏡 **Housing & Glamour** – Decorating guides, creative fashion ideas  
+- 🖼 **Skill Icon Completion** – Ongoing import of missing icons into the `/skills` folder  
+- ⚙️ **Additional Form Backends** – Future integration of enhanced secure endpoints
 
-Final Fantasy XIV is © SQUARE ENIX CO., LTD.  
-This site is an independent fan creation and is not affiliated with Square Enix.
+---
+
+## 🔒 Deployment Notes
+
+- All routing is handled via `BrowserRouter`  
+- SPA-friendly fallback is handled with `404.html` + redirect logic  
+- Public deployment is handled through GitHub Pages using a CNAME record  
+- Environment-specific logic is abstracted from this frontend repo  
+
+---
+
+## ⚠️ Licensing & Usage
+
+This is a private project.  
+Do **not** clone, reuse, or redistribute any part of this repository or its contents without explicit permission.
+
+**Final Fantasy XIV** is © SQUARE ENIX CO., LTD.  
+This site is an independent fan project and is not affiliated with or endorsed by Square Enix.
 
 ---
 
 ## 🔗 Live Preview
 
-Staging site:  
-🌐 [https://test.finalfxiv.com](https://test.finalfxiv.com)
-
-Production launch:  
-🌐 [https://www.finalfxiv.com](https://www.finalfxiv.com)
+- Staging: [https://test.finalfxiv.com](https://test.finalfxiv.com)  
+- Production: [https://www.finalfxiv.com](https://www.finalfxiv.com)  
 
 ---
