@@ -1,6 +1,6 @@
 ﻿// src/components/JobGuides.tsx
 import JobCard from './JobCard';
-import { jobGuides } from '../../data/jobGuidesData';
+import { jobGuides } from '../../data/quickAccessJobGuideData';
 
 export default function JobGuides() {
     return (

@@ -39,9 +39,15 @@ export function JobGuidePage() {
                     </p>
                     <a
                         href="/all-jobs"
-                        className="inline-block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition"
+                        className="inline-block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition mr-2"
                     >
                         Go Back to All Jobs
+                    </a>
+                    <a
+                        href="/home"
+                        className="inline-block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition ml-2"
+                    >
+                        Go Back to Home Page
                     </a>
                 </div>
             </div>

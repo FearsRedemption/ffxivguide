@@ -23,7 +23,7 @@ export const jobGuides = [
         name: 'White Mage',
         role: 'HEALER',
         icon: whitemage,
-        link: '/job/whitemage',
+        link: '/job/white-mage',
         roleColor: 'text-green-600',
         roleBg: 'bg-green-50',
         borderColor: 'border-green-600'
@@ -41,7 +41,7 @@ export const jobGuides = [
         name: 'Black Mage',
         role: 'MAGICAL DPS',
         icon: blackmage,
-        link: '/job/blackmage',
+        link: '/job/black-mage',
         roleColor: 'text-purple-600',
         roleBg: 'bg-purple-50',
         borderColor: 'border-purple-600'
@@ -86,7 +86,7 @@ export const jobGuides = [
         name: 'Dark Knight',
         role: 'TANK',
         icon: darkknight,
-        link: '/job/darkknight',
+        link: '/job/dark-knight',
         roleColor: 'text-blue-600',
         roleBg: 'bg-blue-50',
         borderColor: 'border-blue-600'
