@@ -1,95 +1,230 @@
 # 🧙 FinalFXIV – Internal Guide Platform
 
-**FinalFXIV** is a privately owned and internally developed React + TypeScript web application for delivering Final Fantasy XIV job, dungeon, and raid content.
-
-It is visually inspired by an earlier prototype built on Readdy.ai, but all functionality is now being rebuilt in modular React components with a Vite + Tailwind CSS pipeline. No dependencies on third-party web builders remain.
+**FinalFXIV** is a fully custom-built React + TypeScript web platform for delivering curated Final Fantasy XIV content. From job guides and dungeon strategies to Free Company tools and themed UI elements, the site emphasizes clarity, speed, and extensibility—offering a polished fan experience for players and community members alike.
 
 ---
 
 ## ⚙️ Tech Stack
 
 - ⚛️ React 18 with TypeScript  
-- ⚡ Vite build system  
-- 💨 Tailwind CSS v4 (utility-first styling)  
-- 🔁 React Router DOM (clean, hash-free URLs)  
-- 🔐 Access gating system for early content  
-- 📬 Email form system (currently integrated with an external endpoint)  
-- 🌐 Hosted via GitHub Pages using a custom domain  
+- ⚡ Vite (fast bundling, native ESM)  
+- 💨 Tailwind CSS v4 (utility-first with dark/light mode support)  
+- 🔁 React Router DOM (SPA routing with clean URLs)  
+- 🧠 Global state via Context + custom Hooks  
+- 🌐 Deployed with GitHub Pages and custom domain  
+- 📬 Email forms integrated with a secured backend  
+- 🔒 Route fallback and redirect logic for smooth SPA navigation  
+
+---
+
+## 📁 Project Structure
+
+```txt
+src/
+├── assets/
+│   └── images/
+│       ├── classes/
+│       │   ├── DPS.png
+│       │   ├── Filtered.png
+│       │   ├── Healer.png
+│       │   ├── Magical Ranged DPS.png
+│       │   ├── Melee DPS.png
+│       │   ├── Physical Ranged DPS.png
+│       │   └── Tank.png
+│       ├── fc-members/
+│       │   ├── juneko.png
+│       │   ├── visenyaa.png
+│       │   └── whisper.png
+│       ├── job-hero/
+│       │   ├── Astrologian.png ... WhiteMage.png
+│       ├── job-icon/
+│       │   ├── Astrologian.png ... White Mage.png
+│       ├── skills/
+│       │   ├── astrologian/
+│       │   ├── bard/
+│       │   ├── blackmage/
+│       │   └── ... (includes all jobs: reaper, viper, pictomancer, etc.)
+│       ├── crafter-guide.png
+│       ├── crystal-background.jpg
+│       ├── donator.png
+│       ├── Featurerequest1_Icon.png
+│       ├── final ffxiv purple.png
+│       ├── free user.png
+│       ├── juni.png
+│       ├── lodestone me.jpg
+│       ├── Main Scenario.png
+│       ├── newsletter.jpg
+│       ├── Subscribed User.png
+│       ├── ultimate-raid-guide.png
+│       ├── vice pres.jpg
+│       ├── zone-guide.png
+│       └── react.svg
+│
+├── components/
+│   ├── battleguide/
+│   │   ├── AllJobCard.tsx
+│   │   └── JobCategorySection.tsx
+│   ├── contact/
+│   │   ├── ContactForm.tsx
+│   │   ├── ContactInfo.tsx
+│   │   └── FAQSection.tsx
+│   ├── home/
+│   │   ├── Community.tsx
+│   │   ├── FeaturedGuides.tsx
+│   │   ├── FreeCompanyCard.tsx
+│   │   ├── GilMaking.tsx
+│   │   ├── GuideCard.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── JobCard.tsx
+│   │   ├── JobGuides.tsx
+│   │   ├── QuickAccess.tsx
+│   │   ├── SupportCard.tsx
+│   │   └── ToolCard.tsx
+│   ├── personalfc/
+│   │   ├── BenefitCard.tsx
+│   │   ├── FCAchievements.tsx
+│   │   ├── FCActivities.tsx
+│   │   ├── FCActivitiesCalendar.tsx
+│   │   ├── FCApply.tsx
+│   │   ├── FCBenefits.tsx
+│   │   ├── FCHero.tsx
+│   │   ├── FCMembers.tsx
+│   │   ├── FCOverview.tsx
+│   │   ├── FCRecruitment.tsx
+│   │   ├── FCSectionNav.tsx
+│   │   ├── RoleCard.tsx
+│   │   └── UpcomingEvents.tsx
+│   ├── privacy/
+│   │   ├── DataRightsGrid.tsx
+│   │   ├── InfoGrid.tsx
+│   │   ├── LegalComplianceSection.tsx
+│   │   ├── PolicyUpdatesSection.tsx
+│   │   └── SecurityContactGrid.tsx
+│   └── tos/
+│       ├── TermsOverview.tsx
+│       └── WebsiteUsage.tsx
+│   ├── Footer.tsx
+│   ├── Header.tsx
+│   ├── PageHeader.tsx
+│   └── RedirectHandler.tsx
+│
+├── context/
+│   ├── AccessContext.tsx
+│   ├── ContactFormContext.tsx
+│   ├── FCApplyFormContext.tsx
+│   └── SubscriptionContext.tsx
+│
+├── data/
+│   ├── allJobsData.ts
+│   ├── fcAchievementsData.ts
+│   ├── fcEventsData.ts
+│   ├── fcMembersData.ts
+│   ├── featuredGuidesData.ts
+│   ├── gilToolsData.ts
+│   ├── jobGuideData.ts
+│   └── jobGuidesData.ts
+│
+├── hooks/
+│   ├── useAccess.ts
+│   ├── useContactForm.ts
+│   ├── useDarkMode.ts
+│   ├── useFCApplyForm.ts
+│   ├── useServerStatus.ts
+│   └── useSubscription.ts
+│
+├── pages/
+│   ├── AllJobs.tsx
+│   ├── ComingSoon.tsx
+│   ├── Contact.tsx
+│   ├── Home.tsx
+│   ├── JobGuidePage.tsx
+│   ├── Login.tsx
+│   ├── NotFound.tsx
+│   ├── PersonalFreeCompany.tsx
+│   ├── PrivacyPolicy.tsx
+│   ├── Register.tsx
+│   └── TermsOfService.tsx
+│
+├── styles/
+│   └── index.css
+│
+├── types/
+│   └── JobGuideContent.ts
+│
+├── utils/
+│   └── slugify.ts
+│
+├── App.tsx
+├── main.tsx
+└── vite-env.d.ts
+```
+
+---
+
+## ✅ Key Features
+
+- 📘 **Modular Job Guides**  
+  Job-by-job breakdowns with difficulty ratings, unlock levels, prerequisites, rotation steps, and skill icons. All content is structured using data-driven React components.
+
+- 🏘 **Free Company Hub**  
+  Dedicated FC features include an event calendar, member showcase, and an application form for prospective recruits.
+
+- 🖼 **Light/Dark Mode**  
+  Theme toggle implemented using `useDarkMode` with centralized Tailwind support via `index.css`.
+
+- 🔍 **Search & Filtering**  
+  Overview pages for jobs and content include role-based filtering and difficulty sorting.
+
+- 📺 **Featured Video Guides**  
+  Hand-picked guide videos with thumbnails, metadata, and performance tags displayed in a responsive carousel.
+
+- 📬 **Forms with Hook Context**  
+  Contact and FC applications powered by `useContactForm`, `useFCApplyForm`, and `useSubscription`, with validation and state tracking via context.
+
+- 🚦 **Live Server Status Hook**  
+  Simple world status checker using `useServerStatus` with color-coded display.
+
+- 📦 **Static Asset Resolution**  
+  Skill icons, banners, and images resolved via `import.meta.url` to support clean builds and relative imports.
+
+- 🧭 **404 Support + Redirects**  
+  `404.html` + `RedirectHandler.tsx` enable proper client-side routing for all GitHub Pages routes.
+
+---
+
+## 📌 In Progress
+
+- ⚔ **Combat Guides** – Dungeon, raid, and trial breakdowns  
+- 💰 **Gil Making Tools** – Marketboard tips, retainers, and farming routes  
+- 🔨 **Crafting/Gathering** – Rotations, node maps, and specialist tips  
+- 🏡 **Housing & Glamour** – Decorating guides, creative fashion ideas  
+- 🖼 **Skill Icon Completion** – Ongoing import of missing icons into the `/skills` folder  
+- ⚙️ **Additional Form Backends** – Future integration of enhanced secure endpoints
 
 ---
 
 ## 🔒 Deployment Notes
 
-This is a private project and not intended for cloning or reuse.
-
-- `BrowserRouter` is used to enable clean URLs (e.g., `/home`, `/login`)  
-- A `404.html` is included to enable client-side routing via redirect fallback  
-- `RedirectHandler.tsx` handles those redirects on app mount  
-- Readdy.ai elements are being phased out and replaced with fully React-driven logic  
+- All routing is handled via `BrowserRouter`  
+- SPA-friendly fallback is handled with `404.html` + redirect logic  
+- Public deployment is handled through GitHub Pages using a CNAME record  
+- Environment-specific logic is abstracted from this frontend repo  
 
 ---
 
-## 📁 Project Structure Overview
+## ⚠️ Licensing & Usage
 
-```txt
-ffxivguide/
-├── public/
-│   ├── 404.html               # GitHub Pages SPA redirect fallback
-│   └── favicon.ico            # Optional site icon
-│
-├── src/
-│   ├── components/            # Reusable UI components (e.g., RedirectHandler)
-│   ├── context/               # Global state providers (AccessProvider, SubscriptionProvider)
-│   ├── hooks/                 # Custom hooks for shared logic
-│   ├── pages/                 # Route views like ComingSoon, Home, NotFound
-│   ├── styles/                # Tailwind base + global CSS (index.css)
-│   ├── App.tsx                # Main routing structure with <Routes>
-│   ├── main.tsx               # App entry point (ReactDOM, BrowserRouter, Providers)
-│   └── vite-env.d.ts          # Vite type declarations
-│
-├── index.html                 # Vite root HTML (loaded on all routes)
-├── package.json               # Project metadata and scripts
-├── tailwind.config.cjs        # Tailwind v4 config (CJS)
-├── tsconfig.json              # TypeScript compiler config
-├── tsconfig.node.json         # TS config for Vite's dev server
-├── vite.config.ts             # Vite config (base path, plugins, etc.)
-└── README.md                  # Project overview and internal documentation
-```
+This is a private project.  
+Do **not** clone, reuse, or redistribute any part of this repository or its contents without explicit permission.
+
+**Final Fantasy XIV** is © SQUARE ENIX CO., LTD.  
+This site is an independent fan project and is not affiliated with or endorsed by Square Enix.
 
 ---
 
-## ✅ Current Features
+## 🔗 Live Preview
 
-- "Coming Soon" page layout fully ported to React  
-- Fully responsive layout using Tailwind v4  
-- Early access system for donors and testers  
-- Email capture form (currently connected to third-party form endpoint)  
-- GitHub Pages deployment with clean URL routing  
-- Structured route pages (e.g., `/home`, `/job/:jobName`, `/register`)  
+- Staging: [https://test.finalfxiv.com](https://test.finalfxiv.com)  
+- Production: [https://www.finalfxiv.com](https://www.finalfxiv.com)  
 
 ---
-
-## 🧱 Migration Status
-
-- ✅ Readdy.ai visuals reimplemented using React components  
-- ✅ GitHub Pages routing fully working  
-- 🚧 Email & access backend will eventually be replaced with a custom API  
-- 🚧 Guide content pages under construction  
-- 🚧 Authentication and gated content in planning  
-
----
-
-## ⚠️ Licensing & Use
-
-This project is proprietary.  
-Do **not** clone, distribute, or reuse code or branding without explicit permission.  
-Final Fantasy XIV is © SQUARE ENIX CO., LTD. and this site is not affiliated with them.
-
----
-
-## 🔗 Internal Preview
-
-Live Site (custom domain):  
-[https://test.finalfxiv.com](https://test.finalfxiv.com)
-
-Admin or backend access not exposed publicly. Contact the project owner for access.
