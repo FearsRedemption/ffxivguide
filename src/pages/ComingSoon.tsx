@@ -1,14 +1,11 @@
-﻿// src/pages/ComingSoon.tsx
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+﻿import { useEffect, useState } from 'react';
 import '../styles/index.css';
+import { useAccess } from '../hooks/useAccess';
 
 import CrystalBackground from '../assets/images/crystal-background.jpg';
 import Logo from '../assets/images/final fxiv purple.png';
 
 export default function ComingSoon() {
-    const navigate = useNavigate();
-
     // Notify Me Form (Mocked)
     const [notifyEmail, setNotifyEmail] = useState('');
     const [notifyMessage, setNotifyMessage] = useState('');
@@ -27,24 +24,23 @@ export default function ComingSoon() {
         }
     };
 
-    // Early Access Code Form (Mocked)
-    const [accessEmail, setAccessEmail] = useState('');
-    const [accessCode, setAccessCode] = useState('');
-    const [accessMessage, setAccessMessage] = useState('');
-    const [accessStatus, setAccessStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    // Access context for Early Access code form
+    const {
+        email,
+        code,
+        status: accessStatus,
+        message: accessMessage,
+        setEmail,
+        setCode,
+        verify,
+    } = useAccess();
 
     const handleAccessSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (accessEmail.trim().toLowerCase() === 'test@ff.com' && accessCode.trim() === '0792') {
-            setAccessStatus('success');
-            setAccessMessage('Access granted! Redirecting...');
-            setTimeout(() => navigate('/home'), 1000);
-        } else {
-            setAccessStatus('error');
-            setAccessMessage('Invalid email or access code.');
-        }
+        verify(); // Will handle localStorage, state, and redirect
     };
 
+    // Smooth scroll anchors
     useEffect(() => {
         const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
         const handleClick = (e: Event) => {
@@ -113,7 +109,6 @@ export default function ComingSoon() {
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Feature cards */}
                         {[
                             ['ri-sword-line', 'Combat Guides', 'Master every job with our detailed rotation guides, openers, and optimization tips for both casual and savage content.', 'bg-red-300', 'text-red-700'],
                             ['ri-building-4-line', 'Raid Strategies', 'Step-by-step walkthroughs for all raids, trials, and dungeons with visual guides and mechanic breakdowns.', 'bg-orange-300', 'text-orange-700'],
@@ -163,16 +158,16 @@ export default function ComingSoon() {
                                 <input
                                     type="email"
                                     placeholder="Your email address"
-                                    value={accessEmail}
-                                    onChange={(e) => setAccessEmail(e.target.value)}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     required
                                     className="w-full px-4 py-3 bg-slate-900 border-none !rounded-button text-white placeholder-slate-500 focus:ring-2 focus:ring-primary outline-none"
                                 />
                                 <input
                                     type="text"
                                     placeholder="Enter your access code"
-                                    value={accessCode}
-                                    onChange={(e) => setAccessCode(e.target.value)}
+                                    value={code}
+                                    onChange={(e) => setCode(e.target.value)}
                                     required
                                     className="w-full px-4 py-3 bg-slate-900 border-none !rounded-button text-white placeholder-slate-500 focus:ring-2 focus:ring-primary outline-none"
                                 />

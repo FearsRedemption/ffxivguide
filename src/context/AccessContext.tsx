@@ -1,5 +1,9 @@
-import { createContext, useContext, useState, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+// Constants (for mock access — replace with backend check later)
+const TEST_EMAIL = 'test@ffxiv.com';
+const TEST_CODE = '0792';
 
 export interface AccessState {
     email: string;
@@ -38,6 +42,7 @@ const AccessContext = createContext<{
 });
 
 export const AccessProvider = ({ children }: { children: ReactNode }) => {
+    const navigate = useNavigate();
     const [state, setState] = useState<AccessState>(() => {
         const stored = localStorage.getItem('ffxiv_verified');
         return {
@@ -46,7 +51,13 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
         };
     });
 
-    const navigate = useNavigate();
+    // ✅ Sync localStorage if changed outside this context
+    useEffect(() => {
+        const stored = localStorage.getItem('ffxiv_verified');
+        if (stored === 'true' && !state.isVerified) {
+            setState((s) => ({ ...s, isVerified: true }));
+        }
+    }, []);
 
     const setEmail = (email: string) =>
         setState((s) => ({ ...s, email }));
@@ -62,8 +73,8 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
         }));
 
         if (
-            state.email.trim().toLowerCase() === 'test@ffxiv.com' &&
-            state.code.trim() === '0792'
+            state.email.trim().toLowerCase() === TEST_EMAIL &&
+            state.code.trim() === TEST_CODE
         ) {
             localStorage.setItem('ffxiv_verified', 'true');
             setState((s) => ({
