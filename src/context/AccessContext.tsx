@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect, type ReactNode } from '
 import { useNavigate } from 'react-router-dom';
 
 // Constants (for mock access — replace with backend check later)
-const TEST_EMAIL = 'test@ffxiv.com';
+const TEST_EMAIL = 'test@ff.com';
 const TEST_CODE = '0792';
 
 export interface AccessState {
