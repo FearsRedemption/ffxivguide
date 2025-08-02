@@ -18,7 +18,7 @@ export interface AccessActions {
 const defaultAccess: AccessState = {
     email: '',
     code: '',
-    isVerified: false,
+    isVerified: localStorage.getItem('ffxiv_verified') === 'true',
     status: 'idle',
     message: '',
 };
@@ -52,11 +52,11 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
             message: 'Verifying access credentials...',
         }));
 
-        // Simulated verification (replace with Supabase later)
         if (
             state.email.trim().toLowerCase() === 'test@ffxiv.com' &&
             state.code.trim() === '0792'
         ) {
+            localStorage.setItem('ffxiv_verified', 'true'); // ✅ Store verified flag
             setState((s) => ({
                 ...s,
                 isVerified: true,
@@ -65,6 +65,7 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
             }));
             setTimeout(() => navigate('/home'), 1000);
         } else {
+            localStorage.removeItem('ffxiv_verified'); // ❌ Ensure false is cleared
             setState((s) => ({
                 ...s,
                 isVerified: false,
