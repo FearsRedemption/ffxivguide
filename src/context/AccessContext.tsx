@@ -13,12 +13,13 @@ export interface AccessActions {
     setEmail: (email: string) => void;
     setCode: (code: string) => void;
     verify: () => void;
+    resetAccess: () => void;
 }
 
 const defaultAccess: AccessState = {
     email: '',
     code: '',
-    isVerified: localStorage.getItem('ffxiv_verified') === 'true',
+    isVerified: false,
     status: 'idle',
     message: '',
 };
@@ -32,11 +33,19 @@ const AccessContext = createContext<{
         setEmail: () => {},
         setCode: () => {},
         verify: () => {},
+        resetAccess: () => {},
     },
 });
 
 export const AccessProvider = ({ children }: { children: ReactNode }) => {
-    const [state, setState] = useState<AccessState>(defaultAccess);
+    const [state, setState] = useState<AccessState>(() => {
+        const stored = localStorage.getItem('ffxiv_verified');
+        return {
+            ...defaultAccess,
+            isVerified: stored === 'true',
+        };
+    });
+
     const navigate = useNavigate();
 
     const setEmail = (email: string) =>
@@ -56,7 +65,7 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
             state.email.trim().toLowerCase() === 'test@ffxiv.com' &&
             state.code.trim() === '0792'
         ) {
-            localStorage.setItem('ffxiv_verified', 'true'); // ✅ Store verified flag
+            localStorage.setItem('ffxiv_verified', 'true');
             setState((s) => ({
                 ...s,
                 isVerified: true,
@@ -65,7 +74,7 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
             }));
             setTimeout(() => navigate('/home'), 1000);
         } else {
-            localStorage.removeItem('ffxiv_verified'); // ❌ Ensure false is cleared
+            localStorage.removeItem('ffxiv_verified');
             setState((s) => ({
                 ...s,
                 isVerified: false,
@@ -73,6 +82,11 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
                 message: 'Invalid email or access code. Please try again.',
             }));
         }
+    };
+
+    const resetAccess = () => {
+        localStorage.removeItem('ffxiv_verified');
+        setState((s) => ({ ...s, isVerified: false }));
     };
 
     return (
@@ -83,6 +97,7 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
                     setEmail,
                     setCode,
                     verify,
+                    resetAccess,
                 },
             }}
         >

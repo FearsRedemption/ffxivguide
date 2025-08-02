@@ -12,5 +12,6 @@ export function useAccess() {
         setEmail: actions.setEmail,
         setCode: actions.setCode,
         verify: actions.verify,
+        resetAccess: actions.resetAccess,
     };
 }
