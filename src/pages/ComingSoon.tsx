@@ -118,24 +118,7 @@ export default function ComingSoon() {
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {[
-                            ['ri-sword-line', 'Combat Guides', 'Master every job with detailed rotations, openers, and savage prep.', 'bg-red-300', 'text-red-700'],
-                            ['ri-building-4-line', 'Raid Strategies', 'Walkthroughs for all raids, trials, and dungeons with mechanic breakdowns.', 'bg-orange-300', 'text-orange-700'],
-                            ['ri-map-2-line', 'Interactive Maps', 'Nodes, aether currents, treasure maps, and rare hunt overlays.', 'bg-yellow-300', 'text-yellow-700'],
-                            ['ri-coins-line', 'Gil Making Guides', 'Profit via crafting, gathering, and market board flipping.', 'bg-green-300', 'text-green-700'],
-                            ['ri-hammer-line', 'Crafting & Gathering', 'Leveling, rotations, and expert crafting/gathering tips.', 'bg-blue-300', 'text-blue-700'],
-                            ['ri-community-line', 'Community Tools', 'DPS calculators, gear planners, and party finder integration.', 'bg-purple-300', 'text-purple-700'],
-                        ].map(([icon, title, desc, bg, color], i) => (
-                            <div key={i} className="feature-card p-6 rounded-lg border border-slate-700">
-                                <div className="flex items-center mb-4 space-x-3">
-                                    <div className={`w-12 h-12 flex items-center justify-center ${bg} rounded-full`}>
-                                        <i className={`${icon} ${color} ri-lg`}></i>
-                                    </div>
-                                    <h3 className="text-xl font-semibold">{title}</h3>
-                                </div>
-                                <p>{desc}</p>
-                            </div>
-                        ))}
+                        {/* Feature Cards */}
                     </div>
                 </div>
             </section>
@@ -149,10 +132,12 @@ export default function ComingSoon() {
                         <p className="text-white max-w-2xl mx-auto">
                             Donate to help us launch faster. $5+ gets you an early access code.
                         </p>
+                        <p className="text-sm text-slate-400 mt-2">Already donated? Just enter your email below to receive or resend your code.</p>
                     </div>
                     <div className="max-w-4xl mx-auto bg-slate-900/90 p-8 rounded-lg border border-slate-700">
                         <a
-                            href="https://www.paypal.com/donate/?hosted_button_id=P9V4NDZSTNGZ8"
+                            // TODO: Add VITE_PAYPAL_DONATION_URL to .env
+                            href={import.meta.env.VITE_PAYPAL_DONATION_URL || "https://www.paypal.com/donate/?hosted_button_id=P9V4NDZSTNGZ8"} 
                             target="_blank"
                             rel="noopener"
                             className="w-full block bg-primary hover:bg-opacity-90 text-white py-4 !rounded-button text-lg font-medium text-center mb-6"
