@@ -71,7 +71,16 @@ export default function ComingSoon() {
                         <span className="block mt-2">Coming Soon</span>
                     </h1>
                     <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-                        The ultimate resource for Final Fantasy XIV players. Guides, strategies, and tools for mastering Eorzea.
+                        FinalFXIV is your all-in-one resource for Final Fantasy XIV. Whether you're a new player, a returning adventurer, or a high-end raider, our detailed guides, tools, and strategies are built to help you master every job, role, and encounter across Eorzea.
+                    </p>
+                    <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                        Sign up here to be notified by email when the site reaches a more complete and stable release.
+                    </p>
+                    <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                        Have an access code? Scroll down and enter your email and code to unlock early access and help shape the future of FinalFXIV.
+                    </p>
+                    <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                        Early access is granted to anyone who donates $5 or more, giving you a chance to explore features early, offer feedback, and support the development of community-driven content.
                     </p>
 
                     {/* Notify Me Form */}
