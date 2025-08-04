@@ -51,19 +51,28 @@ export default function ComingSoon() {
 
     // Smooth scroll anchors
     useEffect(() => {
-        const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
-        const handleClick = (e: Event) => {
-            e.preventDefault();
-            const anchor = e.currentTarget as HTMLAnchorElement;
-            const targetId = anchor.getAttribute('href')!.slice(1);
-            if (!targetId) return;
-            const targetEl = document.getElementById(targetId);
-            if (targetEl) {
-                window.scrollTo({ top: targetEl.offsetTop - 80, behavior: 'smooth' });
-            }
+        const onLoad = () => {
+            const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
+            const handleClick = (e: Event) => {
+                e.preventDefault();
+                const anchor = e.currentTarget as HTMLAnchorElement;
+                const targetId = anchor.getAttribute('href')!.slice(1);
+                if (!targetId) return;
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    window.scrollTo({ top: targetEl.offsetTop - 80, behavior: 'smooth' });
+                }
+            };
+            anchors.forEach(a => a.addEventListener('click', handleClick));
+            return () => anchors.forEach(a => a.removeEventListener('click', handleClick));
         };
-        anchors.forEach(a => a.addEventListener('click', handleClick));
-        return () => anchors.forEach(a => a.removeEventListener('click', handleClick));
+
+        if (document.readyState === 'complete') {
+            onLoad();
+        } else {
+            window.addEventListener('load', onLoad);
+            return () => window.removeEventListener('load', onLoad);
+        }
     }, []);
 
     return (
