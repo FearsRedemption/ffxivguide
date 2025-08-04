@@ -1,6 +1,7 @@
 ﻿import { useEffect, useState } from 'react';
 import '../styles/index.css';
 import { useAccess } from '../hooks/useAccess';
+import { useNotifyMe } from "../hooks/useNotifyMe";
 
 import CrystalBackground from '../assets/images/crystal-background.jpg';
 import Logo from '../assets/images/final fxiv purple.png';
@@ -10,17 +11,25 @@ export default function ComingSoon() {
     const [notifyEmail, setNotifyEmail] = useState('');
     const [notifyMessage, setNotifyMessage] = useState('');
     const [notifyStatus, setNotifyStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const { submitEmail } = useNotifyMe();
 
-    const handleNotifySubmit = (e: React.FormEvent) => {
+    const handleNotifySubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
         if (!notifyEmail.includes('@')) {
             setNotifyStatus('error');
             setNotifyMessage('Please enter a valid email.');
-        } else {
+            return;
+        }
+
+        const result = await submitEmail(notifyEmail);
+
+        if (result.success) {
             setNotifyStatus('success');
             setNotifyMessage('Thank you! You’ll be notified when we launch.');
-            // TODO: Replace with Supabase insert
-            console.log('Saved notify email:', notifyEmail);
+        } else {
+            setNotifyStatus('error');
+            setNotifyMessage(`Failed to save email: ${result.error}`);
         }
     };
 
