@@ -1,26 +1,22 @@
-﻿export const useNotifyMe = () => {
+﻿export function useNotifyMe() {
     const submitEmail = async (email: string): Promise<{ success: boolean; error?: string }> => {
         try {
-            const res = await fetch('/api/notifyme', {
+            const res = await fetch(import.meta.env.VITE_NOTIFY_ENDPOINT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email }),
             });
 
-            const text = await res.text(); // ← get raw text
-            console.log('Raw response:', text);
-
-            const result = JSON.parse(text); // now safely parse
-
             if (!res.ok) {
-                return { success: false, error: result.error || 'Something went wrong.' };
+                const error = await res.json();
+                return { success: false, error: error.message || 'Failed to subscribe' };
             }
 
             return { success: true };
-        } catch (err: any) {
-            return { success: false, error: err.message || 'Network error.' };
+        } catch (err) {
+            return { success: false, error: 'Network error or invalid response' };
         }
     };
 
     return { submitEmail };
-};
+}

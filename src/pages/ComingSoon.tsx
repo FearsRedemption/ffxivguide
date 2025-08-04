@@ -7,33 +7,11 @@ import CrystalBackground from '../assets/images/crystal-background.jpg';
 import Logo from '../assets/images/final fxiv purple.png';
 
 export default function ComingSoon() {
-    // Notify Me Form (Mocked)
     const [notifyEmail, setNotifyEmail] = useState('');
     const [notifyMessage, setNotifyMessage] = useState('');
     const [notifyStatus, setNotifyStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const { submitEmail } = useNotifyMe();
 
-    const handleNotifySubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (!notifyEmail.includes('@')) {
-            setNotifyStatus('error');
-            setNotifyMessage('Please enter a valid email.');
-            return;
-        }
-
-        const result = await submitEmail(notifyEmail);
-
-        if (result.success) {
-            setNotifyStatus('success');
-            setNotifyMessage('Thank you! You’ll be notified when we launch.');
-        } else {
-            setNotifyStatus('error');
-            setNotifyMessage(`Failed to save email: ${result.error}`);
-        }
-    };
-
-    // Access context for Early Access code form
     const {
         email,
         code,
@@ -44,75 +22,79 @@ export default function ComingSoon() {
         verify,
     } = useAccess();
 
-    const handleAccessSubmit = (e: React.FormEvent) => {
+    const handleNotifySubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        verify(); // Will handle localStorage, state, and redirect
+        if (!notifyEmail.includes('@')) {
+            setNotifyStatus('error');
+            setNotifyMessage('Please enter a valid email.');
+            return;
+        }
+
+        const result = await submitEmail(notifyEmail);
+        if (result.success) {
+            setNotifyStatus('success');
+            setNotifyMessage('Thank you! You’ll be notified when we launch.');
+        } else {
+            setNotifyStatus('error');
+            setNotifyMessage(`Failed to save email: ${result.error}`);
+        }
     };
 
-    // Smooth scroll anchors
+    const handleAccessSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        verify();
+    };
+
+    // Smooth scroll to section anchors
     useEffect(() => {
-        const onLoad = () => {
-            const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
-            const handleClick = (e: Event) => {
-                e.preventDefault();
-                const anchor = e.currentTarget as HTMLAnchorElement;
-                const targetId = anchor.getAttribute('href')!.slice(1);
-                if (!targetId) return;
-                const targetEl = document.getElementById(targetId);
-                if (targetEl) {
-                    window.scrollTo({ top: targetEl.offsetTop - 80, behavior: 'smooth' });
-                }
-            };
-            anchors.forEach(a => a.addEventListener('click', handleClick));
-            return () => anchors.forEach(a => a.removeEventListener('click', handleClick));
+        const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
+        const handleClick = (e: Event) => {
+            e.preventDefault();
+            const anchor = e.currentTarget as HTMLAnchorElement;
+            const target = document.getElementById(anchor.getAttribute('href')!.slice(1));
+            if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
         };
 
-        if (document.readyState === 'complete') {
-            onLoad();
-        } else {
-            window.addEventListener('load', onLoad);
-            return () => window.removeEventListener('load', onLoad);
-        }
+        anchors.forEach(a => a.addEventListener('click', handleClick));
+        return () => anchors.forEach(a => a.removeEventListener('click', handleClick));
     }, []);
 
     return (
         <>
             {/* Hero Section */}
             <section className="hero-bg min-h-screen flex items-center pt-20 pb-16">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-                            <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                                FinalFXIV Guides
-                            </span>
-                            <span className="block mt-2">Coming Soon</span>
-                        </h1>
-                        <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-                            The ultimate resource for Final Fantasy XIV players. Comprehensive guides, strategies, and tools to master every aspect of Eorzea.
-                        </p>
+                <div className="container mx-auto px-4 text-center max-w-4xl">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                        <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                            FinalFXIV Guides
+                        </span>
+                        <span className="block mt-2">Coming Soon</span>
+                    </h1>
+                    <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                        The ultimate resource for Final Fantasy XIV players. Guides, strategies, and tools for mastering Eorzea.
+                    </p>
 
-                        {/* Notify Me Form */}
-                        <div id="subscribe" className="max-w-md mx-auto bg-slate-800/80 backdrop-blur-md p-6 rounded-lg border border-slate-700">
-                            <h3 className="text-white text-xl font-semibold mb-4">Get Notified When We Launch</h3>
-                            <form onSubmit={handleNotifySubmit} className="flex flex-col space-y-4">
-                                <input
-                                    type="email"
-                                    value={notifyEmail}
-                                    onChange={(e) => setNotifyEmail(e.target.value)}
-                                    placeholder="Your email address"
-                                    required
-                                    className="w-full px-4 py-3 bg-slate-900 border-none !rounded-button text-white placeholder-slate-500 focus:ring-2 focus:ring-primary outline-none"
-                                />
-                                <button type="submit" className="bg-primary text-white py-3 px-6 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors font-medium">
-                                    Notify Me
-                                </button>
-                                {notifyStatus !== 'idle' && (
-                                    <div className={`text-center py-2 px-4 rounded-button ${notifyStatus === 'success' ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'}`}>
-                                        {notifyMessage}
-                                    </div>
-                                )}
-                            </form>
-                        </div>
+                    {/* Notify Me Form */}
+                    <div id="subscribe" className="max-w-md mx-auto bg-slate-800/80 backdrop-blur-md p-6 rounded-lg border border-slate-700">
+                        <h3 className="text-white text-xl font-semibold mb-4">Get Notified When We Launch</h3>
+                        <form onSubmit={handleNotifySubmit} className="flex flex-col space-y-4">
+                            <input
+                                type="email"
+                                value={notifyEmail}
+                                onChange={(e) => setNotifyEmail(e.target.value)}
+                                placeholder="Your email address"
+                                required
+                                className="w-full px-4 py-3 bg-slate-900 border-none !rounded-button text-white placeholder-slate-500 focus:ring-2 focus:ring-primary outline-none"
+                            />
+                            <button type="submit" className="bg-primary text-white py-3 px-6 !rounded-button font-medium hover:bg-opacity-90">
+                                Notify Me
+                            </button>
+                            {notifyStatus !== 'idle' && (
+                                <div className={`text-center py-2 px-4 rounded-button ${notifyStatus === 'success' ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'}`}>
+                                    {notifyMessage}
+                                </div>
+                            )}
+                        </form>
                     </div>
                 </div>
             </section>
@@ -123,17 +105,17 @@ export default function ComingSoon() {
                     <div className="text-center mb-12">
                         <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">What to Expect</h2>
                         <p className="text-white max-w-2xl mx-auto">
-                            Explore our upcoming comprehensive guides designed to help you master every aspect of Final Fantasy XIV.
+                            Explore comprehensive guides to master every job, encounter, and system in Final Fantasy XIV.
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            ['ri-sword-line', 'Combat Guides', 'Master every job with our detailed rotation guides, openers, and optimization tips for both casual and savage content.', 'bg-red-300', 'text-red-700'],
-                            ['ri-building-4-line', 'Raid Strategies', 'Step-by-step walkthroughs for all raids, trials, and dungeons with visual guides and mechanic breakdowns.', 'bg-orange-300', 'text-orange-700'],
-                            ['ri-map-2-line', 'Interactive Maps', 'Detailed maps for gathering nodes, aether currents, treasure hunts, and other collectibles throughout Eorzea.', 'bg-yellow-300', 'text-yellow-700'],
-                            ['ri-coins-line', 'Gil Making Guides', 'Effective strategies for making gil through crafting, gathering, market board flipping, and other lucrative activities.', 'bg-green-300', 'text-green-700'],
-                            ['ri-hammer-line', 'Crafting & Gathering', 'Leveling guides, rotation tips, and best practices for Disciples of the Hand and Land from beginner to expert.', 'bg-blue-300', 'text-blue-700'],
-                            ['ri-community-line', 'Community Tools', 'Party finder integration, DPS calculators, gear planners, and other tools to enhance your FFXIV experience.', 'bg-purple-300', 'text-purple-700'],
+                            ['ri-sword-line', 'Combat Guides', 'Master every job with detailed rotations, openers, and savage prep.', 'bg-red-300', 'text-red-700'],
+                            ['ri-building-4-line', 'Raid Strategies', 'Walkthroughs for all raids, trials, and dungeons with mechanic breakdowns.', 'bg-orange-300', 'text-orange-700'],
+                            ['ri-map-2-line', 'Interactive Maps', 'Nodes, aether currents, treasure maps, and rare hunt overlays.', 'bg-yellow-300', 'text-yellow-700'],
+                            ['ri-coins-line', 'Gil Making Guides', 'Profit via crafting, gathering, and market board flipping.', 'bg-green-300', 'text-green-700'],
+                            ['ri-hammer-line', 'Crafting & Gathering', 'Leveling, rotations, and expert crafting/gathering tips.', 'bg-blue-300', 'text-blue-700'],
+                            ['ri-community-line', 'Community Tools', 'DPS calculators, gear planners, and party finder integration.', 'bg-purple-300', 'text-purple-700'],
                         ].map(([icon, title, desc, bg, color], i) => (
                             <div key={i} className="feature-card p-6 rounded-lg border border-slate-700">
                                 <div className="flex items-center mb-4 space-x-3">
@@ -149,17 +131,17 @@ export default function ComingSoon() {
                 </div>
             </section>
 
-            {/* Donation & Early Access */}
+            {/* Donation + Early Access Section */}
             <section id="donate" className="py-16 bg-slate-800 relative">
                 <div className="absolute inset-0 opacity-30" style={{ backgroundImage: `url(${CrystalBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Support Our Development</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Support Our Development</h2>
                         <p className="text-white max-w-2xl mx-auto">
-                            Donations help us build features faster and get to launch sooner. Early access codes are granted for $5+ donations.
+                            Donate to help us launch faster. $5+ gets you an early access code.
                         </p>
                     </div>
-                    <div className="max-w-4xl mx-auto bg-slate-900/90 backdrop-blur-md p-8 rounded-lg border border-slate-700">
+                    <div className="max-w-4xl mx-auto bg-slate-900/90 p-8 rounded-lg border border-slate-700">
                         <a
                             href="https://www.paypal.com/donate/?hosted_button_id=P9V4NDZSTNGZ8"
                             target="_blank"
@@ -191,7 +173,7 @@ export default function ComingSoon() {
                                 />
                                 <button
                                     type="submit"
-                                    className="w-full bg-slate-700 hover:bg-opacity-90 text-white py-3 !rounded-button whitespace-nowrap transition-colors font-medium"
+                                    className="w-full bg-slate-700 hover:bg-opacity-90 text-white py-3 !rounded-button font-medium"
                                 >
                                     Verify Access
                                 </button>
@@ -219,12 +201,8 @@ export default function ComingSoon() {
                         </p>
                     </div>
                     <div className="border-t border-slate-800 pt-6 text-slate-500 text-xs space-y-2">
-                        <p>
-                            FINAL FANTASY XIV © 2010 - 2025 SQUARE ENIX CO., LTD. All Rights Reserved.
-                        </p>
-                        <p>
-                            FinalFXIV Guides is an independent fan project and is not affiliated with SQUARE ENIX CO., LTD.
-                        </p>
+                        <p>FINAL FANTASY XIV © 2010 - 2025 SQUARE ENIX CO., LTD. All Rights Reserved.</p>
+                        <p>FinalFXIV Guides is an independent fan project and is not affiliated with SQUARE ENIX CO., LTD.</p>
                         <p>© 2025 FinalFXIV Guides. All rights reserved.</p>
                     </div>
                 </div>
