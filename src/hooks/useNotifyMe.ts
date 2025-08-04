@@ -7,7 +7,10 @@
                 body: JSON.stringify({ email }),
             });
 
-            const result = await res.json();
+            const text = await res.text(); // ← get raw text
+            console.log('Raw response:', text);
+
+            const result = JSON.parse(text); // now safely parse
 
             if (!res.ok) {
                 return { success: false, error: result.error || 'Something went wrong.' };
