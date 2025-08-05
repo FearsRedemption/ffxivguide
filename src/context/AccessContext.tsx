@@ -8,8 +8,8 @@ import {
 } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// ===== MOCK / TEMPORARY MANUAL SETUP =====
-const TEST_CODE = 'FF14-FXIV-CODE-0805'; // Code manually sent via email
+// ===== MOCK / TEMPORARY MANUAL SETUP
+const TEST_CODE = import.meta.env.VITE_TEST_CODE;
 
 export interface AccessState {
     email: string;
