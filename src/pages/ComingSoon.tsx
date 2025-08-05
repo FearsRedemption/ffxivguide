@@ -45,7 +45,6 @@ export default function ComingSoon() {
         verify();
     };
 
-    // Smooth scroll to section anchors
     useEffect(() => {
         const anchors = Array.from(document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'));
         const handleClick = (e: Event) => {
@@ -77,10 +76,10 @@ export default function ComingSoon() {
                         Sign up here to be notified by email when the site reaches a more complete and stable release.
                     </p>
                     <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-                        Have an access code? Scroll down and enter your email and code to unlock early access and help shape the future of FinalFXIV.
+                        Have an access code? Scroll down and enter it to unlock early access.
                     </p>
                     <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-                        Early access is granted to anyone who donates $5 or more, giving you a chance to explore features early, offer feedback, and support the development of community-driven content.
+                        Early access is temporarily available via a manual donation. Codes will be sent by email.
                     </p>
 
                     {/* Notify Me Form */}
@@ -114,40 +113,65 @@ export default function ComingSoon() {
                     <div className="text-center mb-12">
                         <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">What to Expect</h2>
                         <p className="text-white max-w-2xl mx-auto">
-                            Explore comprehensive guides to master every job, encounter, and system in Final Fantasy XIV.
+                            Explore our upcoming comprehensive guides designed to help you master every aspect of Final Fantasy XIV.
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Feature Cards */}
+                        {[
+                            ['ri-sword-line', 'Combat Guides', 'Master every job with our detailed rotation guides, openers, and optimization tips for both casual and savage content.', 'bg-red-300', 'text-red-700'],
+                            ['ri-building-4-line', 'Raid Strategies', 'Step-by-step walkthroughs for all raids, trials, and dungeons with visual guides and mechanic breakdowns.', 'bg-orange-300', 'text-orange-700'],
+                            ['ri-map-2-line', 'Interactive Maps', 'Detailed maps for gathering nodes, aether currents, treasure hunts, and other collectibles throughout Eorzea.', 'bg-yellow-300', 'text-yellow-700'],
+                            ['ri-coins-line', 'Gil Making Guides', 'Effective strategies for making gil through crafting, gathering, market board flipping, and other lucrative activities.', 'bg-green-300', 'text-green-700'],
+                            ['ri-hammer-line', 'Crafting & Gathering', 'Leveling guides, rotation tips, and best practices for Disciples of the Hand and Land from beginner to expert.', 'bg-blue-300', 'text-blue-700'],
+                            ['ri-community-line', 'Community Tools', 'Party finder integration, DPS calculators, gear planners, and other tools to enhance your FFXIV experience.', 'bg-purple-300', 'text-purple-700'],
+                        ].map(([icon, title, desc, bg, color], i) => (
+                            <div key={i} className="feature-card p-6 rounded-lg border border-slate-700">
+                                <div className="flex items-center mb-4 space-x-3">
+                                    <div className={`w-12 h-12 flex items-center justify-center ${bg} rounded-full`}>
+                                        <i className={`${icon} ${color} ri-lg`}></i>
+                                    </div>
+                                    <h3 className="text-xl font-semibold">{title}</h3>
+                                </div>
+                                <p>{desc}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* Donation + Early Access Section */}
+            {/* Manual Donation + Access Code Section */}
             <section id="donate" className="py-16 bg-slate-800 relative">
                 <div className="absolute inset-0 opacity-30" style={{ backgroundImage: `url(${CrystalBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Support Our Development</h2>
                         <p className="text-white max-w-2xl mx-auto">
-                            Donate to help us launch faster. $5+ gets you an early access code.
+                            Donate $5 or more to support the site. We'll manually send you an early access code.
                         </p>
-                        <p className="text-sm text-slate-400 mt-2">Already donated? Just enter your email below to receive or resend your code.</p>
                     </div>
                     <div className="max-w-4xl mx-auto bg-slate-900/90 p-8 rounded-lg border border-slate-700">
                         <a
-                            // TODO: Add VITE_PAYPAL_DONATION_URL to .env
-                            href={import.meta.env.VITE_PAYPAL_DONATION_URL || "https://www.paypal.com/donate/?hosted_button_id=P9V4NDZSTNGZ8"} 
+                            href="https://www.paypal.com/donate/?hosted_button_id=P9V4NDZSTNGZ8"
                             target="_blank"
                             rel="noopener"
                             className="w-full block bg-primary hover:bg-opacity-90 text-white py-4 !rounded-button text-lg font-medium text-center mb-6"
                         >
                             <i className="ri-paypal-fill text-xl mr-2"></i>
-                            Support via PayPal
+                            Donate via PayPal
                         </a>
+
+                        {/*
+                        // Future automatic webhook integration
+                        const response = await fetch(import.meta.env.VITE_PAYPAL_ENDPOINT, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email: emailAddress })
+                        });
+                        */}
 
                         <div className="mt-8 pt-8 border-t border-slate-700">
                             <h3 className="text-white text-xl font-semibold mb-4 text-center">Early Access Code</h3>
+                            <p className="text-slate-400 text-center mb-4">If you've received a code via email, you can enter it below.</p>
                             <form onSubmit={handleAccessSubmit} className="space-y-4" autoComplete="off">
                                 <input
                                     type="email"

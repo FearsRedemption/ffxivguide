@@ -1,9 +1,15 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+// src/context/AccessContext.tsx
+import {
+    createContext,
+    useContext,
+    useState,
+    useEffect,
+    type ReactNode,
+} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Constants (for mock access — replace with backend check later)
-const TEST_EMAIL = 'test@ff.com';
-const TEST_CODE = '0792';
+// ===== MOCK / TEMPORARY MANUAL SETUP =====
+const TEST_CODE = 'FF14-FXIV-CODE-0805'; // Code manually sent via email
 
 export interface AccessState {
     email: string;
@@ -43,6 +49,7 @@ const AccessContext = createContext<{
 
 export const AccessProvider = ({ children }: { children: ReactNode }) => {
     const navigate = useNavigate();
+
     const [state, setState] = useState<AccessState>(() => {
         const stored = localStorage.getItem('ffxiv_verified');
         return {
@@ -51,7 +58,6 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
         };
     });
 
-    // ✅ Sync localStorage if changed outside this context
     useEffect(() => {
         const stored = localStorage.getItem('ffxiv_verified');
         if (stored === 'true' && !state.isVerified) {
@@ -59,23 +65,18 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
         }
     }, []);
 
-    const setEmail = (email: string) =>
-        setState((s) => ({ ...s, email }));
+    const setEmail = (email: string) => setState((s) => ({ ...s, email }));
+    const setCode = (code: string) => setState((s) => ({ ...s, code }));
 
-    const setCode = (code: string) =>
-        setState((s) => ({ ...s, code }));
-
-    const verify = () => {
+    const verify = async () => {
         setState((s) => ({
             ...s,
             status: 'info',
             message: 'Verifying access credentials...',
         }));
 
-        if (
-            state.email.trim().toLowerCase() === TEST_EMAIL &&
-            state.code.trim() === TEST_CODE
-        ) {
+        // ======= TEMPORARY MANUAL CHECK =======
+        if (state.code.trim() === TEST_CODE) {
             localStorage.setItem('ffxiv_verified', 'true');
             setState((s) => ({
                 ...s,
@@ -84,15 +85,51 @@ export const AccessProvider = ({ children }: { children: ReactNode }) => {
                 message: 'Access granted! Redirecting...',
             }));
             setTimeout(() => navigate('/home'), 1000);
-        } else {
+            return;
+        }
+
+        // ======= FUTURE BACKEND INTEGRATION =======
+        /*
+        try {
+            const res = await fetch(import.meta.env.VITE_ACCESS_VERIFY_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: state.email, code: state.code }),
+            });
+
+            const data = await res.json();
+            if (res.ok && data.valid) {
+                localStorage.setItem('ffxiv_verified', 'true');
+                setState((s) => ({
+                    ...s,
+                    isVerified: true,
+                    status: 'success',
+                    message: 'Access granted! Redirecting...',
+                }));
+                setTimeout(() => navigate('/home'), 1000);
+            } else {
+                throw new Error(data.error || 'Invalid code.');
+            }
+        } catch (err: any) {
             localStorage.removeItem('ffxiv_verified');
             setState((s) => ({
                 ...s,
                 isVerified: false,
                 status: 'error',
-                message: 'Invalid email or access code. Please try again.',
+                message: err.message || 'Verification failed. Please try again.',
             }));
         }
+        */
+        // ======= END FUTURE BLOCK =======
+
+        // Manual fallback error
+        localStorage.removeItem('ffxiv_verified');
+        setState((s) => ({
+            ...s,
+            isVerified: false,
+            status: 'error',
+            message: 'Invalid email or access code. Please try again.',
+        }));
     };
 
     const resetAccess = () => {

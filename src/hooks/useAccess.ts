@@ -1,3 +1,4 @@
+// src/hooks/useAccess.ts
 import { useAccessContext } from '../context/AccessContext';
 
 export function useAccess() {
