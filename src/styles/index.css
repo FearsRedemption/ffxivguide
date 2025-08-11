@@ -44,6 +44,15 @@ html {
   background-position: center;
 }
 
+/* Combat hero background */
+.hero-bg-combat {
+  background: url('/src/assets/images/CombatHero.png'); /* replace with your asset */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* remove if you don't want parallax feel */
+}
+
+
 /* Feature Cards */
 .feature-card {
   background: black;
@@ -145,20 +154,30 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-.text-low {
-  @apply text-green-600 dark:text-green-400;
+.text-easy {
+  @apply text-emerald-800 bg-emerald-200/80 dark:text-emerald-300 dark:bg-emerald-900/50;
 }
 
 .text-medium {
-  @apply text-yellow-700 dark:text-yellow-400;
+  @apply text-amber-800 bg-amber-200/80 dark:text-amber-300 dark:bg-amber-900/50;
 }
 
-.text-high {
-  @apply text-red-600 dark:text-red-400;
+.text-hard {
+  @apply text-rose-800 bg-rose-200/80 dark:text-rose-300 dark:bg-rose-900/50;
 }
 
-.text-shadow {
+.text-extreme {
+  @apply text-fuchsia-800 bg-fuchsia-200/80 dark:text-fuchsia-300 dark:bg-fuchsia-900/50;
+}
+
+.text-shadow-light {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.75);
 }
+
+.text-shadow-dark {
+  text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.25);
+}
+
+
 
 

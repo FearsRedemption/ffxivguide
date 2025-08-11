@@ -7,9 +7,9 @@ type RoleCardProps = {
 };
 
 const needClassMap = {
-    Low: "text-low",
+    Low: "text-easy",
     Medium: "text-medium",
-    High: "text-high",
+    High: "text-hard",
 };
 
 export default function RoleCard({ title, jobs, need }: RoleCardProps) {

@@ -23,6 +23,10 @@ import StyleDesign from './pages/StyleDesign';
 import AllJobs from './pages/AllJobs';
 import { JobGuidePage } from './pages/JobGuidePage';
 import NotFound from './pages/NotFound';
+import DungeonsAll from "./components/combat/DungeonsAll.tsx";
+import RaidsAll from "./components/combat/RaidsAll.tsx";
+import TrialsAll from "./components/combat/TrialsAll.tsx";
+import GuideDetail from "./pages/GuideDetail.tsx";
 
 export default function App() {
     const serverStatus = useServerStatus();
@@ -34,6 +38,8 @@ export default function App() {
     }, [location.pathname]);
 
     const isComingSoon = location.pathname === '/';
+    
+    //TODO: Remove the protected route once the ComingSoon page is done
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -60,6 +66,20 @@ export default function App() {
                     <Route path="/style-design" element={<ProtectedRoute><StyleDesign /></ProtectedRoute>} />
                     <Route path="/all-jobs" element={<ProtectedRoute><AllJobs /></ProtectedRoute>} />
                     <Route path="/job/:jobName" element={<ProtectedRoute><JobGuidePage /></ProtectedRoute>} />
+                    <Route
+                        path="/guides/dungeons"
+                        element={<ProtectedRoute><DungeonsAll /></ProtectedRoute>}
+                    />
+                    <Route
+                        path="/guides/raids"
+                        element={<ProtectedRoute><RaidsAll /></ProtectedRoute>}
+                    />
+                    <Route
+                        path="/guides/trials"
+                        element={<ProtectedRoute><TrialsAll /></ProtectedRoute>}
+                    />
+                    
+                    <Route path="/guides/:category/:slug" element={<ProtectedRoute><GuideDetail /></ProtectedRoute>} />
 
                     {/* Catch-all */}
                     <Route path="*" element={<NotFound />} />

@@ -1,7 +1,7 @@
 ﻿// src/pages/AllJobs.tsx
-import {useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../styles/index.css';
-import {allJobsData} from '../data/allJobsData';
+import { allJobsData } from '../data/allJobsData';
 import JobCategorySection from '../components/battleguide/JobCategorySection';
 import PageHeader from "../components/PageHeader.tsx";
 
@@ -13,31 +13,45 @@ import PhysicalRanged from '../assets/images/classes/Physical Ranged DPS.png';
 import MagicalRanged from '../assets/images/classes/Magical Ranged DPS.png';
 import Filtered from '../assets/images/classes/Filtered.png';
 
+type MenuKey = 'role' | 'expansion' | 'difficulty' | null;
+
 export default function AllJobs() {
     const [selectedRole, setSelectedRole] = useState('All');
     const [selectedDifficulty, setSelectedDifficulty] = useState('All');
     const [selectedExpansion, setSelectedExpansion] = useState('All');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
-    const [showRoleDropdown, setShowRoleDropdown] = useState(false);
-    const [showExpansionDropdown, setShowExpansionDropdown] = useState(false);
-    const [showDifficultyDropdown, setShowDifficultyDropdown] = useState(false);
+    // Which dropdown is open?
+    const [openMenu, setOpenMenu] = useState<MenuKey>(null);
 
-    const dropdownRef = useRef<HTMLDivElement>(null);
+    // Individual refs for proper outside-click handling
+    const roleRef = useRef<HTMLDivElement>(null);
+    const expansionRef = useRef<HTMLDivElement>(null);
+    const difficultyRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(event.target as Node)
-            ) {
-                setShowRoleDropdown(false);
-                setShowExpansionDropdown(false);
-                setShowDifficultyDropdown(false);
+            const target = event.target as Node;
+            const insideRole = roleRef.current?.contains(target);
+            const insideExpansion = expansionRef.current?.contains(target);
+            const insideDifficulty = difficultyRef.current?.contains(target);
+
+            // If click is NOT inside any of the three dropdown wrappers, close all.
+            if (!insideRole && !insideExpansion && !insideDifficulty) {
+                setOpenMenu(null);
             }
         }
+
+        function handleEscape(event: KeyboardEvent) {
+            if (event.key === 'Escape') setOpenMenu(null);
+        }
+
         document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleEscape);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleEscape);
+        };
     }, []);
 
     const roles = [
@@ -57,22 +71,49 @@ export default function AllJobs() {
         'Stormblood (Patch 4.5)'
     ];
 
-    const filteredJobs = allJobsData.filter(job => {
-        const roleMatch = selectedRole === 'All' || job.jobRole === selectedRole;
-        const difficultyMatch = selectedDifficulty === 'All' || job.difficulty === parseInt(selectedDifficulty);
-        const expansionMatch = selectedExpansion === 'All' || job.unlockedIn.includes(selectedExpansion);
-        return roleMatch && difficultyMatch && expansionMatch;
-    }).sort((a, b) => {
-        const nameA = a.jobName.toLowerCase();
-        const nameB = b.jobName.toLowerCase();
-        return sortOrder === 'asc' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
-    });
+    const filteredJobs = allJobsData
+        .filter(job => {
+            const roleMatch = selectedRole === 'All' || job.jobRole === selectedRole;
+            const difficultyMatch =
+                selectedDifficulty === 'All' || job.difficulty === parseInt(selectedDifficulty);
+            const expansionMatch =
+                selectedExpansion === 'All' || job.unlockedIn.includes(selectedExpansion);
+            return roleMatch && difficultyMatch && expansionMatch;
+        })
+        .sort((a, b) => {
+            const nameA = a.jobName.toLowerCase();
+            const nameB = b.jobName.toLowerCase();
+            return sortOrder === 'asc' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+        });
 
-    const toggleDropdown = (dropdown: 'role' | 'expansion' | 'difficulty') => {
-        setShowRoleDropdown(dropdown === 'role');
-        setShowExpansionDropdown(dropdown === 'expansion');
-        setShowDifficultyDropdown(dropdown === 'difficulty');
+    const toggleMenu = (key: Exclude<MenuKey, null>) => {
+        setOpenMenu(prev => (prev === key ? null : key));
     };
+
+    // Close any open dropdown on scroll/resize
+    useEffect(() => {
+        let ticking = false;
+
+        const closeMenus = () => setOpenMenu(null);
+
+        const onScrollOrResize = () => {
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(() => {
+                    closeMenus();
+                    ticking = false;
+                });
+            }
+        };
+
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize);
+
+        return () => {
+            window.removeEventListener('scroll', onScrollOrResize);
+            window.removeEventListener('resize', onScrollOrResize);
+        };
+    }, []);
 
     return (
         <div className="bg-[#f6f6f6] dark:bg-[#121212] text-gray-900 dark:text-white min-h-screen">
@@ -94,24 +135,26 @@ export default function AllJobs() {
                 </section>
 
                 <section className="bg-white dark:bg-[#1f1f1f] rounded-xl shadow-sm p-6 mb-6">
-                    <div className="flex flex-wrap md:flex-nowrap justify-between gap-4 mb-6 relative z-10" ref={dropdownRef}>
+                    <div className="flex flex-wrap md:flex-nowrap justify-between gap-4 mb-6 relative z-10">
                         <div className="flex flex-wrap gap-4">
                             {/* Role Dropdown */}
-                            <div className="relative inline-block text-left">
+                            <div className="relative inline-block text-left" ref={roleRef}>
                                 <button
-                                    onClick={() => toggleDropdown('role')}
+                                    onClick={() => toggleMenu('role')}
                                     className="cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-md flex items-center space-x-2"
+                                    aria-haspopup="menu"
+                                    aria-expanded={openMenu === 'role'}
                                 >
                                     <i className="ri-filter-3-line" />
                                     <span>Role</span>
                                     <i className="ri-arrow-down-s-line" />
                                 </button>
-                                {showRoleDropdown && (
+                                {openMenu === 'role' && (
                                     <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800">
                                         {['All', ...roles.map(r => r.name)].map(role => (
                                             <button
                                                 key={role}
-                                                onClick={() => { setSelectedRole(role); setShowRoleDropdown(false); }}
+                                                onClick={() => { setSelectedRole(role); setOpenMenu(null); }}
                                                 className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700"
                                             >
                                                 {role}
@@ -122,21 +165,23 @@ export default function AllJobs() {
                             </div>
 
                             {/* Expansion Dropdown */}
-                            <div className="relative inline-block text-left">
+                            <div className="relative inline-block text-left" ref={expansionRef}>
                                 <button
-                                    onClick={() => toggleDropdown('expansion')}
+                                    onClick={() => toggleMenu('expansion')}
                                     className="cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-md flex items-center space-x-2"
+                                    aria-haspopup="menu"
+                                    aria-expanded={openMenu === 'expansion'}
                                 >
                                     <i className="ri-stack-line" />
                                     <span>Expansion</span>
                                     <i className="ri-arrow-down-s-line" />
                                 </button>
-                                {showExpansionDropdown && (
-                                    <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800">
+                                {openMenu === 'expansion' && (
+                                    <div className="absolute mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800">
                                         {['All', ...expansions].map(exp => (
                                             <button
                                                 key={exp}
-                                                onClick={() => { setSelectedExpansion(exp); setShowExpansionDropdown(false); }}
+                                                onClick={() => { setSelectedExpansion(exp); setOpenMenu(null); }}
                                                 className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700"
                                             >
                                                 {exp}
@@ -147,22 +192,29 @@ export default function AllJobs() {
                             </div>
 
                             {/* Difficulty Dropdown */}
-                            <div className="relative inline-block text-left">
+                            <div className="relative inline-block text-left" ref={difficultyRef}>
                                 <button
-                                    onClick={() => toggleDropdown('difficulty')}
+                                    onClick={() => toggleMenu('difficulty')}
                                     className="cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-md flex items-center space-x-2"
+                                    aria-haspopup="menu"
+                                    aria-expanded={openMenu === 'difficulty'}
                                 >
                                     <i className="ri-bar-chart-line" />
                                     <span>Difficulty</span>
                                     <i className="ri-arrow-down-s-line" />
                                 </button>
-                                {showDifficultyDropdown && (
+                                {openMenu === 'difficulty' && (
                                     <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800">
-                                        <button onClick={() => { setSelectedDifficulty('All'); setShowDifficultyDropdown(false); }} className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">All</button>
+                                        <button
+                                            onClick={() => { setSelectedDifficulty('All'); setOpenMenu(null); }}
+                                            className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700"
+                                        >
+                                            All
+                                        </button>
                                         {[1, 2, 3, 4, 5].map(level => (
                                             <button
                                                 key={level}
-                                                onClick={() => { setSelectedDifficulty(level.toString()); setShowDifficultyDropdown(false); }}
+                                                onClick={() => { setSelectedDifficulty(level.toString()); setOpenMenu(null); }}
                                                 className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700"
                                             >
                                                 {`${'★'.repeat(level)}${'☆'.repeat(5 - level)}`}
@@ -176,7 +228,7 @@ export default function AllJobs() {
                         <div className="flex flex-wrap gap-4 justify-end">
                             {/* Sort Button */}
                             <button
-                                onClick={() => setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc')}
+                                onClick={() => { setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc')); setOpenMenu(null); }}
                                 className="cursor-pointer bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-md flex items-center space-x-2"
                             >
                                 <i className={`ri-sort-${sortOrder === 'asc' ? 'asc' : 'desc'}`} />
@@ -190,6 +242,7 @@ export default function AllJobs() {
                                     setSelectedDifficulty('All');
                                     setSelectedExpansion('All');
                                     setSortOrder('asc');
+                                    setOpenMenu(null);
                                 }}
                                 className="cursor-pointer text-primary hover:text-indigo-600 text-sm flex items-center space-x-1"
                             >

@@ -52,7 +52,7 @@ export default function FCRecruitment() {
                         <div className="space-y-4 text-sm">
                             <RoleCard title="Tanks" jobs="Paladins, Warriors, Dark Knights, Gunbreakers" need="High" />
                             <RoleCard title="Healers" jobs="White Mages, Scholars, Astrologians, Sages" need="Medium" />
-                            <RoleCard title="Melee DPS" jobs="Monks, Dragoons, Ninjas, Samurai, Reapers" need="Medium" />
+                            <RoleCard title="Melee DPS" jobs="Monks, Dragoons, Ninjas, Samurai, Reapers" need="Low" />
                             <RoleCard title="Physical Ranged DPS" jobs="Bards, Machinists, Dancers" need="Medium" />
                             <RoleCard title="Magical DPS" jobs="Black Mages, Summoners, Red Mages" need="Medium" />
                             <RoleCard title="Crafters & Gatherers" jobs="DoH and DoL specialists" need="Medium" />
