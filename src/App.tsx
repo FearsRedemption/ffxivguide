@@ -66,19 +66,9 @@ export default function App() {
                     <Route path="/style-design" element={<ProtectedRoute><StyleDesign /></ProtectedRoute>} />
                     <Route path="/all-jobs" element={<ProtectedRoute><AllJobs /></ProtectedRoute>} />
                     <Route path="/job/:jobName" element={<ProtectedRoute><JobGuidePage /></ProtectedRoute>} />
-                    <Route
-                        path="/guides/dungeons"
-                        element={<ProtectedRoute><DungeonsAll /></ProtectedRoute>}
-                    />
-                    <Route
-                        path="/guides/raids"
-                        element={<ProtectedRoute><RaidsAll /></ProtectedRoute>}
-                    />
-                    <Route
-                        path="/guides/trials"
-                        element={<ProtectedRoute><TrialsAll /></ProtectedRoute>}
-                    />
-                    
+                    <Route path="/guides/dungeons" element={<ProtectedRoute><DungeonsAll /></ProtectedRoute>} />
+                    <Route path="/guides/raids" element={<ProtectedRoute><RaidsAll /></ProtectedRoute>} />
+                    <Route path="/guides/trials" element={<ProtectedRoute><TrialsAll /></ProtectedRoute>} />
                     <Route path="/guides/:category/:slug" element={<ProtectedRoute><GuideDetail /></ProtectedRoute>} />
 
                     {/* Catch-all */}

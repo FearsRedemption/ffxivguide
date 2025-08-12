@@ -1,54 +1,21 @@
 ﻿// src/pages/GuideDetail.tsx
 import { useParams, Link } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
-import type { QuickGuide } from "../types/guides";
+import type {DetailedGuide, QuickGuide} from "../types/guides";
 
 import { dungeonsData } from "../data/guides/dungeons/dungeonsData";
 import { raidsData } from "../data/guides/raids/raidsData";
 import { trialsData } from "../data/guides/trials/trialsData";
 import {useState} from "react";
 
-// ---------- Optional extended shape the page can consume ----------
-type MechanicsItem = {
-    boss?: string;
-    notes?: string;
-    steps?: string[];        // bullet points for mechanics/rotation/safe-spots
-};
-
-type RewardsBlock = {
-    loot?: string[];
-    tomestones?: string;
-    drops?: string[];
-    misc?: string[];
-};
-
-type UnlockInfo = {
-    quest?: string;
-    level?: number | string;
-    location?: string;
-    prerequisites?: string[];
-};
-
-// Extend QuickGuide at runtime with optional fields.
-// Your data files can add any of these keys per guide.
-type DetailedGuide = QuickGuide & {
-    subtitle?: string;
-    overview?: string | string[];     // paragraph(s)
-    mechanics?: MechanicsItem[];      // array of boss mechanic groups
-    rewards?: RewardsBlock;
-    unlock?: UnlockInfo;
-    videoUrl?: string;                 // e.g., YouTube link
-    extras?: { title: string; items: string[] }[]; // any extra grouped lists
-};
-
 // ---------- UI helpers ----------
 const difficultyChip = (d: QuickGuide["difficulty"]) => {
     const base = "inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-semibold";
     switch (d) {
-        case "EASY": return `${base} text-easy text-shadow-light dark:text-shadow-dark`;
-        case "MEDIUM": return `${base} text-medium text-shadow-light dark:text-shadow-dark`;
-        case "HARD": return `${base} text-hard text-shadow-light dark:text-shadow-dark`;
-        case "EXTREME": return `${base} text-extreme text-shadow-light dark:text-shadow-dark`;
+        case "EASY": return `${base} text-easy`;
+        case "MEDIUM": return `${base} text-medium`;
+        case "HARD": return `${base} text-hard`;
+        case "EXTREME": return `${base} text-extreme`;
     }
 };
 
@@ -96,9 +63,11 @@ export default function GuideDetail() {
     };
 
     const list = (category && byCategory[category]) || [];
-    // Cast to DetailedGuide to allow optional fields; safe because we always guard accesses
     const guide = list.find(g => g.id === slug) as DetailedGuide | undefined;
     const [videoError, setVideoError] = useState(false);
+    const capitalize = (str?: string) =>
+        str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
+
 
     return (
         <div className="bg-[#f6f6f6] dark:bg-[#121212] min-h-screen text-gray-900 dark:text-white">
@@ -106,7 +75,7 @@ export default function GuideDetail() {
                 breadcrumbs={[
                     { label: "Home", href: "/home" },
                     { label: "Combat Guides", href: "/combat" },
-                    { label: `All ${category}`, href: `/guides/${category ?? ""}` },
+                    { label: `All ${capitalize(category)}`, href: `/guides/${category ?? ""}` },
                     { label: guide?.title ?? "Guide", href: `/guides/${category ?? ""}/${slug ?? ""}` },
                 ]}
             />
@@ -114,9 +83,9 @@ export default function GuideDetail() {
             <main className="max-w-[90rem] mx-auto px-6 pb-16">
                 {!guide ? (
                     <section className="rounded-xl overflow-hidden shadow-md bg-white dark:bg-[#1f1f1f] border border-gray-200 dark:border-gray-700 p-8">
-                        <h1 className="text-2xl font-bold mb-2">Guide not found</h1>
+                        <h1 className="text-2xl font-bold mb-2">Guide Not Found</h1>
                         <p className="text-gray-600 dark:text-gray-300">
-                            We couldn’t find <code className="text-sm">{slug}</code> under <code className="text-sm">{category}</code>.
+                            We couldn’t find <code className="text-lg text-hard">{slug}</code> under <code className="text-lg text-hard">{category}</code>.
                         </p>
                         <div className="mt-6">
                             <Link to={`/guides/${category ?? ""}`} className="text-primary hover:underline">
