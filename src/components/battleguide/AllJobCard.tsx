@@ -1,6 +1,6 @@
 ﻿// src/components/battleguide/AllJobCard.tsx
 import { Link } from 'react-router-dom';
-import type { JobCardData } from '../../data/allJobsData';
+import type { JobCardData } from '../../data/guides/jobs/allJobsData';
 
 interface AllJobCardProps {
     job: JobCardData;
