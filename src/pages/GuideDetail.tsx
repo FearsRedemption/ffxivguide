@@ -3,9 +3,10 @@ import { useParams, Link } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import type { QuickGuide } from "../types/guides";
 
-import { dungeonsData } from "../data/dungeonsData";
-import { raidsData } from "../data/raidsData";
-import { trialsData } from "../data/trialsData";
+import { dungeonsData } from "../data/guides/dungeons/dungeonsData";
+import { raidsData } from "../data/guides/raids/raidsData";
+import { trialsData } from "../data/guides/trials/trialsData";
+import {useState} from "react";
 
 // ---------- Optional extended shape the page can consume ----------
 type MechanicsItem = {
@@ -97,6 +98,7 @@ export default function GuideDetail() {
     const list = (category && byCategory[category]) || [];
     // Cast to DetailedGuide to allow optional fields; safe because we always guard accesses
     const guide = list.find(g => g.id === slug) as DetailedGuide | undefined;
+    const [videoError, setVideoError] = useState(false);
 
     return (
         <div className="bg-[#f6f6f6] dark:bg-[#121212] min-h-screen text-gray-900 dark:text-white">
@@ -128,12 +130,24 @@ export default function GuideDetail() {
                         <section className="rounded-xl overflow-hidden shadow-md mb-6 bg-white dark:bg-[#1f1f1f] border border-gray-200 dark:border-gray-700">
                             <div className="grid md:grid-cols-3 gap-0">
                                 {/* Media */}
-                                <div className="md:col-span-1">
-                                    <img
-                                        src={guide.image}
-                                        alt={guide.title}
-                                        className="w-full h-full object-cover aspect-video md:aspect-auto"
-                                    />
+                                <div className="md:col-span-1 flex">
+                                    <div className="flex-1">
+                                        {guide.videoUrl && !videoError ? (
+                                            <iframe
+                                                src={`https://www.youtube.com/embed/${guide.videoUrl.split("v=")[1]}`}
+                                                title={guide.title}
+                                                className="w-full h-full object-cover md:h-full"
+                                                allowFullScreen
+                                                onError={() => setVideoError(true)}
+                                            />
+                                        ) : (
+                                            <img
+                                                src={guide.image || "/fallback-image.png"}
+                                                alt={guide.title}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        )}
+                                    </div>
                                 </div>
 
                                 {/* Meta */}
@@ -166,18 +180,25 @@ export default function GuideDetail() {
                                         </div>
                                         <span className="opacity-70">Updated {guide.updated || "—"}</span>
                                         <span className="opacity-70 flex items-center gap-1">
-                      <i className="ri-eye-line" />
+                                            <i className="ri-eye-line" />
                                             {guide.views || "—"}
-                    </span>
+                                        </span>
+                                    </div>
+                                    <div className="mt-5">
                                         {guide.videoUrl && (
                                             <a
                                                 href={guide.videoUrl}
                                                 target="_blank"
-                                                rel="noreferrer"
-                                                className="inline-flex items-center gap-1 text-primary hover:underline"
-                                                aria-label="Watch video guide"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 shrink-0
+                                                   rounded-lg px-3 py-1.5 text-sm font-semibold
+                                                   bg-red-600 text-white hover:bg-red-700
+                                                   focus:outline-none focus:ring-2 focus:ring-red-500/50
+                                                   transition"
+                                                aria-label={`Watch ${guide.title} on YouTube`}
                                             >
-                                                <i className="ri-play-circle-line" /> Watch Video
+                                                <i className="ri-youtube-fill text-base" />
+                                                Watch on YouTube
                                             </a>
                                         )}
                                     </div>

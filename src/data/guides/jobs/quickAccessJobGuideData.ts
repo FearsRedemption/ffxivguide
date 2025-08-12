@@ -1,13 +1,13 @@
-﻿import paladin from '../assets/images/job-icon/Paladin.png';
-import darkknight from '../assets/images/job-icon/Dark Knight.png';
-import gunbreaker from '../assets/images/job-icon/Gunbreaker.png';
-import whitemage from '../assets/images/job-icon/White Mage.png';
-import sage from '../assets/images/job-icon/Sage.png';
-import samurai from '../assets/images/job-icon/Samurai.png';
-import reaper from '../assets/images/job-icon/Reaper.png';
-import bard from '../assets/images/job-icon/Bard.png';
-import blackmage from '../assets/images/job-icon/Black Mage.png';
-import summoner from '../assets/images/job-icon/Summoner.png';
+﻿import paladin from '../../../assets/images/job-icon/Paladin.png';
+import darkknight from '../../../assets/images/job-icon/Dark Knight.png';
+import gunbreaker from '../../../assets/images/job-icon/Gunbreaker.png';
+import whitemage from '../../../assets/images/job-icon/White Mage.png';
+import sage from '../../../assets/images/job-icon/Sage.png';
+import samurai from '../../../assets/images/job-icon/Samurai.png';
+import reaper from '../../../assets/images/job-icon/Reaper.png';
+import bard from '../../../assets/images/job-icon/Bard.png';
+import blackmage from '../../../assets/images/job-icon/Black Mage.png';
+import summoner from '../../../assets/images/job-icon/Summoner.png';
 
 export const jobGuides = [
     {

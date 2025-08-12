@@ -1,5 +1,5 @@
-﻿import type { JobGuideContent } from '../types/JobGuideContent';
-import { slugifyJobName } from "../utils/slugify.ts";
+﻿import type { JobGuideContent } from '../../../types/JobGuideContent';
+import { slugifyJobName } from "../../../utils/slugify.ts";
 
 export const jobGuideData: Record<string, JobGuideContent> = {
     [slugifyJobName('Paladin')]: {

@@ -1,4 +1,4 @@
-﻿import fcAchievementsData from '../../data/fcAchievementsData';
+﻿import fcAchievementsData from '../../data/fc/fcAchievementsData';
 
 export default function FCAchievements() {
     return (

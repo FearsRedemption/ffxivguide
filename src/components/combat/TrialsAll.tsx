@@ -1,7 +1,7 @@
 ﻿// src/pages/TrialsAll.tsx
 import PageHeader from "../PageHeader";
 import GuideDirectory from "../guides/GuideDirectory";
-import { trialsData } from "../../data/trialsData";
+import { trialsData } from "../../data/guides/trials/trialsData";
 
 export default function TrialsAll() {
     return (

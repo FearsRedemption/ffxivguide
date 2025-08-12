@@ -12,7 +12,7 @@ import {
     subMonths,
     isToday
 } from 'date-fns';
-import fcEventsData from '../../data/fcEventsData';
+import fcEventsData from '../../data/fc/fcEventsData';
 
 export default function Calendar(): JSX.Element {
     const [currentDate, setCurrentDate] = useState(new Date());

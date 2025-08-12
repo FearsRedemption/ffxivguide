@@ -1,6 +1,6 @@
 ﻿import { useParams } from 'react-router-dom';
-import { jobGuideData } from '../data/jobGuideData';
-import type { SkillBlock } from '../types/JobGuideContent';
+import { jobGuideData } from '../data/guides/jobs/jobGuideData';
+import type {Opener, SkillBlock} from '../types/JobGuideContent';
 import { slugifyJobName } from '../utils/slugify';
 import PageHeader from '../components/PageHeader';
 import JobGuideSectionNav from '../components/jobguide/JobGuideSectionNav';
@@ -128,7 +128,7 @@ export function JobGuidePage() {
                 {openers.length > 0 && (
                     <section id="openers" className="scroll-mt-32 bg-white dark:bg-[#1f1f1f] rounded-xl shadow-sm p-6 mb-6">
                         <h2 className="text-2xl font-bold mb-4 text-primary-600 dark:text-primary-400">Openers</h2>
-                        {openers.map((opener, index) => (
+                        {(openers ?? []).map((opener: Opener, index: number) => (
                             <div key={index} className="mb-8">
                                 <h3 className="text-xl font-semibold mb-2">{opener.title}</h3>
                                 {renderTimeline(fullJobName, opener.skills)}
@@ -185,7 +185,7 @@ export function JobGuidePage() {
                     <section id="tips" className="scroll-mt-32 bg-white dark:bg-[#1f1f1f] rounded-xl shadow-sm p-6 mb-6">
                         <h2 className="text-2xl font-bold mb-4 text-primary-600 dark:text-primary-400">Tips</h2>
                         <ul className="list-disc pl-6 space-y-2 text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                            {tips.map((tip, index) => (
+                            {(tips ?? []).map((tip: string, index: number) => (
                                 <li key={index}>{tip}</li>
                             ))}
                         </ul>

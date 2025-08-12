@@ -1,6 +1,6 @@
 ﻿// src/components/personalfc/FCMembers.tsx
 import { useState } from 'react';
-import fcMembers from '../../data/fcMembersData';
+import fcMembers from '../../data/fc/fcMembersData';
 
 export default function FCMembers() {
     const [currentPage, setCurrentPage] = useState(1);

@@ -1,7 +1,7 @@
 ﻿// src/components/combat/DungeonsAll.tsx
 import PageHeader from "../PageHeader";
 import GuideDirectory from "../guides/GuideDirectory";
-import { dungeonsData } from "../../data/dungeonsData";
+import { dungeonsData } from "../../data/guides/dungeons/dungeonsData";
 
 export default function DungeonsAll() {
     return (

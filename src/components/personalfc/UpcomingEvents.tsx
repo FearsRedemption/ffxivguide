@@ -1,6 +1,6 @@
 ﻿// src/components/personalfc/UpcomingEvents.tsx
 import { useEffect, useState } from 'react';
-import fcEvents from '../../data/fcEventsData';
+import fcEvents from '../../data/fc/fcEventsData';
 
 type Event = {
     title: string;

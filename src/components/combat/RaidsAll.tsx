@@ -1,7 +1,7 @@
 ﻿// src/pages/RaidsAll.tsx
 import PageHeader from "../../components/PageHeader";
 import GuideDirectory from "../guides/GuideDirectory";
-import { raidsData } from "../../data/raidsData";
+import { raidsData } from "../../data/guides/raids/raidsData";
 
 export default function RaidsAll() {
     return (

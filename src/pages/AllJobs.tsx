@@ -1,7 +1,7 @@
 ﻿// src/pages/AllJobs.tsx
 import { useEffect, useRef, useState } from 'react';
 import '../styles/index.css';
-import { allJobsData } from '../data/allJobsData';
+import { allJobsData } from '../data/guides/jobs/allJobsData';
 import JobCategorySection from '../components/battleguide/JobCategorySection';
 import PageHeader from "../components/PageHeader.tsx";
 

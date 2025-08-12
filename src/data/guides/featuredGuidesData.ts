@@ -1,7 +1,7 @@
 ﻿// src/data/featuredGuidesData.ts
-import UltimateRaidImage from '../assets/images/ultimate-raid-guide.png';
-import CrafterImage from '../assets/images/crafter-guide.png';
-import ZoneGuideImage from '../assets/images/zone-guide.png';
+import UltimateRaidImage from '../../assets/images/ultimate-raid-guide.png';
+import CrafterImage from '../../assets/images/crafter-guide.png';
+import ZoneGuideImage from '../../assets/images/zone-guide.png';
 
 export const featuredGuides = [
     {

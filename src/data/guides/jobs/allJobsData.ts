@@ -1,29 +1,29 @@
-﻿import paladin from '../assets/images/job-icon/Paladin.png';
-import warrior from '../assets/images/job-icon/Warrior.png';
-import darkknight from '../assets/images/job-icon/Dark Knight.png';
-import gunbreaker from '../assets/images/job-icon/Gunbreaker.png';
+﻿import paladin from '../../../assets/images/job-icon/Paladin.png';
+import warrior from '../../../assets/images/job-icon/Warrior.png';
+import darkknight from '../../../assets/images/job-icon/Dark Knight.png';
+import gunbreaker from '../../../assets/images/job-icon/Gunbreaker.png';
 
-import whitemage from '../assets/images/job-icon/White Mage.png';
-import scholar from '../assets/images/job-icon/Scholar.png';
-import astrologian from '../assets/images/job-icon/Astrologian.png';
-import sage from '../assets/images/job-icon/Sage.png';
+import whitemage from '../../../assets/images/job-icon/White Mage.png';
+import scholar from '../../../assets/images/job-icon/Scholar.png';
+import astrologian from '../../../assets/images/job-icon/Astrologian.png';
+import sage from '../../../assets/images/job-icon/Sage.png';
 
-import monk from '../assets/images/job-icon/Monk.png';
-import dragoon from '../assets/images/job-icon/Dragoon.png';
-import ninja from '../assets/images/job-icon/Ninja.png';
-import samurai from '../assets/images/job-icon/Samurai.png';
-import reaper from '../assets/images/job-icon/Reaper.png';
-import viper from '../assets/images/job-icon/Viper.png';
+import monk from '../../../assets/images/job-icon/Monk.png';
+import dragoon from '../../../assets/images/job-icon/Dragoon.png';
+import ninja from '../../../assets/images/job-icon/Ninja.png';
+import samurai from '../../../assets/images/job-icon/Samurai.png';
+import reaper from '../../../assets/images/job-icon/Reaper.png';
+import viper from '../../../assets/images/job-icon/Viper.png';
 
-import bard from '../assets/images/job-icon/Bard.png';
-import machinist from '../assets/images/job-icon/Machinist.png';
-import dancer from '../assets/images/job-icon/Dancer.png';
+import bard from '../../../assets/images/job-icon/Bard.png';
+import machinist from '../../../assets/images/job-icon/Machinist.png';
+import dancer from '../../../assets/images/job-icon/Dancer.png';
 
-import blackmage from '../assets/images/job-icon/Black Mage.png';
-import summoner from '../assets/images/job-icon/Summoner.png';
-import redmage from '../assets/images/job-icon/Red Mage.png';
-import pictomancer from '../assets/images/job-icon/Pictomancer.png';
-import bluemage from '../assets/images/job-icon/Blue Mage.png';
+import blackmage from '../../../assets/images/job-icon/Black Mage.png';
+import summoner from '../../../assets/images/job-icon/Summoner.png';
+import redmage from '../../../assets/images/job-icon/Red Mage.png';
+import pictomancer from '../../../assets/images/job-icon/Pictomancer.png';
+import bluemage from '../../../assets/images/job-icon/Blue Mage.png';
 
 export interface JobCardData {
     jobName: string;

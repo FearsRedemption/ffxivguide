@@ -2,7 +2,7 @@
 import PageHeader from "../components/PageHeader";
 import CombatHero from "../components/combat/CombatHero";
 import GuideSection from "../components/guides/GuideSection";
-import { dungeonQuickGuides, raidQuickGuides, trialQuickGuides } from "../data/guideQuickData";
+import { dungeonQuickGuides, raidQuickGuides, trialQuickGuides } from "../data/guides/guideQuickData";
 
 export default function Combat() {
     return (

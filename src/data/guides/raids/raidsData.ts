@@ -1,4 +1,4 @@
-﻿import type { QuickGuide } from "../types/guides";
+﻿import type { QuickGuide } from "../../../types/guides";
 
 export const raidsData: QuickGuide[] = [
     {

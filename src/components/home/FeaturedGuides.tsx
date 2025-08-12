@@ -1,5 +1,5 @@
 ﻿import GuideCard from './GuideCard';
-import { featuredGuides } from '../../data/featuredGuidesData';
+import { featuredGuides } from '../../data/guides/featuredGuidesData';
 
 export default function FeaturedGuides() {
     return (
