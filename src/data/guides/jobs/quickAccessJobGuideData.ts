@@ -42,9 +42,9 @@ export const jobGuides = [
         role: 'MAGICAL DPS',
         icon: blackmage,
         link: '/job/black-mage',
-        roleColor: 'text-purple-600',
-        roleBg: 'bg-purple-50',
-        borderColor: 'border-purple-600'
+        roleColor: 'text-cyan-600',
+        roleBg: 'bg-cyan-50',
+        borderColor: 'border-cyan-600'
     },
     {
         name: 'Gunbreaker',
@@ -78,9 +78,9 @@ export const jobGuides = [
         role: 'MAGICAL DPS',
         icon: summoner,
         link: '/job/summoner',
-        roleColor: 'text-purple-600',
-        roleBg: 'bg-purple-50',
-        borderColor: 'border-purple-600'
+        roleColor: 'text-cyan-600',
+        roleBg: 'bg-cyan-50',
+        borderColor: 'border-cyan-600'
     },
     {
         name: 'Dark Knight',

@@ -1,25 +1,36 @@
 ﻿// src/components/battleguide/AllJobCard.tsx
 import { Link } from 'react-router-dom';
 import type { JobCardData } from '../../data/guides/jobs/allJobsData';
+import { slugifyJobName } from "../../utils/slugify";
 
 interface AllJobCardProps {
     job: JobCardData;
+    originPath?: string;
+    originLabel?: string;
 }
 
 const roleColorMap: Record<string, string> = {
-    'Tank': 'border-blue-500',
-    'Healer': 'border-green-500',
+    Tank: 'border-blue-500',
+    Healer: 'border-green-500',
     'Melee DPS': 'border-red-500',
     'Physical Ranged DPS': 'border-yellow-400',
-    'Magical Ranged DPS': 'border-purple-500',
+    'Magical Ranged DPS': 'border-cyan-500',
+    Crafter: 'border-violet-500',
+    Gatherer: 'border-amber-500',
 };
 
-export default function AllJobCard({ job }: AllJobCardProps) {
+export default function AllJobCard({ job, originPath, originLabel }: AllJobCardProps) {
     const borderColor = roleColorMap[job.jobRole] || 'border-gray-300';
-    const jobSlug = job.jobName.toLowerCase().replace(/\s+/g, '-'); // e.g., "Dark Knight" → "dark-knight"
+    const jobSlug = slugifyJobName(job.jobName);
 
     return (
-        <Link to={`/job/${jobSlug}`}>
+        <Link 
+            to={`/job/${jobSlug}`}
+            state={{
+                from: originPath ?? '/all-jobs',
+                fromLabel: originLabel ?? 'All Jobs',
+            }}
+        >
             <div className={`cursor-pointer bg-white dark:bg-[#2d2d2d] rounded-lg shadow-lg overflow-hidden transition-transform duration-200 hover:scale-[1.02] border-t-4 ${borderColor}`}>
                 <div className="flex items-center p-4 space-x-4">
                     <div className="w-16 h-16 flex-shrink-0">

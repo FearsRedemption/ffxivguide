@@ -68,7 +68,7 @@ export default function AllJobs() {
         'Stormblood',
         'Shadowbringers',
         'Endwalker',
-        'Stormblood (Patch 4.5)'
+        'Dawntrail'
     ];
 
     const filteredJobs = allJobsData
@@ -262,6 +262,8 @@ export default function AllJobs() {
                                     icon={role.icon}
                                     title={role.name}
                                     jobs={jobs}
+                                    originPath="/all-jobs"
+                                    originLabel="All Jobs"
                                 />
                             );
                         })
@@ -270,6 +272,8 @@ export default function AllJobs() {
                             icon={roles.find(r => r.name === selectedRole)?.icon || Filtered}
                             title="Filtered Jobs"
                             jobs={filteredJobs}
+                            originPath="/all-jobs"
+                            originLabel="All Jobs"
                         />
                     )}
                 </section>
