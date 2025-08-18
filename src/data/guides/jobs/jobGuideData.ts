@@ -539,61 +539,45 @@ export const jobGuideData: Record<string, JobGuideContent> = {
         ],
     },
     [slugifyJobName('Monk')]: {
-        jobName: 'Monk',
-        subtitle: 'Mobile Melee DPS Focused on Fast-Paced Combos and Chakra',
-        role: 'Melee DPS',
-        difficulty: 4,
-        unlockLevel: 30,
-        preJob: 'Pugilist',
-        bgImage: 'Monk',
-        intro:
-            'Monk is a fast-paced melee DPS that emphasizes a flowing rotation with constantly shifting forms, resource management via Chakra, and powerful burst windows through Masterful Blitz. Its gameplay rewards rhythm, positioning, and perfect GCD alignment.',
-        roleSummary:
-            'Monk cycles through a combo-based rotation using Form techniques (Opo-Opo, Raptor, Coeurl), weaving in oGCD abilities like Brotherhood and Riddle of Fire. Perfect execution hinges on maintaining uptime and optimizing Blitz windows via Chakra and Form transitions.',
-        rotations: {
-            singleTarget: [
-                { icon: 'Bootshine', name: 'Bootshine', time: '0s' },
-                { icon: 'True_Strike', name: 'True Strike', time: '2s' },
-                { icon: 'Snap_Punch', name: 'Snap Punch', time: '4s' },
-                { icon: 'Demolish', name: 'Demolish', time: '6s' },
-                { icon: 'Dragon_Kick', name: 'Dragon Kick', time: '8s' },
-                { icon: 'Twin_Snakes', name: 'Twin Snakes', time: '10s' },
-                { icon: 'Riddle_Of_Fire', name: 'Riddle of Fire', time: '12s' },
-                { icon: 'Rising_Phoenix', name: 'Rising Phoenix', time: '14s' },
-                { icon: 'Masterful_Blitz', name: 'Masterful Blitz (Elixir Field)', time: '16s' },
-            ],
-            aoe: [
-                { icon: 'Shadow_Of_The_Destroyer', name: 'Shadow of the Destroyer', time: '0s' },
-                { icon: 'Four_Point_Fury', name: 'Four-point Fury', time: '2s' },
-                { icon: 'Rising_Phoenix', name: 'Rising Phoenix', time: '4s' },
-                { icon: 'Masterful_Blitz', name: 'Masterful Blitz (Rising Phoenix)', time: '6s' },
-            ],
-            mitigationRotation: [],
-            healingRotation: [],
-        },
-        openers: [
-            {
-                title: 'Standard Monk Opener',
-                skills: [
-                    { icon: 'Bootshine', name: 'Bootshine', time: '0s' },
-                    { icon: 'True_Strike', name: 'True Strike', time: '2s' },
-                    { icon: 'Snap_Punch', name: 'Snap Punch', time: '4s' },
-                    { icon: 'Dragon_Kick', name: 'Dragon Kick', time: '6s' },
-                    { icon: 'Twin_Snakes', name: 'Twin Snakes', time: '8s' },
-                    { icon: 'Riddle_Of_Fire', name: 'Riddle of Fire', time: '10s' },
-                    { icon: 'Rising_Phoenix', name: 'Rising Phoenix', time: '12s' },
-                    { icon: 'Masterful_Blitz', name: 'Masterful Blitz (Rising Phoenix)', time: '14s' },
-                ],
-            },
+      jobName: 'Monk',
+      subtitle: 'Mobile Melee DPS with Fluid Forms, Chakra, and Blitz Burst Windows',
+      role: 'Melee DPS',
+      difficulty: 4,
+      unlockLevel: 30,
+      preJob: 'Pugilist',
+      bgImage: 'Monk',
+      intro:
+        'Monk is a high-tempo melee DPS built around cycling through form-based combos, managing Chakra and Beast Chakra resources, and unleashing powerful Blitz burst windows.',
+      roleSummary:
+        'Monk’s core gameplay relies on transitioning between Opo-opo, Raptor, and Coeurl forms to generate Fury stacks and Chakra, woven with oGCDs like Brotherhood and high-potency bursts via Blitz combos.',
+      rotations: {
+        singleTarget: [
+          { step: 'Opo-opo form', action: 'Dragon Kick or Leaping Opo (if Fury)' },
+          { step: 'Raptor form', action: 'Twin Snakes or Rising Raptor (if Fury)' },
+          { step: 'Coeurl form', action: 'Demolish or Pouncing Coeurl (if Fury)' },
+          { step: 'Chakra use', action: 'Spend on The Forbidden Chakra or Enlightenment' },
+          { step: 'Beast Chakra/Burst', action: 'Use Flint Strike, Elixir Field, Celestial Revolution, or Phantom Rush during Enhanced Perfect Balance' },
         ],
-        tips: [
-            'Keep Demolish’s DoT active at all times—clip it slightly only if necessary for burst windows.',
-            'Twin Snakes grants a damage buff—refresh it before it drops.',
-            'Use Riddle of Fire and Rising Phoenix together to optimize burst and generate Blitz opportunities.',
-            'Masterful Blitz changes based on the techniques used—learn each combo’s result.',
-            'Positioning is key: Bootshine crits from the rear, while True Strike and Snap Punch are flank-positioned.',
-            'Use Brotherhood on cooldown and align with raid buffs when possible.',
+        aoe: [
+          'Use Enlightenment (AoE Chakra)',
+          'Chain Blitz combos (e.g., Elixir Field → Rising Phoenix)',
+          'Use AoE Blitz weaponskills like Phantom Rush, Tornado Kick, etc.',
         ],
+        mitigationRotation: [],
+        healingRotation: [],
+      },
+      openers: [
+        // Openers vary; refer to advanced guides for full execution timing for 1-min and 2-min windows.
+        { title: 'Standard Burst Opener', description: 'Combine form filler → Blitz combos → Chakra usage timed with Perfect Balance windows' },
+      ],
+      tips: [
+        'Maintain Fury stacks in each form—only use the enhanced version when stacks are available.',
+        'Build and spend Chakra wisely—never cap out without using it during burst.',
+        'Align Blitz combos (Flint Strike, Rising Phoenix, etc.) with Enhanced Perfect Balance to maximize Beast Chakra effects.',
+        'Take advantage of patch 7.2 buffs: higher potency on Fire’s and Wind’s Reply, and less AoE penalty on Blitzes.',
+        'Don't neglect positionals—many Monk weaponskills benefit from rear or flank hits.',
+        'Use Brotherhood on cooldown, and sync it with party-wide buffs for optimal impact.',
+      ],
     },
     [slugifyJobName('Dragoon')]: {
         jobName: 'Dragoon',
