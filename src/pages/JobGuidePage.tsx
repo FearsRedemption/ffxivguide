@@ -97,10 +97,13 @@ export function JobGuidePage() {
     const hasTips = tips.length > 0;
 
     const renderTimeline = (name: string, skills: SkillBlock[]) => (
-        <div className="overflow-x-auto mt-2">
-            <div className="flex min-w-[800px] bg-gray-100 dark:bg-[#2a2a2a] p-4 rounded-lg shadow-inner">
+        <div className="mt-2">
+            <div className="flex flex-wrap justify-left bg-gray-100 dark:bg-[#2a2a2a] p-4 rounded-lg shadow-inner">
                 {skills.map((skill, index) => (
-                    <div key={index} className="timeline-item flex flex-col items-center mx-3 text-center">
+                    <div
+                        key={index}
+                        className="timeline-item flex flex-col items-center mx-2 my-2 text-center w-24"
+                    >
                         <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden shadow-sm mb-2">
                             <img
                                 src={getSkillIconPath(name, skill.icon)}
