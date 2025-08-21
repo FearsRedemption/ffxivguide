@@ -593,7 +593,7 @@ export const jobGuideData: Record<string, JobGuideContent> = {
                     { icon: 'Twin_Snakes', name: 'Twin Snakes', time: '0s' },
                     { icon: 'Demolish', name: 'Demolish', time: '0s' },
                     { icon: 'Rising_Phoenix', name: 'Rising Phoenix', time: '0s' },
-                    { icon: 'The_Forbidden_Chakra', name: 'The_Forbidden_Chakra', time: '0s' },
+                    { icon: 'The_Forbidden_Chakra', name: 'The Forbidden Chakra', time: '0s' },
                     { icon: 'Perfect_Balance', name: 'Perfect Balance', time: '0s' },
                     { icon: 'Dragon_Kick', name: 'Dragon Kick', time: '0s' },
                     { icon: 'Twin_Snakes', name: 'Twin Snakes', time: '0s' },
